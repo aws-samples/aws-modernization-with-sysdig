@@ -1,17 +1,5 @@
-## My Project
+## AWS Modernization Workshop Samples
 
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This library is licensed under the MIT-0 License. See the LICENSE file.
+This repo contains samples that can be used as building blocks in https://github.com/aws-samples/aws-modernization-workshop-base to help quickly build
+a modernization workshop.  See https://aws-samples.github.io/aws-modernization-workshop-sample/ for additional info.
 
