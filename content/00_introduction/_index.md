@@ -19,3 +19,16 @@ chapter: true
  In particular, we'll guide you on how to implement **ECS Fargate image scanning** with Sysdig Secure. The resulting solution will automatically scan any container image instance that is executed, and will warn you with reports about any vulnerabilities or misconfigurations in your workload. It will do this **without leaving your AWS workflow**, and without data leaving your AWS infrastructure.
 
  We will also look at how to use Falco to perform 'runtime' security and compliance in the context of your AWS environment using Sysdig's CloudConnector's integration with AWS CloudTrail.
+
+ Expected Duration:
+ 
+ * 2-3 Hours
+
+ Target Audience:
+
+* Cloud Architects
+* Security Architects
+* SysAdmins
+* Developers
+
+ Some experience/knowledge with AWS is helpful but the workshop will provide instructions to run through the workshop with no issues and if you are attending one of our live workshop sessions there will be folks to help assist with issues that come up 

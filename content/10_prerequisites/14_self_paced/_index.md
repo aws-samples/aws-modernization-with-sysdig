@@ -17,6 +17,10 @@ Only complete this section if you are running the workshop on your own. If you a
 Your account must have the ability to create new IAM roles and scope other IAM permissions.
 {{% /notice %}}
 
+{{% notice warning %}}
+You are responsible for the cost of the AWS services used while running this workshop in your AWS account.
+{{% /notice %}}
+
 1. If you don't already have an AWS account with Administrator access: [create
 one now by clicking here](https://aws.amazon.com/getting-started/)
 
