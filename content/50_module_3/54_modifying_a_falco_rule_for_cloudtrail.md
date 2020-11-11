@@ -15,10 +15,10 @@ Let’s try first modifying a rule. The following rule checks if a resource is c
 
 - rule: AWS command executed on unused region
   desc: Detect AWS command execution on unused regions
-  condition:
+  condition: >
     not jevt.value[/errorCode] exists and
     jevt.value[/awsRegion] in (disallowed_aws_regions)
-  output:
+  output: >
     An AWS command has been executed on an unused region
     (requesting user=%jevt.value[/userIdentity/arn],
      requesting IP=%jevt.value[/sourceIPAddress],
@@ -33,7 +33,7 @@ Let’s try first modifying a rule. The following rule checks if a resource is c
 ```
 - list: disallowed_aws_regions
   items: [us-west-1, us-west-2]
-  update: true
+  append: true
 
 ```
 
@@ -43,10 +43,10 @@ Let’s try first modifying a rule. The following rule checks if a resource is c
 
 ```
 mkdir -p rules
-cat <<EOF >>rules/disallowed_aws_regions.yaml
+cat <<EOF >rules/disallowed_aws_regions.yaml
 - list: disallowed_aws_regions
   items: [us-west-1, us-west-2]
-  update: true
+  append: true
 
 EOF
 ```
@@ -74,21 +74,34 @@ echo $task_id
 AWS_PAGER="" aws ecs stop-task --cluster CloudConnector --task $task_id
 ```
 
-     It usually takes the Fargate task a couple of minutes to restart. You can follow Cloud Connector logs to check it's status using this command:
+     It usually takes the Fargate task a couple of minutes to restart. You can follow Cloud Connector logs to check it's status, discarding very verbose messages that are not essential, using this command:
 
 ```
-aws logs tail cloud-connector --follow  --filter-pattern "{ $.component != http-server }"
+aws logs tail cloud-connector --follow  --filter-pattern "{ $.component != "http-server" && $.component != "cloudtrail-sns-http-ingestor" }"
 ```
 
-     When you see info level messages indicating the rules have been loaded, and maybe some alerts, it means it is working.
+     When you see info level messages indicating the rules have been loaded like the following example, and maybe some alerts, it means the new settings and rules have been loaded.
 
 1. Now we create a new log group on **us-west-2**
+     ```
+     2020-11-11T17:31:27.770000+00:00 ecs/CloudConnector/6cbd184c9ce446baa1beb5ef2f91fcdb {"level":"info","component":"main","time":"2020-11-11T17:31:27Z","message":"Starting cloud-connector"}
+2020-11-11T17:31:27.770000+00:00 ecs/CloudConnector/6cbd184c9ce446baa1beb5ef2f91fcdb {"level":"info","component":"directory-rule-provider","time":"2020-11-11T17:31:27Z","message":"loading rules from /rules"}
+2020-11-11T17:31:27.959000+00:00 ecs/CloudConnector/6cbd184c9ce446baa1beb5ef2f91fcdb {"level":"info","component":"s3-rule-provider","time":"2020-11-11T17:31:27Z","message":"loading rules from s3 bucket 'cloudconnector-cloudconnectorbucket-6gq5ia7dir18' with path 'rules'"}
+2020-11-11T17:31:27.973000+00:00 ecs/CloudConnector/6cbd184c9ce446baa1beb5ef2f91fcdb {"level":"info","component":"rule-loader","time":"2020-11-11T17:31:27Z","message":"loaded 98 rules, 13 lists and 39 macros from 2 rule providers"}     
+2020-11-11T17:31:28.080000+00:00 ecs/CloudConnector/6cbd184c9ce446baa1beb5ef2f91fcdb {"level":"info","component":"main","time":"2020-11-11T17:31:28Z","message":"cloud-connector is listening to HTTP requests"}
+     ```
 
+1. Now that we know the modification has been loaded, we create a new log group on **us-west-2** to trigger a a security alert.
 ```
 aws logs create-log-group --log-group-name "test_unused_region" --region="us-west-2"
 ```
 
-     CloudTrail takes up to 10 minutes to provide the events. When the event is available, CloudConnector will trigger the rule and we will see a new security finding appear in AWS Security Hub.
+     CloudTrail takes up to 10 minutes to provide the events. When the event is available, CloudConnector will trigger the rule and we will see a new security event on the log, as well as a new finding appear in AWS Security Hub.
+
+     ```
+     2020-11-11T18:31:07.093000+00:00 ecs/CloudConnector/6b068dbba66a404696db054cf3d46341 {"level":"warn","component":"console-notifier","name":"AWS Command Executed on Unused Region","priority":"CRITICAL","event.ID":"69cc425f-17db-4647-b27e-8a75d375a40b","event.HappenedOn":"2020-11-11T18:20:36Z","time":"2020-11-11T18:31:07Z","message":"An AWS command has been executed on an unused region (requesting user=arn:aws:iam::972909301756:root, requesting IP=87.218.230.200, AWS 
+region=us-west-2)"}
+     ```
 
      ![Triggered Security Event](/images/50_module_3/image7.png)
 

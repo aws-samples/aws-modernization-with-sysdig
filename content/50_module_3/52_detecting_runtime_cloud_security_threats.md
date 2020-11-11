@@ -64,9 +64,9 @@ A Falco rule to detect this elevation of privileges would look like this:
 ```
 - rule: Delete bucket encryption
   desc: Detect deleting configuration to use encryption for bucket storage
-  condition:
+  condition: > 
     jevt.value[/eventName]="DeleteBucketEncryption" and not jevt.value[/errorCode] exists
-  output:
+  output: >
     A encryption configuration for a bucket has been deleted
     (requesting user=%jevt.value[/userIdentity/arn],
      requesting IP=%jevt.value[/sourceIPAddress],
