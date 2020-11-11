@@ -4,6 +4,7 @@ Description: This template will launch the Modernization Workshop CI/CD Pipeline
 # It should only be necessary to update the parameters
 # run this stack as below but sub for {WORKSHOP NAME} with the workshop/company name
 # aws cloudformation create-stack --stack-name Cfn-Samples-to-S3 --template-body file://pipeline.yaml --capabilities CAPABILITY_NAMED_IAM
+
 Parameters:
   ProjectName:
     Type: String
@@ -65,7 +66,7 @@ Resources:
                   - s3:GetObject
                   - s3:PutObject
                   - s3:GetObjectVersion
-                  - s3:PutObjectAcl
+                  - s3:ListBucket
               - Effect: Allow
                 Action:
                   - cloudfront:CreateInvalidation
