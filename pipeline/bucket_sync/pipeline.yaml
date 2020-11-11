@@ -8,15 +8,15 @@ Parameters:
   ProjectName:
     Type: String
     Description: Project Name
-    Default: cfn-to-s3
+    Default: sysdig
   Bucket:
     Type: String
     Description: S3 bucket for public assets. ex. Cloudformation templates
-    Default: modernization-workshop-bucket  
+    Default: sysdig.awsworkshop.io 
   GitHubRepo:
     Type: String
     Description: repo name
-    Default: aws-modernization-workshop-sample
+    Default: aws-modernization-with-sysdig
   FullRepoURL:
     Type: String
     Description: The full url to the repo
