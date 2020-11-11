@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: This template will launch a code pipeline to copy templates from a directory to an s3 bucket.
+Description: This template will launch the Modernization Workshop CI/CD Pipeline.
 
 # It should only be necessary to update the parameters
 # run this stack as below but sub for {WORKSHOP NAME} with the workshop/company name
@@ -9,10 +9,14 @@ Parameters:
     Type: String
     Description: Project Name
     Default: sysdig
-  Bucket:
+  WebsiteBucket:
     Type: String
     Description: S3 bucket for public assets. ex. Cloudformation templates
     Default: sysdig.awsworkshop.io 
+  CloudFrontDistroId:
+    Type: String
+    Description: CloudFront distribution ID 
+    Default: E2KZIQ2GVGN1ZN
   GitHubRepo:
     Type: String
     Description: repo name
@@ -55,22 +59,17 @@ Resources:
                   - s3:GetObject
                   - s3:PutObject
                   - s3:GetObjectVersion
-              - Resource: !Sub arn:aws:s3:::${Bucket}/*
+              - Resource: !Sub arn:aws:s3:::${WebsiteBucket}/*
                 Effect: Allow
                 Action:
                   - s3:GetObject
                   - s3:PutObject
                   - s3:GetObjectVersion
                   - s3:PutObjectAcl
-                  - s3:List*
-              - Resource: !Sub arn:aws:s3:::${Bucket}
-                Effect: Allow
+              - Effect: Allow
                 Action:
-                  - s3:GetObject
-                  - s3:PutObject
-                  - s3:GetObjectVersion
-                  - s3:PutObjectAcl
-                  - s3:List*
+                  - cloudfront:CreateInvalidation
+                Resource: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistroId}
     
 
   CodePipelineServiceRole:
@@ -125,10 +124,12 @@ Resources:
             Value: !Ref AWS::Region
           - Name: FULL_REPO_URL
             Value: !Ref FullRepoURL
-          - Name: BUCKET  
-            Value: !Ref Bucket  
+          - Name: WEB_SITE_BUCKET
+            Value: !Ref WebsiteBucket
+          - Name: CLOUDFRONT_DISTRO_ID
+            Value: !Ref CloudFrontDistroId
         PrivilegedMode: true
-      Name: !Join ['', [!Ref 'ProjectName', '-pipeline']]
+      Name: !Join ['', [!Ref 'ProjectName', '-Workshop-website']]
       ServiceRole: !Ref CodeBuildServiceRole
                      
   Pipeline:
@@ -150,7 +151,7 @@ Resources:
               Configuration:
                 Owner: !Ref GitHubOwner
                 Repo: !Ref GitHubRepo
-                Branch: master
+                Branch: main
                 PollForSourceChanges: false
                 OAuthToken: '{{resolve:secretsmanager:GitHub/WorkshopOwnerToken:SecretString:OwnerToken}}'
               OutputArtifacts:
