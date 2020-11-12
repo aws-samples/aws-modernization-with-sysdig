@@ -8,7 +8,7 @@ For illustration purposes, let's rebuild our image and make it more secure by st
 
 1. Go back into Cloud9 Workspace
 
-2. As a bit of housekeeping, first lets delete the older `node` image as follows to free up space on our cloud9 workspace,
+2. As a bit of housekeeping, first lets delete the older `node` image as follows to free up space on our Cloud9 workspace,
 
 	```
 	docker rmi node:12

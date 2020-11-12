@@ -42,6 +42,8 @@ To illustrate the images scanning we will build an example Node.JS application b
 
 Once complete the scan will show the status '**Failed**'. ![Build Complete](/images/30_module_1/CodeBuild-ScanComplete-Fail.png)
 
+**Important** This may mean the image has failed the scan, **and not** that the image scan process itself has failed. Check the CodeBuild pipeline logs to verify.
+
 #### Optional: Further Information
 
 You can see a complete log of the scan process by clicking [ECS Scan log](https://gist.githubusercontent.com/johnfitzpatrick/369c1f9df765be68ba2d83cbe37f6eb3/raw/421fe8d829ad74cd406d09ca6625283e4020751b/gistfile1.txt).  This shows
