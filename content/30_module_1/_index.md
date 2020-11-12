@@ -30,7 +30,7 @@ How this is implemented is illustrated below.
 
 Once a new image is pushed to Amazon ECR, this is picked up by Amazon EventBridge and passed to a Lambda function which creates an ephemeral CodeBuild task to build and scan the base image.  The results of the scan are then sent to the Sysdig Secure backend.  You are not required to configure, or expose, the registry on the Sysdig Secure side. Also, the image itself is not sent to Sysdig, but only the image metadata.
 
-An important point to note is that, although the scan actually happens with this AWS pipeline, you maintain the scanning policies and results within Sysdig.
+An important point to note is that, although the scan actually happens with this AWS pipeline, you maintain the scanning policies and view results within Sysdig.
 
 #### About AWS CodeBuild
-[AWS CodeBuild](https://aws.amazon.com/codebuild/) is a fully managed continuous integration service. CodeBuild compiles source code, runs tests, and produces deployable software packages without the need to provision, manage, and scale your own build servers. 
+[AWS CodeBuild](https://aws.amazon.com/codebuild/) is a fully managed continuous integration service. CodeBuild compiles source code, runs tests, and produces deployable software packages without the need to provision, manage, and scale your own build servers.

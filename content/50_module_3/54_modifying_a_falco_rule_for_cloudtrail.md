@@ -96,13 +96,11 @@ aws logs tail cloud-connector --follow  --filter-pattern "{ $.component != "http
 aws logs create-log-group --log-group-name "test_unused_region" --region="us-west-2"
 ```
 
-     CloudTrail takes up to 10 minutes to provide the events. When the event is available, CloudConnector will trigger the rule and we will see a new security event on the log, as well as a new finding appear in AWS Security Hub.
+     CloudTrail takes up to 10 minutes to provide the events. When the event is available, CloudConnector will trigger the rule and we will see a new security event on the log, as well as a new finding appearing in AWS Security Hub.
 
      ```
-     2020-11-11T18:31:07.093000+00:00 ecs/CloudConnector/6b068dbba66a404696db054cf3d46341 {"level":"warn","component":"console-notifier","name":"AWS Command Executed on Unused Region","priority":"CRITICAL","event.ID":"69cc425f-17db-4647-b27e-8a75d375a40b","event.HappenedOn":"2020-11-11T18:20:36Z","time":"2020-11-11T18:31:07Z","message":"An AWS command has been executed on an unused region (requesting user=arn:aws:iam::972909301756:root, requesting IP=87.218.230.200, AWS 
+     2020-11-11T18:31:07.093000+00:00 ecs/CloudConnector/6b068dbba66a404696db054cf3d46341 {"level":"warn","component":"console-notifier","name":"AWS Command Executed on Unused Region","priority":"CRITICAL","event.ID":"69cc425f-17db-4647-b27e-8a75d375a40b","event.HappenedOn":"2020-11-11T18:20:36Z","time":"2020-11-11T18:31:07Z","message":"An AWS command has been executed on an unused region (requesting user=arn:aws:iam::972909301756:root, requesting IP=87.218.230.200, AWS
 region=us-west-2)"}
      ```
 
      ![Triggered Security Event](/images/50_module_3/image7.png)
-
-_[Introduce screenshots when rule update process is available]_
