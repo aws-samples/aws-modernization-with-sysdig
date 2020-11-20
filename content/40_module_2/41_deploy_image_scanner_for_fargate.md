@@ -8,17 +8,37 @@ To deploy the Sysdig image scanner for Fargate, we'll again use Amazon CloudForm
 
 ***Note*** You can find instructions on using the CLI on the [[Sysdig Fargate scanning installation page](https://sysdiglabs.github.io/ecs-image-scanning/install.html)](https://sysdiglabs.github.io/ecs-image-scanning/install.html)
 
+<!--
+1. Copy and run the following two commands into your Cloud9 Workspace console and follow the instructions to configure your __Secure API Token__ and  __Secure API Endpoint__ as environment variables.
 
-1. First, make sure your Sysdig `SecureAPIToken` and `SecureEndpoint` environment variables are set.
+```sh
+echo "Enter your 'Sysdig Secure API Token' from above"; read SecureAPIToken 
+```
+
+```sh
+echo "Enter your 'Sysdig Secure API Endpoint' from above"; read SecureEndpoint
+```
+ -->
+
+
+ 1. Configure your __Secure API Token__ and  __Secure API Endpoint__ as environment variables.
+
+ ```sh
+ SecureAPIToken =<<YOUR_API_TOKEN>>
+ ```
+
+ ```sh
+ SecureEndpoint=<YOUR_API_ENDPOINT>
+ ```
+
+    You should have made a note of these environment variables when setting up your [Cloud9 Workspace]({{< ref "/10_prerequisites/15_workspace_setup/23_cloud.md" >}}).
+
+    Make sure your Sysdig `SecureAPIToken` and `SecureEndpoint` environment variables are set correctly.
 
     ```
     echo $SecureAPIToken
     echo $SecureEndpoint
     ```
-
-    You should have set these environment variables when setting up your [Cloud9 Workspace]({{< ref "/10_prerequisites/15_workspace_setup/23_cloud.md" >}}).
-
-    **IMPORTANT** If these variable are not set, then you can set them manually using the information you noted from [here]({{< ref "/10_prerequisites/30_sysdig.md" >}}).
 
 1. Let's set our CloudFormation template URL as an environment variable to simplify the actual `aws` command.  
 

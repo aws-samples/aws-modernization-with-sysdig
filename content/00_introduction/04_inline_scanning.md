@@ -1,6 +1,6 @@
 
 +++
-title = "Inline Scanning"
+title = "Image Scanning"
 chapter = false
 weight = 04
 +++
