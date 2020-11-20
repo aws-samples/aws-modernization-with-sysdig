@@ -23,14 +23,5 @@ You need a Sysdig Secure account to complete this workshop. In particular you wi
 
         **IMPORTANT:** Make sure you **DO NOT** use the **Sysdig Monitor** API Token, or the Access Token!
 
-3. Copy and run the following two commands into your Cloud9 Workspace console and follow the instructions to configure your __Secure API Token__ and  __Secure API Endpoint__ as environment variables.
-
-```sh
-echo "Enter your 'Sysdig Secure API Token' from above"; read SecureAPIToken 
-```
-
-```sh
-echo "Enter your 'Sysdig Secure API Endpoint' from above"; read SecureEndpoint
-```
 
 <img src=/images/10_prerequisites/apiValues.gif width="100%" >
