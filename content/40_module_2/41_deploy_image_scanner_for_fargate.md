@@ -24,7 +24,7 @@ echo "Enter your 'Sysdig Secure API Endpoint' from above"; read SecureEndpoint
  1. Configure your __Secure API Token__ and  __Secure API Endpoint__ as environment variables.
 
  ```sh
- SecureAPIToken =<<YOUR_API_TOKEN>>
+ SecureAPIToken =<YOUR_API_TOKEN>
  ```
 
  ```sh
