@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>//localhost:1313/</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/00_introduction/03_image_scanning.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/00_introduction/04_inline_scanning.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/00_introduction/05_fargate_ecs_sec.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/00_introduction.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/00_introduction/06_infra_runtime_sec.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/10_prerequisites.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/10_prerequisites/12_start_workshop.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/10_prerequisites/16_start_cloud9workspace.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/30_module_1.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/10_prerequisites/30_sysdig.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/30_module_1/30_setup_ecr.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/30_module_1/31_deploy_ecr_integration.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/30_module_1/32_image_from_registry.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/30_module_1/33_image_rescan.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/30_module_1/34_review.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/30_module_1/35_cleanup.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2/40_install_amazon_ecs_cli.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2/41_deploy_image_scanner_for_fargate.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2/42_deploy_an_ecs_cluster.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2/43_initiate_scan.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2/44_sysdig_secure_dashboard.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2/45_review.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/40_module_2/46_cleanup.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3/51_setup_cloudtrail_runtime_security.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3/53_detecting_runtime_cloud_security_threats.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3/54_checking_security_findings_in_the_aws_security_hub.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3/55_modifying_a_falco_rule_for_cloudtrail.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3/56_review.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3/57_cleanup.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/60_conclusions.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/70_cleanup.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/25_prework/241_enable_aws_security_hub.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/25_prework.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/50_module_3/52_setup_cloudtrail_runtime_security.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/categories.html</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags.html</loc>
+  </url>
+  
+</urlset>

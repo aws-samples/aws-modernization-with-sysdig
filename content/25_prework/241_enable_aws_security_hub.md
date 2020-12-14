@@ -1,7 +1,7 @@
----
+<!-- ---
 title: "Installing the CloudConnector"
 chapter: false
-weight: 241
+<!-- weight: 241 -->
 ---
 
 {{% notice tip %}}
@@ -86,4 +86,4 @@ The creation process may take **up to ten minutes**. You'll be using *CloudConne
 
 ## Step summary
 
-<img src=/images/module3prework.gif width="100%" >
+<img src=/images/module3prework.gif width="100%" > -->

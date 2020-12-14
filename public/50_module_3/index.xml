@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3. CloudTrail Runtime Security on Secure DevOps with AWS &amp; Sysdig</title>
+    <link>//localhost:1313/50_module_3.html</link>
+    <description>Recent content in 3. CloudTrail Runtime Security on Secure DevOps with AWS &amp; Sysdig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="//localhost:1313/50_module_3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup CloudTrail Runtime Security</title>
+      <link>//localhost:1313/50_module_3/51_setup_cloudtrail_runtime_security.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/50_module_3/51_setup_cloudtrail_runtime_security.html</guid>
+      <description>There are two steps required to enable CloudTrail runtime security:
+ Firstly, you must enable AWS Security Hub in the account, then Deploy the Sysdig CloudConnector CloudFormation template.  If you prefer learning by watching over reading, you can find an animated image at the bottom with all the steps listed below.
+ Step 1. Enable AWS Security Hub To enable AWS Security Hub:
+ Log into your Cloud9 Workspace</description>
+    </item>
+    
+    <item>
+      <title>Detecting Runtime Cloud Security Threats</title>
+      <link>//localhost:1313/50_module_3/53_detecting_runtime_cloud_security_threats.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/50_module_3/53_detecting_runtime_cloud_security_threats.html</guid>
+      <description>Let&amp;rsquo;s look at an example of AWS threat detection in action with CloudTrail and the Sysdig CloudConnector. To do so we&amp;rsquo;ll create an S3 bucket, and make it public
+ Log into Cloud9 Workspace
+S3 bucket names are globally unique, so use your initials in lower case combined with a timestamp
+ First set your initials as an environment variable
+INITIALS=&amp;lt;your initials&amp;gt; Now create the S3 bucket, ensuring the bucket name is in lowercase.</description>
+    </item>
+    
+    <item>
+      <title>Checking Security Findings in AWS Security Hub</title>
+      <link>//localhost:1313/50_module_3/54_checking_security_findings_in_the_aws_security_hub.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/50_module_3/54_checking_security_findings_in_the_aws_security_hub.html</guid>
+      <description>You can check these events without leaving the AWS console. This is how findings reported by Sysdig CloudConnector look in the AWS Security Hub:
+ Browse to Security Hub and click &amp;lsquo;Findings&amp;rsquo; on the left.   Click on &amp;ldquo;Delete bucket encryption&amp;rdquo; to view all the information you need to take immediate action:   And they appear in JSON format in AWS CloudWatch log streams.
+Browse to CloudWatch, and click &amp;lsquo;Log groups &amp;gt; cloud-connector &amp;gt; alerts&amp;rsquo;</description>
+    </item>
+    
+    <item>
+      <title>Modifying a Falco Rule for CloudTrail</title>
+      <link>//localhost:1313/50_module_3/55_modifying_a_falco_rule_for_cloudtrail.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/50_module_3/55_modifying_a_falco_rule_for_cloudtrail.html</guid>
+      <description>Using Sysdig CloudConnector, you are not limited to the out-of-the-box rules provided. You can modify existing rules, or write your own tailored to your own needs.
+Let’s try first modifying a rule. The following rule checks if a resource is created in a region that you are not usually using. However, to be active you must specify which regions you want to detect.
+- list: disallowed_aws_regions items: [] - rule: AWS command executed on unused region desc: Detect AWS command execution on unused regions condition: &amp;gt; not jevt.</description>
+    </item>
+    
+    <item>
+      <title>Module Review</title>
+      <link>//localhost:1313/50_module_3/56_review.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/50_module_3/56_review.html</guid>
+      <description>In this module we looked at how to audit AWS CloudTrail events with Sysdig CloudConnector. The Sysdig CloudConnector analyzes every CloudTrail entry in real time, and provides runtime protection using a flexible set of Falco rules, and can forward findings to AWS Security Hub, AWS CloudWatch, as well as to Sysdig Secure.</description>
+    </item>
+    
+    <item>
+      <title>Cleanup</title>
+      <link>//localhost:1313/50_module_3/57_cleanup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/50_module_3/57_cleanup.html</guid>
+      <description> Delete the log group created to test the Falco rule modification
+aws logs delete-log-group --log-group-name &amp;#34;test_unused_region&amp;#34; --region=&amp;#34;us-west-2&amp;#34; Delete an S3 bucket
+aws s3api delete-bucket --bucket $BUCKETNAME  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/50_module_3/52_setup_cloudtrail_runtime_security.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/50_module_3/52_setup_cloudtrail_runtime_security.html</guid>
+      <description>&amp;lt;!&amp;ndash; If you followed this workshop from the beginning then you should have deployed the CloudTrail CloudFormation Template earlier. If you didn&amp;rsquo;t, then go back and complete this step now Setup CloudTrail Runtime Security, however please note that this can take up to ten minutes to complete.
+To check it has been deployed successfully, navigate to https://console.aws.amazon.com/cloudformation/ and search for CloudConnector. You should see it&amp;rsquo;s status is CREATE_COMPLETE.
+&amp;ndash;&amp;gt; &amp;ndash;&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

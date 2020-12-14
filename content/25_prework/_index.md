@@ -1,4 +1,4 @@
-+++
+<!-- +++
 title = "Prework"
 chapter = true
 weight = 25
@@ -11,4 +11,4 @@ We will be looking at CloudTrail runtime security in module 3 of this workshop. 
 There are two steps required to enable CloudTrail runtime security:
 
 1. Firstly, you must enable AWS Security Hub in the account, then
-2. Deploy the Sysdig CloudConnector CloudFormation template.
+2. Deploy the Sysdig CloudConnector CloudFormation template. -->

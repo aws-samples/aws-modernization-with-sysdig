@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prerequisites on Secure DevOps with AWS &amp; Sysdig</title>
+    <link>//localhost:1313/10_prerequisites.html</link>
+    <description>Recent content in Prerequisites on Secure DevOps with AWS &amp; Sysdig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="//localhost:1313/10_prerequisites/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1. Access AWS Account...</title>
+      <link>//localhost:1313/10_prerequisites/12_start_workshop.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/10_prerequisites/12_start_workshop.html</guid>
+      <description>Access an AWS account To start the workshop, follow one of the following depending on whether you are&amp;hellip;
+ Attending an AWS hosted event, or Running the workshop on your own  Both options are explained below.
+Once you have completed with either setup, continue with Launch a Cloud9 IDE Workspace
+Attending an AWS hosted event To complete this workshop, you are provided with an AWS account via the AWS Event Engine service.</description>
+    </item>
+    
+    <item>
+      <title>2. Launch Cloud9 IDE Workspace</title>
+      <link>//localhost:1313/10_prerequisites/16_start_cloud9workspace.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/10_prerequisites/16_start_cloud9workspace.html</guid>
+      <description>AWS Cloud9 is a cloud-based integrated development environment (IDE) that Let’s you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your laptop for this workshop.
+We will use Amazon Cloud9 to access our AWS account via the AWS CLI in this Workshop.</description>
+    </item>
+    
+    <item>
+      <title>3. Sign-up for a Sysdig Trial account</title>
+      <link>//localhost:1313/10_prerequisites/30_sysdig.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/10_prerequisites/30_sysdig.html</guid>
+      <description>You need a Sysdig Secure account to complete this workshop. In particular you will need to make a note of your account&amp;rsquo;s associated API token &amp;amp; API Endpoint to configure the integrations.
+ Sign-up for a free Sysdig trial here https://sysdig.com/company/free-trial/. Remember to select Sysdig Secure under the Trial Offer&amp;hellip; dropdown.
+ You will receive a confirmation email with a confirmation link  Click the link and log into Sysdig, and make a note of the following two items (see animated GIF below for details on how to obtain these two values)</description>
+    </item>
+    
+  </channel>
+</rss>
