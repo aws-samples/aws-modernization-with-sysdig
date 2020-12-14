@@ -1,5 +1,5 @@
 ---
-title: "Deploy Sysdig Secure Automatic Image Scanner for Fargate"
+title: "Deploy Sysdig Secure Automated Image Scanner for Fargate"
 chapter: false
 weight: 41
 ---
@@ -31,7 +31,7 @@ echo "Enter your 'Sysdig Secure API Endpoint' from above"; read SecureEndpoint
  SecureEndpoint=<YOUR_API_ENDPOINT>
  ```
 
-    You should have made a note of these environment variables when setting up your [Cloud9 Workspace]({{< ref "/10_prerequisites/15_workspace_setup/23_cloud.md" >}}).
+    You should have made a note of these environment variables when setting up your [Cloud9 Workspace](content/10_prerequisites/16_start_cloud9workspace.md).
 
     Make sure your Sysdig `SecureAPIToken` and `SecureEndpoint` environment variables are set correctly.
 

@@ -1,10 +1,10 @@
 +++
-title = "Module 2"
+title = "2. Fargate & ECS Automated Image Scanning"
 chapter = true
 weight = 40
 +++
 
-# Module 2: Fargate automatic image scanning
+# Module 2: Fargate & ECS Automated Image Scanning
 
 ## Module Overview
 
@@ -13,7 +13,7 @@ Amazon Fargate is a serverless compute engine for containers that works with bot
 In this lab we will
 
 1. Install Amazon ECS CLI
-2. Deploy Sysdig Secure automatic image scanner for Fargate
+2. Deploy Sysdig Secure automated image scanner for Fargate
 3. Deploy an ECS cluster using Fargate
 4. See that CodeBuild pipelines are automatically created to scan them
 5. See scan results on Sysdig Secure dashboard
