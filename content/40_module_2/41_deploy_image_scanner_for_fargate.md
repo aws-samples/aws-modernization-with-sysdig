@@ -1,5 +1,5 @@
 ---
-title: "Deploy Sysdig Secure Automatic Image Scanner for Fargate"
+title: "Deploy Sysdig Secure Automated Image Scanner for Fargate"
 chapter: false
 weight: 41
 ---

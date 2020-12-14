@@ -1,10 +1,10 @@
 +++
-title = "2. Fargate automated image scanning"
+title = "2. Fargate & ECS Automated Image Scanning"
 chapter = true
 weight = 40
 +++
 
-# Module 2: Fargate automated image scanning
+# Module 2: Fargate & ECS Automated Image Scanning
 
 ## Module Overview
 

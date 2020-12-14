@@ -1,7 +1,7 @@
 ---
 title: "AWS Fargate and ECS Security"
 draft: false
-weight: 06
+weight: 05
 ---
 
 [**Amazon Elastic Container Service**](https://aws.amazon.com/ecs) (Amazon ECS) is a fully managed container orchestration service based on Kubernetes, allowing developers to run applications without the need to configure the required running environment. Amazon ECS is fully integrated with the Docker container registry [**AWS ECR**](https://aws.amazon.com/ecr).

@@ -1,7 +1,7 @@
 ---
 title: "Infrastructure Runtime Security"
 draft: false
-weight: 05
+weight: 06
 ---
 
 In the same way image scanning gives you visibility of vulnerabilities and threats pertaining specifically to an application's containers, infrastructure scanning gives visibility of potential issues emanating from the environment on which these containers run.
@@ -10,7 +10,7 @@ AWS provides a rich environment upon which to base your application, but it's no
 
 Falco is an open source threat detection language that is widely used to detect and alert on runtime abnormalities, and can also be used to detect changes within the AWS environment.
 
-Falco was created by Sysdig in 2016 and is the first runtime security project to join CNCF as an incubation-level project.
+Falco was created by Sysdig in 2016.  It was the first runtime security project to join CNCF as a sandbox-level project, and has since graduated to incubation status.
 
 A set of out-of-the-box Falco rules for CloudTrail is packaged with the Sysdig CloudConnector allowing you to easily generate detections and alerts on abnormal behavior changes. The included out-of-the-box CloudTrail rules can detect events like:
 
