@@ -4,7 +4,7 @@ chapter: false
 weight: 42
 ---
 
-To illustrate automatic scanning, we will now deploy a sample ECS cluster that scales using Fargate.  For the purposes of the lab this will consist of this sample PHP appliction running in a Docker Compose environment - https://hub.docker.com/r/amazon/amazon-ecs-sample.
+To illustrate automated scanning, we will now deploy a sample ECS cluster that scales using Fargate.  For the purposes of the lab this will consist of this sample PHP appliction running in a Docker Compose environment - https://hub.docker.com/r/amazon/amazon-ecs-sample.
 
 1. Create a cluster configuration and create a cluster
 
