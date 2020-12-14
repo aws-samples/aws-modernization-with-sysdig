@@ -6,7 +6,7 @@ weight: 32
 
 ### Download Example Dockerfile and Sources
 
-Now that our automatic scanner is in place, we can test it by pushing a Docker container, and check if it scans.
+Now that our automated scanner is in place, we can test it by pushing a Docker container, and check if it scans.
 
 To illustrate the images scanning we will build an example Node.JS application based on the official “hello world” example described in [their website](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).
 
