@@ -1,5 +1,5 @@
 +++
-title = "Module 2"
+title = "Amazon ECS & Fargate Security"
 chapter = true
 weight = 40
 +++

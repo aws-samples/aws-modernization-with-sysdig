@@ -1,5 +1,5 @@
 +++
-title = "Module 1"
+title = "Amazon ECR Security"
 chapter = true
 weight = 30
 +++
