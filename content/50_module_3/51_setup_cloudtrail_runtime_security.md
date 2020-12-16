@@ -9,9 +9,8 @@ There are two steps required to enable CloudTrail runtime security:
 1. Firstly, you must enable AWS Security Hub in the account, then
 2. Deploy the Sysdig CloudConnector CloudFormation template.
 
-
 {{% notice tip %}}
-If you prefer learning by watching over reading, you can find an animated image at the bottom with all the steps listed below.
+If you require any clarification of the following steps, please refer to the animated image at the bottom.
 {{% /notice %}}
 
 ## Step 1. Enable AWS Security Hub
@@ -71,9 +70,9 @@ You can optionally add tag keys and values to the deployment, but no further con
 
 	<!-- ![cf4](/images/20_workshop_setup/cf4.png) -->
 
-    You will be presented with a summary of all the parameters you previously introduced. Please note that dedicated IAM roles will be created to perform the scanning. These roles follow the "least privilege principle" to enforce maximum security.
+    You will be presented with a summary of all the parameters you previously introduced. 
 
-5. Finally click the checkbox
+5. Finally, click the checkbox to acknowledge that dedicated IAM roles will be created to perform the scanning. These roles follow the "least privilege principle" to enforce maximum security.
 
 	![cf5](/images/20_workshop_setup/cf5.png)
 

@@ -1,5 +1,5 @@
 ---
-title: "1. Access AWS Account..."
+title: "1. Access AWS Account"
 chapter: true
 weight: 11
 ---
@@ -20,7 +20,7 @@ Both options are explained below.
 Once you have completed with either setup, continue with [**Launch a Cloud9 IDE Workspace**](/10_prerequisites/16_start_cloud9workspace.html)
 
 
-## Attending an AWS hosted event
+## Option 1: Attending an AWS hosted event
 
 To complete this workshop, you are provided with an AWS account via the AWS Event Engine service. A team hash will be provided to you by event staff.
 
@@ -56,13 +56,12 @@ Please select **US East (N.Virginia)** in the top right corner.
 This account will expire at the end of the workshop and the all the resources created will be automatically deprovision-ed. You will not be able to access this account after today.
 {{% /notice %}}
 
-
-## Running the workshop on your own
+## Option 2: Running the workshop on your own
 
 {{% notice warning %}}
-Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Kubecon, Immersion Day, etc), go to [Start the workshop at an AWS event](../aws_event/).
-{{% /notice %}}
+Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Kubecon, Immersion Day, etc), go to [Start the workshop at an AWS event]({{< relref "#option-1-attending-an-aws-hosted-event" >}}).
 
+{{% /notice %}}
 {{% children %}}
 
 {{% notice warning %}}

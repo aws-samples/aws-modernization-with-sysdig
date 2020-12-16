@@ -41,7 +41,65 @@ Let's look at an example of AWS threat detection in action with CloudTrail and t
 It can take several minutes for new events to appear in CloudTrail. In the meantime you can browse the existing events created earlier from earlier activity in the account.
 {{% /notice %}}
 
-![insertexamplejson]
+```
+{
+    "eventVersion": "1.05",
+    "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAVAOQCKJMIBOSOS7IM:i-08b251cf94d4e6a80",
+        "arn": "arn:aws:sts::370614344560:assumed-role/Sysdig-Workshop-Admin/i-08d4e6ab251cf9480",
+        "accountId": "344570614360",
+        "accessKeyId": "ASIAVRLT4PAKJMFOQCMK",
+        "sessionContext": {
+            "sessionIssuer": {
+                "type": "Role",
+                "principalId": "ARQCKJMIBOSOS7OAVAOIM",
+                "arn": "arn:aws:iam::370614344560:role/Sysdig-Workshop-Admin",
+                "accountId": "370614344560",
+                "userName": "Sysdig-Workshop-Admin"
+            },
+            "webIdFederationData": {},
+            "attributes": {
+                "mfaAuthenticated": "false",
+                "creationDate": "2020-12-16T10:37:43Z"
+            },
+            "ec2RoleDelivery": "2.0"
+        }
+    },
+    "eventTime": "2020-12-16T11:02:06Z",
+    "eventSource": "s3.amazonaws.com",
+    "eventName": "DeleteBucketEncryption",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "54.208.132.231",
+    "userAgent": "[aws-cli/1.18.197 Python/3.6.12 Linux/4.14.203-116.332.amzn1.x86_64 botocore/1.19.37]",
+    "requestParameters": {
+        "bucketName": "in-1608116489",
+        "Host": "in-1608116489.s3.amazonaws.com",
+        "encryption": ""
+    },
+    "responseElements": null,
+    "additionalEventData": {
+        "SignatureVersion": "SigV4",
+        "CipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "bytesTransferredIn": 0,
+        "AuthenticationMethod": "AuthHeader",
+        "x-amz-id-2": "7oxWqk04DWgmjvSO3TgutyZPtcOYIfnJud2SGZEQOryG3LNgpSV9ZYCd4jLqatr9VaGMEefUVKg=",
+        "bytesTransferredOut": 0
+    },
+    "requestID": "E90DD548B6C5B224",
+    "eventID": "af6a54f9-c2ee-4e14-866a-48f9338bcc94",
+    "readOnly": false,
+    "resources": [
+        {
+            "accountId": "370614344560",
+            "type": "AWS::S3::Bucket",
+            "ARN": "arn:aws:s3:::in-1608116489"
+        }
+    ],
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "370614344560"
+}
+```
 
 {{% notice info %}}
 Please note that all data in the JSON doc above is fictitious and is used as an example.
@@ -56,7 +114,9 @@ All CloudTrail events have the following key fields:
 
 If a request has an **errorCode** field, it means that it could not be processed because of an error. For example, the requester may not have had permission to perform a change.
 
-In this case, we can see how a policy has just been attached (**AttachUserPolicy**) to a user (**admin_test**) with administrator access (**arn:aws:iam::aws:policy/AdministratorAccess**).
+In this case, we can see encryption hs been deleted (**DeleteBucketEncryption**) by user with administrator access (**arn:aws:iam::370614344560:role/Sysdig-Workshop-Admin**).
+
+<!-- In this case, we can see how a policy has just been attached (**AttachUserPolicy**) to a user (**admin_test**) with administrator access (**arn:aws:iam::aws:policy/AdministratorAccess**). -->
 
 A Falco rule to detect this elevation of privileges would look like this:
 
@@ -67,7 +127,7 @@ A Falco rule to detect this elevation of privileges would look like this:
   condition: >
     jevt.value[/eventName]="DeleteBucketEncryption" and not jevt.value[/errorCode] exists
   output: >
-    A encryption configuration for a bucket has been deleted
+    An encryption configuration for a bucket has been deleted
     (requesting user=%jevt.value[/userIdentity/arn],
      requesting IP=%jevt.value[/sourceIPAddress],
      AWS region=%jevt.value[/awsRegion],

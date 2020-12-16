@@ -75,7 +75,7 @@ Starting from here, when you see command to be entered such as below, you will e
 
 1. Follow [this deep link to find your Cloud9 EC2 instance](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:search=aws-cloud9-sysdig;sort=desc:launchTime)
 
-2. Select the instance, then choose **Actions / Security / Modify IAM role**
+2. Select the instance, then choose **Actions** > **Security** > **Modify IAM role**
 
 3. Choose **Sysdig-Workshop-Admin** from the **IAM Role** drop down, and select **Save**
 
@@ -83,7 +83,7 @@ Starting from here, when you see command to be entered such as below, you will e
 
 
 
-## Configure workspace for Sysdig Workshop
+## Configure Workspace for Sysdig Workshop
 
 {{% notice info %}}
 Cloud9 normally manages IAM credentials dynamically. This isn't currently compatible with
@@ -96,11 +96,9 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
 
   3. Close the Preferences tab
 
-     <img src=/images/10_prerequisites/iamRoleWorkspace.gif width="100%" >
-
   4. Copy and run (paste with **Ctrl+P**) the commands below.
 
-     Before running it, review what it does by reading through the comments.
+     Before running it, you may wish to review what it does by reading through the comments.
 
 
 ```sh
@@ -143,3 +141,5 @@ aws sts get-caller-identity --query Arn | grep Sysdig-Workshop-Admin -q && echo 
 {{% notice warning %}}
 If the IAM role is not valid, <span style="color: red;">**DO NOT PROCEED**</span>. Go back and confirm the steps on this page.
 {{% /notice %}}
+
+<img src=/images/10_prerequisites/iamRoleWorkspace.gif width="100%" >
