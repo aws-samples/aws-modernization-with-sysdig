@@ -14,7 +14,7 @@ Welcome to the **Secure DevOps with AWS & Sysdig** hands-on workshop.
 
 In this workshop, you will learn how to securely run cloud applications in production by automating AWS Fargate and ECR image scanning directly in your AWS environment.
 
-You will also discover how to improve the security of your cloud infrastructure using AWS CloudTrail and Sysdig CloudConnector. So not only are the applications secure, but so is the cloud infrastructure on which they depend! The topics we'll discuss are:
+You will also discover how to improve the security of your cloud infrastructure using AWS CloudTrail and Sysdig CloudConnector. So not only are the applications secure, but so is the cloud infrastructure on which they depend! The topics we will discuss in this workshop are:
 
  - Introduction to Security
    - Image Scanning
@@ -24,9 +24,9 @@ You will also discover how to improve the security of your cloud infrastructure 
  - Infrastructure Runtime security
 
 
-## Objectives
+## Learning Objectives
 
-The objective of this workshop is to familiarize users with the installation, configuration and usage of the following Sysdig security tools specific to AWS:
+The learning objectives of this workshop is to familiarize users with the installation, configuration, and usage of the following Sysdig security tools specific to AWS:
 
  - Amazon ECR image scanning
 
@@ -45,6 +45,6 @@ The objective of this workshop is to familiarize users with the installation, co
 
  - Software Developers
 
- - SREs
+ - Site Reliability Engineers (SREs)
 
  - Technical leads
