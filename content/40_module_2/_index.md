@@ -8,6 +8,8 @@ weight = 40
 
 ## Module Overview
 
+Estimated time to finish module: 30 minutes - 1 hour
+
 Amazon Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). It allocates the correct amount of compute resources, eliminating the need to choose instance types and scaling cluster capacity. With Fargate, you pay for the minimum resources required to run your containers.  Sysdig provides the ability to scan running Fargate services for known issues, in a similar manner to how it scans Amazon ECR.
 
 In this lab we will

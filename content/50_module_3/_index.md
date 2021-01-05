@@ -8,6 +8,8 @@ weight = 50
 
 ## Module Overview
 
+Estimated time to finish module: 30 minutes - 1 hour
+
 Every action taken over your infrastructure resources results in a registry in AWS CloudTrail. This includes all AWS account activity, actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.  This event history is extremely useful for detecting unwanted or unexpected activity involving your AWS resources, however it's quite noisy, and being JSON, it's not really human readable so can be hard to understand.
 
 Also, as your infrastructure grows and the number of AWS services are released, the amount of events and operational trails can become so huge that analyzing them is no longer practical.  

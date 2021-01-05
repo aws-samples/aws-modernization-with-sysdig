@@ -8,6 +8,8 @@ weight = 30
 
 ## Overview
 
+Estimated time to finish module: 30 minutes - 1 hour
+
 Amazon Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images. It hosts your container images in a highly available and scalable architecture, allowing you to reliably deploy containers for your applications.  Sysdig provides inline scanning of your Amazon ECR registry as part of Sysdig's ImageVision.  
 
 In this lab we will:
@@ -16,9 +18,8 @@ In this lab we will:
 2. Deploy the Amazon ECR Integration
 3. Push and scan an image from the registry
 4. See scan results on Sysdig Secure dashboard
-5. Download Example Dockerfile and Sources
+5. Download example Dockerfile and sources
 6. Modify the image and trigger a second scan
-
 
 ## Reference Architecture
 
@@ -34,3 +35,8 @@ An important point to note is that, although the scan actually happens with this
 
 #### About AWS CodeBuild
 [AWS CodeBuild](https://aws.amazon.com/codebuild/) is a fully managed continuous integration service. CodeBuild compiles source code, runs tests, and produces deployable software packages without the need to provision, manage, and scale your own build servers.
+
+The ephemeral task that is created for scanning our images is important to note because AWS CodeBuild allows you to do two important steps as part of the image build process:
+
+1. AWS CodeBuild lets you use custom containers or choose standard images provided by AWS which in this case is used to scan our container images
+2. AWS CodeBuild builds the base image for your container as we need an ephemeral container that is responsible for scanning the image built for security vulnerabilities. 
