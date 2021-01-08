@@ -1,5 +1,5 @@
 ---
-title: "2. Launch Cloud9 IDE Workspace"
+title: "3. Launch Cloud9 IDE Workspace"
 chapter: false
 weight: 16
 ---
