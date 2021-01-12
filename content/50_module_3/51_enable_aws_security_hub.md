@@ -1,7 +1,7 @@
 ---
 title: "Installing the CloudConnector"
 chapter: false
-weight: 241
+weight: 51
 ---
 
 {{% notice tip %}}

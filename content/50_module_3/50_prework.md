@@ -1,7 +1,7 @@
 +++
 title = "Prework"
 chapter = true
-weight = 25
+weight = 50
 +++
 
 ## Module 3 Prework: Setup CloudTrail Runtime Security
