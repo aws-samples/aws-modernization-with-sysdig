@@ -6,7 +6,7 @@ weight: 30
 
 You need a Sysdig Secure account to complete this workshop. In particular you will need to make a note of your account's associated API token & API Endpoint to configure the integrations.
 
-1. Sign-up for a free Sysdig trial here [https://sysdig.com/company/free-trial/](https://sysdig.com/company/free-trial/). Remember to **select Sysdig Secure** under the *Trial Offer...* dropdown.
+1. Sign-up for a free Sysdig trial here [https://sysdig.com/company/free-trial/?utm_campaign=aws-workshop ](https://sysdig.com/company/free-trial/?utm_campaign=aws-workshop). Remember to **select Sysdig Secure** under the *Trial Offer...* dropdown.
 
     - You will receive a confirmation email with a confirmation link
 
