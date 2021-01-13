@@ -1,5 +1,5 @@
 ---
-title: "Create a Workspace"
+title: "3.1 Create a Workspace"
 chapter: false
 weight: 16
 ---
