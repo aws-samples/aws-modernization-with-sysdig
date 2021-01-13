@@ -1,5 +1,5 @@
 ---
-title: "Sign-up for a Sysdig Trial account"
+title: "4. Sign-up for a Sysdig Trial account"
 chapter: false
 weight: 30
 ---

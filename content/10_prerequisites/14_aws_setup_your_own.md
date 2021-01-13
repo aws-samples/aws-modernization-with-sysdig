@@ -1,5 +1,5 @@
 ---
-title: "Running the workshop on your own"
+title: "2. Running the workshop on your own"
 chapter: false
 weight: 14
 ---
