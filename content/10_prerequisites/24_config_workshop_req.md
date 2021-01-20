@@ -1,7 +1,7 @@
 ---
-title: "3.4 Configure workshop specific requirements"
+title: "4.4 Configure workshop specific requirements"
 chapter: false
-weight: 16
+weight: 13
 ---
 
 ## Configure workspace for Sysdig Workshop
