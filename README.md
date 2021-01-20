@@ -18,7 +18,7 @@ git submodule init
 git submodule update
 ```
 
-Then server the website with hugo:
+Then serve the website with hugo:
 
 ```bash
 hugo server
