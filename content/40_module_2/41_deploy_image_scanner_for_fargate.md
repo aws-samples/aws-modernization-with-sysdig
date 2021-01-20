@@ -24,14 +24,14 @@ echo "Enter your 'Sysdig Secure API Endpoint' from above"; read SecureEndpoint
  1. Configure your __Secure API Token__ and  __Secure API Endpoint__ as environment variables.
 
  ```sh
- SecureAPIToken =<YOUR_API_TOKEN>
+ SecureAPIToken=<YOUR_API_TOKEN>
  ```
 
  ```sh
  SecureEndpoint=<YOUR_API_ENDPOINT>
  ```
 
-    You should have made a note of these environment variables when setting up your [Cloud9 Workspace](content/10_prerequisites/16_start_cloud9workspace.md).
+    You should have made a note of these environment variables when setting up your [Sysdig Trial Account](10_prerequisites/12_sysdig.md). 
 
     Make sure your Sysdig `SecureAPIToken` and `SecureEndpoint` environment variables are set correctly.
 
