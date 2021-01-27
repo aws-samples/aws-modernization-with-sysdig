@@ -41,7 +41,66 @@ Let's look at an example of AWS threat detection in action with CloudTrail and t
 It can take several minutes for new events to appear in CloudTrail. In the meantime you can browse the existing events created earlier from earlier activity in the account.
 {{% /notice %}}
 
-![insertexamplejson]
+```
+{
+    "eventVersion": "1.05",
+    "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAVAOQCKJMIBOSOS7IM:i-08b251cf94d4e6a80",
+        "arn": "arn:aws:sts::370614344560:assumed-role/Sysdig-Workshop-Admin/i-08d4e6ab251cf9480",
+        "accountId": "xxxxxxxxxxxxx",
+        "accessKeyId": "xxxxxxxxxxxx",
+        "sessionContext": {
+            "sessionIssuer": {
+                "type": "Role",
+                "principalId": "ARQCKJMIBOSOS7OAVAOIM",
+                "arn": "arn:aws:iam::370614344560:role/Sysdig-Workshop-Admin",
+                "accountId": "xxxxxxxxxxxx",
+                "userName": "Sysdig-Workshop-Admin"
+            },
+            "webIdFederationData": {},
+            "attributes": {
+                "mfaAuthenticated": "false",
+                "creationDate": "2020-12-16T10:37:43Z"
+            },
+            "ec2RoleDelivery": "2.0"
+        }
+    },
+    "eventTime": "2020-12-16T11:02:06Z",
+    "eventSource": "s3.amazonaws.com",
+    "eventName": "DeleteBucketEncryption",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "54.208.132.231",
+    "userAgent": "[aws-cli/1.18.197 Python/3.6.12 Linux/4.14.203-116.332.amzn1.x86_64 botocore/1.19.37]",
+    "requestParameters": {
+        "bucketName": "in-1608116489",
+        "Host": "in-1608116489.s3.amazonaws.com",
+        "encryption": ""
+    },
+    "responseElements": null,
+    "additionalEventData": {
+        "SignatureVersion": "SigV4",
+        "CipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "bytesTransferredIn": 0,
+        "AuthenticationMethod": "AuthHeader",
+        "x-amz-id-2": "7oxWqk04DWgmjvSO3TgutyZPtcOYIfnJud2SGZEQOryG3LNgpSV9ZYCd4jLqatr9VaGMEefUVKg=",
+        "bytesTransferredOut": 0
+    },
+    "requestID": "E90DD548B6C5B224",
+    "eventID": "af6a54f9-c2ee-4e14-866a-48f9338bcc94",
+    "readOnly": false,
+    "resources": [
+        {
+            "accountId": "xxxxxxxxxxxx",
+            "type": "AWS::S3::Bucket",
+            "ARN": "arn:aws:s3:::in-1608116489"
+        }
+    ],
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "370614344560"
+}
+
+```
 
 {{% notice info %}}
 Please note that all data in the JSON doc above is fictitious and is used as an example.
