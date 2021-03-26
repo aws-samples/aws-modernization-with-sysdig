@@ -1,7 +1,7 @@
 ---
-title: "4.3 Attach IAM Role"
+title: "3.3 Attach IAM Role"
 chapter: false
-weight: 13
+weight: 22
 ---
 
 ## Attach the IAM role to your Workspace
@@ -13,6 +13,3 @@ weight: 13
 3. Choose **Sysdig-Workshop-Admin** from the **IAM Role** drop down, and select **Save**
 
 <img src=/images/10_prerequisites/attachIAMRole.gif width="75%" height="57%">
-
-
-

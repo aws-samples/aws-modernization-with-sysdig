@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prerequisites on Secure DevOps with AWS &amp; Sysdig</title>
+    <link>/10_prerequisites.html</link>
+    <description>Recent content in Prerequisites on Secure DevOps with AWS &amp; Sysdig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/10_prerequisites/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1. Sign-up for a Sysdig Trial account</title>
+      <link>/10_prerequisites/12_sysdig.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/10_prerequisites/12_sysdig.html</guid>
+      <description>You need a Sysdig Secure account to complete this workshop. In particular you will need to make a note of your account&amp;rsquo;s associated API token &amp;amp; API Endpoint to configure the integrations.
+ Sign-up for a free Sysdig trial here https://sysdig.com/company/free-trial/?utm_campaign=aws-workshop . Remember to select Sysdig Secure under the Trial Offer&amp;hellip; dropdown.
+ You will receive a confirmation email with a confirmation link  Click the link and log into Sysdig, and make a note of the following two items (see animated GIF below for details on how to obtain these two values)</description>
+    </item>
+    
+    <item>
+      <title>2. Attending an AWS hosted event</title>
+      <link>/10_prerequisites/14_aws_event_setup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/10_prerequisites/14_aws_event_setup.html</guid>
+      <description>To complete this workshop, you are provided with an AWS account via the AWS Event Engine service. A team hash will be provided to you by event staff.
+If you are currently logged in to an AWS Account, you can logout using this link
+ Create AWS Account 1 . Connect to the portal by clicking the button or browsing to https://dashboard.eventengine.run/. The following screen shows up. Enter the provided hash in the text box.</description>
+    </item>
+    
+    <item>
+      <title>3. Running the workshop on your own</title>
+      <link>/10_prerequisites/16_aws_setup_your_own.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/10_prerequisites/16_aws_setup_your_own.html</guid>
+      <description>Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Kubecon, Immersion Day, etc), go to Start the workshop at an AWS event.
+  Your account must have the ability to create new IAM roles and scope other IAM permissions.
+ You are responsible for the cost of the AWS services used while running this workshop in your AWS account.</description>
+    </item>
+    
+    <item>
+      <title>4.1 Create a Workspace</title>
+      <link>/10_prerequisites/18_start_cloud9workspace.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/10_prerequisites/18_start_cloud9workspace.html</guid>
+      <description>AWS Cloud9 is a cloud-based integrated development environment (IDE) that Let’s you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your laptop for this workshop.
+We will use Amazon Cloud9 to access our AWS account via the AWS CLI in this Workshop.</description>
+    </item>
+    
+    <item>
+      <title>4.2 Create IAM role</title>
+      <link>/10_prerequisites/20_create_iam_role.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/10_prerequisites/20_create_iam_role.html</guid>
+      <description>Create an IAM role for your workspace Starting from here, when you see command to be entered such as below, you will enter these commands into Cloud9 IDE. You can use the Copy to clipboard feature (right hand upper corner) to simply copy and paste into Cloud9. In order to paste, you can use Ctrl + V for Windows or Command + V for Mac.
+  Follow this deep link to create an IAM role with Administrator access.</description>
+    </item>
+    
+    <item>
+      <title>4.3 Attach IAM Role</title>
+      <link>/10_prerequisites/22_attach_iam_role.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/10_prerequisites/22_attach_iam_role.html</guid>
+      <description> Attach the IAM role to your Workspace  Follow this deep link to find your Cloud9 EC2 instance
+ Select the instance, then choose Actions / Security / Modify IAM role
+ Choose Sysdig-Workshop-Admin from the IAM Role drop down, and select Save
+  </description>
+    </item>
+    
+    <item>
+      <title>4.4 Configure workshop specific requirements</title>
+      <link>/10_prerequisites/24_config_workshop_req.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/10_prerequisites/24_config_workshop_req.html</guid>
+      <description>Configure workspace for Sysdig Workshop Cloud9 normally manages IAM credentials dynamically. This isn&amp;rsquo;t currently compatible with the EKS IAM authentication, so we will disable it and rely on the IAM role instead.
+  Return to your workspace and click the gear icon (in top right corner), or click to open a new tab and choose &amp;ldquo;Open Preferences&amp;rdquo;
+ Select AWS SETTINGS and turn off AWS managed temporary credentials</description>
+    </item>
+    
+  </channel>
+</rss>

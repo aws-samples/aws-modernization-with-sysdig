@@ -1,7 +1,7 @@
 ---
-title: "3. Running the workshop on your own"
+title: "2. Running the workshop on your own"
 chapter: false
-weight: 12
+weight: 16
 ---
 
 {{% notice warning %}}

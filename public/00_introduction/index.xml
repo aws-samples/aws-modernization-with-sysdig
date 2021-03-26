@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Secure DevOps with AWS &amp; Sysdig</title>
+    <link>/00_introduction.html</link>
+    <description>Recent content in Introduction on Secure DevOps with AWS &amp; Sysdig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/00_introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Image Scanning Overview</title>
+      <link>/00_introduction/03_image_scanning.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/00_introduction/03_image_scanning.html</guid>
+      <description>Sysdig Secure provides a comprehensive suite of tools to enhance and compliance across your application&amp;rsquo;s ecosystem. One critical part of this is scanning the images in your registry.
+Sysdig’s ImageVision technology identifies vulnerabilities and misconfigurations by automating scanning within CI/CD pipelines and registries, as well as implementing registry scanning inline. It also blocks vulnerabilities pre-production, monitors for new CVEs at runtime, and helps you map a critical vulnerability back to an application and dev team.</description>
+    </item>
+    
+    <item>
+      <title>Image Scanning Technical Description</title>
+      <link>/00_introduction/04_inline_scanning.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/00_introduction/04_inline_scanning.html</guid>
+      <description>There are two general approaches to scanning images in Sysdig - backend scanning or inline scanning. The reasons why you might choose one over the other is best explained by an understanding of how scanning works under the hood.
+-- With Sysdig, there are two phases in scanning an image
+ Analysis of contents Evaluation against policies and vulnerabilities  Phase 1 - Analysis of Contents During the analysis phase of the scan, the worker first loads the image.</description>
+    </item>
+    
+    <item>
+      <title>AWS Fargate and ECS Security</title>
+      <link>/00_introduction/05_fargate_ecs_sec.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/00_introduction/05_fargate_ecs_sec.html</guid>
+      <description>Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service based on Kubernetes, allowing developers to run applications without the need to configure the required running environment. Amazon ECS is fully integrated with the Docker container registry AWS ECR.
+AWS Fargate is a serverless compute engine for containers that removes the need to provision and manage servers. Fargate works alongside Amazon ECS (as well as Amazon EKS) to allocate the correct amount of compute resources for your application no matter the load, hence eliminating the need to choose instance types or scale cluster capacity.</description>
+    </item>
+    
+    <item>
+      <title>Infrastructure Runtime Security</title>
+      <link>/00_introduction/06_infra_runtime_sec.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/00_introduction/06_infra_runtime_sec.html</guid>
+      <description>In the same way image scanning gives you visibility of vulnerabilities and threats pertaining specifically to an application&amp;rsquo;s containers, infrastructure scanning gives visibility of potential issues emanating from the environment on which these containers run.
+AWS provides a rich environment upon which to base your application, but it&amp;rsquo;s not without its risks. There are many places where bad actors can create harm, for example exposing data by making S3 buckets public, deleting bucket encryption, disabling MFA for an account, adding/removing IAM policies.</description>
+    </item>
+    
+  </channel>
+</rss>
