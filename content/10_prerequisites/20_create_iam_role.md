@@ -1,7 +1,7 @@
 ---
-title: "4.2 Create IAM role"
+title: "3.2 Create IAM role"
 chapter: false
-weight: 13
+weight: 20
 ---
 
 ## Create an IAM role for your workspace

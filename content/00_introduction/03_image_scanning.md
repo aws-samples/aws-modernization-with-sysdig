@@ -1,9 +1,8 @@
-+++
+<!-- +++
 title = "Image Scanning Overview"
 chapter = false
 weight = 03
-+++
-
++++ -->
 
 Sysdig Secure provides a comprehensive suite of tools to enhance and compliance across your application's ecosystem.   One critical part of this is scanning the images in your registry.
 

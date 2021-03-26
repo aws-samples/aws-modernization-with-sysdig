@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2. Fargate &amp; ECS Automated Image Scanning on Secure DevOps with AWS &amp; Sysdig</title>
+    <link>/40_module_2.html</link>
+    <description>Recent content in 2. Fargate &amp; ECS Automated Image Scanning on Secure DevOps with AWS &amp; Sysdig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/40_module_2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Amazon ECS CLI</title>
+      <link>/40_module_2/40_install_amazon_ecs_cli.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/40_module_2/40_install_amazon_ecs_cli.html</guid>
+      <description>We will use the Amazon ECS CLI tool to deploy an example ECS cluster, so we&amp;rsquo;ll need to install it on our Cloud9 Workspace. To install Amazon ECS CLI, follow the steps below
+ Log into your Cloud9 Workspace
+ Download the Amazon ECS CLI binary and make it executable .
+sudo curl -sLo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest sudo chmod +x /usr/local/bin/ecs-cli Check installation
+ecs-cli --version Now create a file named task-execution-assume-role.json for our IAM role as follows</description>
+    </item>
+    
+    <item>
+      <title>Deploy Sysdig Secure Automated Image Scanner for Fargate</title>
+      <link>/40_module_2/41_deploy_image_scanner_for_fargate.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/40_module_2/41_deploy_image_scanner_for_fargate.html</guid>
+      <description>To deploy the Sysdig image scanner for Fargate, we&amp;rsquo;ll again use Amazon CloudFormation. The procedure is identical to how we installed Amazon ECR Integration in the previous lab, so this time we&amp;rsquo;ll use the AWS CLI instead.
+Note You can find instructions on using the CLI on the Sysdig Fargate scanning installation page
+ Let&amp;rsquo;s set our CloudFormation template URL as an environment variable to simplify the actual aws command.</description>
+    </item>
+    
+    <item>
+      <title>Deploy an ECS cluster using Fargate</title>
+      <link>/40_module_2/42_deploy_an_ecs_cluster.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/40_module_2/42_deploy_an_ecs_cluster.html</guid>
+      <description>To illustrate automated scanning, we will now deploy a sample ECS cluster that scales using Fargate. For the purposes of the lab this will consist of this sample PHP appliction running in a Docker Compose environment - https://hub.docker.com/r/amazon/amazon-ecs-sample.
+ Create a cluster configuration and create a cluster
+ecs-cli configure --cluster tutorial --default-launch-type FARGATE --config-name tutorial --region us-east-1 ecs-cli up --cluster-config tutorial --ecs-profile tutorial-profile The output should show a VPC and two Subnets have been created:-</description>
+    </item>
+    
+    <item>
+      <title>Initiate CodeBuild Pipelines Build and Scan</title>
+      <link>/40_module_2/43_initiate_scan.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/40_module_2/43_initiate_scan.html</guid>
+      <description>Now that a sample image has been deployed, the scanner should pick this up and scan it automatically
+ Now go to CodeBuild &amp;gt; Build projects and see the task progress.
+ Click on &amp;lsquo;Failed&amp;rsquo; next to ECSInlineSecureScanning to drill down on it.
+ Click &amp;lsquo;Failed&amp;rsquo; link and scroll down to see the scan details
+  </description>
+    </item>
+    
+    <item>
+      <title>View Results on Sysdig Secure Dashboard</title>
+      <link>/40_module_2/44_sysdig_secure_dashboard.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/40_module_2/44_sysdig_secure_dashboard.html</guid>
+      <description>The beauty of the Amazon ECS Fargate with Sysdig is that you have a centralised location to report on your scanning results.
+ Log into Sysdig Secure, and Browse to &amp;lsquo;Image Scanning &amp;gt; Scan Results&amp;rsquo;.
+ You can drill into amazon/amazon-ecs-sample to see details results of the scan
+  </description>
+    </item>
+    
+    <item>
+      <title>Module Review</title>
+      <link>/40_module_2/45_review.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/40_module_2/45_review.html</guid>
+      <description>In this module we saw how to use Sysdig&amp;rsquo;s AWS ECS/Fargate integration to automatically scan deployed images.
+We first deployed Sysdig&amp;rsquo;s AWS ECS/Fargate integration using a CloudFormation template.
+In particular we looked at how to deploy the Amazon ECR Integration. Then we deployed an ECS cluster using Fargate and watched as CodeBuild pipelines are automatically created to scan the images.
+Finally we saw how to view the scan results on the Sysdig Secure dashboard.</description>
+    </item>
+    
+    <item>
+      <title>Cleanup</title>
+      <link>/40_module_2/46_cleanup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/40_module_2/46_cleanup.html</guid>
+      <description>Remove ecsTaskExecutionRole
+aws iam detach-role-policy --role-name ecsTaskExecutionRole --policy-arn arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy --region us-east-1 aws iam --region us-east-1 delete-role --role-name ecsTaskExecutionRole Remove ECS Cluster
+stack=tutorial services=&amp;#34;$(aws ecs list-services --cluster &amp;#34;$stack&amp;#34; | grep &amp;#34;$stack&amp;#34; | sed -e &amp;#39;s/&amp;#34;//g&amp;#39; -e &amp;#39;s/,//&amp;#39;)&amp;#34; for service in $services; do aws ecs update-service --cluster &amp;#34;$stack&amp;#34; --service &amp;#34;$service&amp;#34; --desired-count 0 aws ecs delete-service --cluster &amp;#34;$stack&amp;#34; --service &amp;#34;$service&amp;#34; done for id in $(aws ecs list-container-instances --cluster &amp;#34;$stack&amp;#34; | grep container-instance | sed -e &amp;#39;s/&amp;#34;//g&amp;#39; -e &amp;#39;s/,//&amp;#39;); do aws ecs deregister-container-instance --cluster &amp;#34;$stack&amp;#34; --container-instance &amp;#34;$id&amp;#34; --force done for service in $services; do aws ecs wait services-inactive --cluster &amp;#34;$stack&amp;#34; --services &amp;#34;$service&amp;#34; done aws ecs delete-cluster --cluster &amp;#34;$stack&amp;#34; aws cloudformation delete-stack --stack-name &amp;#34;$stack&amp;#34; Delete log group created with ecs-cli compose</description>
+    </item>
+    
+  </channel>
+</rss>

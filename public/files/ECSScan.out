@@ -1,0 +1,1986 @@
+     1	[Container] 2020/10/21 11:05:21 Waiting for agent ping
+     2	[Container] 2020/10/21 11:05:23 Waiting for DOWNLOAD_SOURCE
+     3	[Container] 2020/10/21 11:05:23 Phase is DOWNLOAD_SOURCE
+     4	[Container] 2020/10/21 11:05:23 CODEBUILD_SRC_DIR=/codebuild/output/src186571250/src
+     5	[Container] 2020/10/21 11:05:23 YAML location is /codebuild/readonly/buildspec.yml
+     6	[Container] 2020/10/21 11:05:23 Processing environment variables
+     7	[Container] 2020/10/21 11:05:23 Decrypting parameter store environment variables
+     8	[Container] 2020/10/21 11:05:24 No runtime version selected in buildspec.
+     9	[Container] 2020/10/21 11:05:24 Moving to directory /codebuild/output/src186571250/src
+    10	[Container] 2020/10/21 11:05:24 Registering with agent
+    11	[Container] 2020/10/21 11:05:24 Phases found in YAML: 1
+    12	[Container] 2020/10/21 11:05:24  BUILD: 2 commands
+    13	[Container] 2020/10/21 11:05:24 Phase complete: DOWNLOAD_SOURCE State: SUCCEEDED
+    14	[Container] 2020/10/21 11:05:24 Phase context status code:  Message:
+    15	[Container] 2020/10/21 11:05:24 Entering phase INSTALL
+    16	[Container] 2020/10/21 11:05:24 Phase complete: INSTALL State: SUCCEEDED
+    17	[Container] 2020/10/21 11:05:24 Phase context status code:  Message:
+    18	[Container] 2020/10/21 11:05:24 Entering phase PRE_BUILD
+    19	[Container] 2020/10/21 11:05:24 Phase complete: PRE_BUILD State: SUCCEEDED
+    20	[Container] 2020/10/21 11:05:24 Phase context status code:  Message:
+    21	[Container] 2020/10/21 11:05:24 Entering phase BUILD
+    22	[Container] 2020/10/21 11:05:24 Running command docker pull $REPOSITORY
+    23	Using default tag: latest
+    24	latest: Pulling from amazon/amazon-ecs-sample
+    25	72d97abdfae3: Pulling fs layer
+    26	9db40311d082: Pulling fs layer
+    27	991f1d4df942: Pulling fs layer
+    28	9fd8189a392d: Pulling fs layer
+    29	9fd8189a392d: Waiting
+    30	991f1d4df942: Download complete
+    31	9fd8189a392d: Verifying Checksum
+    32	9fd8189a392d: Download complete
+    33	72d97abdfae3: Download complete
+    34	9db40311d082: Verifying Checksum
+    35	9db40311d082: Download complete
+    36	72d97abdfae3: Pull complete
+    37	9db40311d082: Pull complete
+    38	991f1d4df942: Pull complete
+    39	9fd8189a392d: Pull complete
+    40	Digest: sha256:36c7b282abd0186e01419f2e58743e1bf635808231049bbc9d77e59e3a8e4914
+    41	Status: Downloaded newer image for amazon/amazon-ecs-sample:latest
+    42	docker.io/amazon/amazon-ecs-sample:latest
+    43	
+    44	[Container] 2020/10/21 11:05:32 Running command docker run --rm -v /var/run/docker.sock:/var/run/docker.sock $SCAN_IMAGE_NAME analyze -s $SYSDIG_SECURE_ENDPOINT -k $SYSDIG_SECURE_TOKEN $REPOSITORY
+    45	Unable to find image 'sysdiglabs/secure-inline-scan:latest' locally
+    46	latest: Pulling from sysdiglabs/secure-inline-scan
+    47	9d48c3bd43c5: Pulling fs layer
+    48	7f94eaf8af20: Pulling fs layer
+    49	9fe9984849c1: Pulling fs layer
+    50	3091f1b4f1aa: Pulling fs layer
+    51	6ef266ac0949: Pulling fs layer
+    52	b2c2c13f4c08: Pulling fs layer
+    53	f354b3ae6d74: Pulling fs layer
+    54	8f4a6170836f: Pulling fs layer
+    55	853fedec02a1: Pulling fs layer
+    56	a57a377d7e5d: Pulling fs layer
+    57	ac4bc61da695: Pulling fs layer
+    58	3918501aa043: Pulling fs layer
+    59	e77b4d657909: Pulling fs layer
+    60	3091f1b4f1aa: Waiting
+    61	6ef266ac0949: Waiting
+    62	b2c2c13f4c08: Waiting
+    63	853fedec02a1: Waiting
+    64	a57a377d7e5d: Waiting
+    65	ac4bc61da695: Waiting
+    66	3918501aa043: Waiting
+    67	e77b4d657909: Waiting
+    68	f354b3ae6d74: Waiting
+    69	8f4a6170836f: Waiting
+    70	9fe9984849c1: Download complete
+    71	7f94eaf8af20: Download complete
+    72	6ef266ac0949: Verifying Checksum
+    73	6ef266ac0949: Download complete
+    74	9d48c3bd43c5: Verifying Checksum
+    75	9d48c3bd43c5: Download complete
+    76	b2c2c13f4c08: Verifying Checksum
+    77	b2c2c13f4c08: Download complete
+    78	f354b3ae6d74: Verifying Checksum
+    79	f354b3ae6d74: Download complete
+    80	853fedec02a1: Verifying Checksum
+    81	853fedec02a1: Download complete
+    82	8f4a6170836f: Verifying Checksum
+    83	8f4a6170836f: Download complete
+    84	a57a377d7e5d: Verifying Checksum
+    85	a57a377d7e5d: Download complete
+    86	ac4bc61da695: Verifying Checksum
+    87	e77b4d657909: Verifying Checksum
+    88	e77b4d657909: Download complete
+    89	9d48c3bd43c5: Pull complete
+    90	3918501aa043: Verifying Checksum
+    91	3918501aa043: Download complete
+    92	3091f1b4f1aa: Verifying Checksum
+    93	3091f1b4f1aa: Download complete
+    94	7f94eaf8af20: Pull complete
+    95	9fe9984849c1: Pull complete
+    96	3091f1b4f1aa: Pull complete
+    97	6ef266ac0949: Pull complete
+    98	b2c2c13f4c08: Pull complete
+    99	f354b3ae6d74: Pull complete
+   100	8f4a6170836f: Pull complete
+   101	853fedec02a1: Pull complete
+   102	a57a377d7e5d: Pull complete
+   103	ac4bc61da695: Pull complete
+   104	3918501aa043: Pull complete
+   105	e77b4d657909: Pull complete
+   106	Digest: sha256:64afc49e9474ad3cc6ac02d5e5ba0cc9e01db06f8188a06626f0410b75dd5732
+   107	Status: Downloaded newer image for sysdiglabs/secure-inline-scan:latest
+   108	Using temporary path /tmp/sysdig/sysdig-inline-scan-1603278342
+   109	Retrieving remote Anchore version from Sysdig Secure APIs
+   110	Found Anchore version from Sysdig Secure APIs 0.8.1
+   111	Pulling docker.io/anchore/inline-scan:v0.8.1
+   112	v0.8.1: Pulling from anchore/inline-scan
+   113	77c58f19bd6e: Pulling fs layer
+   114	47db82df7f3f: Pulling fs layer
+   115	be0d47a718dc: Pulling fs layer
+   116	60c746b56e11: Pulling fs layer
+   117	64dabba9481a: Pulling fs layer
+   118	edae365e3a77: Pulling fs layer
+   119	abe81e685372: Pulling fs layer
+   120	82c213753892: Pulling fs layer
+   121	ef57d2ebc5c4: Pulling fs layer
+   122	9dae471388a6: Pulling fs layer
+   123	f19741cfdf6e: Pulling fs layer
+   124	26759c7fd0b4: Pulling fs layer
+   125	c2d8b9c22a76: Pulling fs layer
+   126	fd4159472bc1: Pulling fs layer
+   127	1672e826cca9: Pulling fs layer
+   128	42b1de134aad: Pulling fs layer
+   129	64dabba9481a: Waiting
+   130	edae365e3a77: Waiting
+   131	abe81e685372: Waiting
+   132	82c213753892: Waiting
+   133	ef57d2ebc5c4: Waiting
+   134	9dae471388a6: Waiting
+   135	60c746b56e11: Waiting
+   136	42b1de134aad: Waiting
+   137	f19741cfdf6e: Waiting
+   138	fd4159472bc1: Waiting
+   139	c2d8b9c22a76: Waiting
+   140	26759c7fd0b4: Waiting
+   141	1672e826cca9: Waiting
+   142	47db82df7f3f: Download complete
+   143	60c746b56e11: Verifying Checksum
+   144	60c746b56e11: Download complete
+   145	64dabba9481a: Verifying Checksum
+   146	64dabba9481a: Download complete
+   147	be0d47a718dc: Verifying Checksum
+   148	be0d47a718dc: Download complete
+   149	edae365e3a77: Verifying Checksum
+   150	edae365e3a77: Download complete
+   151	82c213753892: Verifying Checksum
+   152	82c213753892: Download complete
+   153	ef57d2ebc5c4: Verifying Checksum
+   154	ef57d2ebc5c4: Download complete
+   155	77c58f19bd6e: Verifying Checksum
+   156	77c58f19bd6e: Download complete
+   157	9dae471388a6: Download complete
+   158	abe81e685372: Verifying Checksum
+   159	abe81e685372: Download complete
+   160	c2d8b9c22a76: Verifying Checksum
+   161	c2d8b9c22a76: Download complete
+   162	fd4159472bc1: Verifying Checksum
+   163	fd4159472bc1: Download complete
+   164	1672e826cca9: Verifying Checksum
+   165	1672e826cca9: Download complete
+   166	42b1de134aad: Verifying Checksum
+   167	42b1de134aad: Download complete
+   168	f19741cfdf6e: Verifying Checksum
+   169	f19741cfdf6e: Download complete
+   170	77c58f19bd6e: Pull complete
+   171	47db82df7f3f: Pull complete
+   172	26759c7fd0b4: Verifying Checksum
+   173	26759c7fd0b4: Download complete
+   174	be0d47a718dc: Pull complete
+   175	60c746b56e11: Pull complete
+   176	64dabba9481a: Pull complete
+   177	edae365e3a77: Pull complete
+   178	abe81e685372: Pull complete
+   179	82c213753892: Pull complete
+   180	ef57d2ebc5c4: Pull complete
+   181	9dae471388a6: Pull complete
+   182	f19741cfdf6e: Pull complete
+   183	26759c7fd0b4: Pull complete
+   184	c2d8b9c22a76: Pull complete
+   185	fd4159472bc1: Pull complete
+   186	1672e826cca9: Pull complete
+   187	42b1de134aad: Pull complete
+   188	Digest: sha256:1a4ddcd785df3a8f0fa0681ceb1f55811a13888a20c2786a2f869729832b8931
+   189	Status: Downloaded newer image for anchore/inline-scan:v0.8.1
+   190	
+   191	Repo name: amazon
+   192	Base image name: amazon-ecs-sample
+   193	Tag name: amazon-ecs-sample
+   194	
+   195	Image id: 2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a
+   196	
+   197	using full image name: docker.io/amazon/amazon-ecs-sample:latest
+   198	Saving amazon-ecs-sample:latest for local analysis
+   199	Successfully prepared image archive -- /tmp/sysdig/sysdig-inline-scan-1603278342/amazon-ecs-sample:latest.tar
+   200	
+   201	Analyzing docker.io/amazon/amazon-ecs-sample:latest...
+   202	[MainThread] [anchore_engine.configuration.localconfig/validate_config()] [WARN] no webhooks defined in configuration file - notifications will be disabled
+   203	[MainThread] [anchore_manager.cli.analyzers/exec()] [INFO] using fulltag=docker.io/amazon/amazon-ecs-sample:latest fulldigest=docker.io/amazon/amazon-ecs-sample@sha256:36c7b282abd0186e01419f2e58743e1bf635808231049bbc9d77e59e3a8e4914
+   204	 Analysis complete!
+   205	
+   206	Sending analysis archive to ***/api/scanning/v1
+   207	Scan Report -
+   208	[
+   209	 {
+   210	  "sha256:36c7b282abd0186e01419f2e58743e1bf635808231049bbc9d77e59e3a8e4914": {
+   211	   "docker.io/amazon/amazon-ecs-sample:latest": [
+   212	    {
+   213	     "detail": {},
+   214	     "last_evaluation": "2020-10-21T11:08:22Z",
+   215	     "policyId": "default",
+   216	     "status": "fail"
+   217	    }
+   218	   ]
+   219	  }
+   220	 }
+   221	]
+   222	Status is fail
+   223	Result Details:
+   224	[
+   225	 {
+   226	  "sha256:36c7b282abd0186e01419f2e58743e1bf635808231049bbc9d77e59e3a8e4914": {
+   227	   "docker.io/amazon/amazon-ecs-sample:latest": [
+   228	    {
+   229	     "detail": {
+   230	      "policy": {
+   231	       "blacklisted_images": [],
+   232	       "comment": "Default Sysdig policy bundle for new customers.",
+   233	       "id": "default",
+   234	       "mappings": [
+   235	        {
+   236	         "id": "mapping_1CI5tw3zxNL9b344sSsXBfth3dW",
+   237	         "image": {
+   238	          "type": "tag",
+   239	          "value": "*"
+   240	         },
+   241	         "name": "default",
+   242	         "policy_ids": [
+   243	          "default"
+   244	         ],
+   245	         "registry": "*",
+   246	         "repository": "*",
+   247	         "whitelist_ids": [
+   248	          "global"
+   249	         ]
+   250	        }
+   251	       ],
+   252	       "name": "Default Sysdig policy bundle",
+   253	       "policies": [
+   254	        {
+   255	         "comment": "System default policy",
+   256	         "id": "default",
+   257	         "name": "DefaultPolicy",
+   258	         "rules": [
+   259	          {
+   260	           "action": "WARN",
+   261	           "gate": "dockerfile",
+   262	           "id": "rule_1FlJOnK9qdRSRcTNrfz3IUZXbou",
+   263	           "params": [
+   264	            {
+   265	             "name": "instruction",
+   266	             "value": "HEALTHCHECK"
+   267	            },
+   268	            {
+   269	             "name": "check",
+   270	             "value": "not_exists"
+   271	            }
+   272	           ],
+   273	           "trigger": "instruction"
+   274	          },
+   275	          {
+   276	           "action": "WARN",
+   277	           "gate": "dockerfile",
+   278	           "id": "rule_1FwAx2yR2myVxaaXMp5zleEUpKd",
+   279	           "params": [
+   280	            {
+   281	             "name": "instruction",
+   282	             "value": "USER"
+   283	            },
+   284	            {
+   285	             "name": "check",
+   286	             "value": "not_exists"
+   287	            }
+   288	           ],
+   289	           "trigger": "instruction"
+   290	          },
+   291	          {
+   292	           "action": "WARN",
+   293	           "gate": "vulnerabilities",
+   294	           "id": "rule_1FlKixNbbwnsUx8pJtX5xV8uboG",
+   295	           "params": [
+   296	            {
+   297	             "name": "max_days_since_sync",
+   298	             "value": "7"
+   299	            }
+   300	           ],
+   301	           "trigger": "stale_feed_data"
+   302	          },
+   303	          {
+   304	           "action": "STOP",
+   305	           "gate": "vulnerabilities",
+   306	           "id": "rule_1FlKnkFbIN3fSvl71lHIxBXgh2s",
+   307	           "params": [
+   308	            {
+   309	             "name": "package_type",
+   310	             "value": "all"
+   311	            },
+   312	            {
+   313	             "name": "severity_comparison",
+   314	             "value": "\u003e="
+   315	            },
+   316	            {
+   317	             "name": "severity",
+   318	             "value": "high"
+   319	            },
+   320	            {
+   321	             "name": "fix_available",
+   322	             "value": "true"
+   323	            }
+   324	           ],
+   325	           "trigger": "package"
+   326	          },
+   327	          {
+   328	           "action": "WARN",
+   329	           "gate": "secret_scans",
+   330	           "id": "rule_1Ezo0nDiqv0I1wxZPl4MK0RLEAZ",
+   331	           "params": [
+   332	            {
+   333	             "name": "content_regex_name",
+   334	             "value": "['AWS_ACCESS_KEY', 'AWS_SECRET_KEY', 'PRIV_KEY', 'DOCKER_AUTH', 'API_KEY']"
+   335	            }
+   336	           ],
+   337	           "trigger": "content_regex_checks"
+   338	          },
+   339	          {
+   340	           "action": "WARN",
+   341	           "gate": "passwd_file",
+   342	           "id": "rule_1GB4xfQVikoJt0nKyAeUVJwYZYh",
+   343	           "params": [],
+   344	           "trigger": "content_not_available"
+   345	          },
+   346	          {
+   347	           "action": "WARN",
+   348	           "gate": "files",
+   349	           "id": "rule_1GB4xhDsvBbDT96h95bjxtONQS2",
+   350	           "params": [],
+   351	           "trigger": "suid_or_guid_set"
+   352	          },
+   353	          {
+   354	           "action": "WARN",
+   355	           "gate": "dockerfile",
+   356	           "id": "rule_1GB4zh3sQYTEnQpa4EcYl34SZYN",
+   357	           "params": [
+   358	            {
+   359	             "name": "ports",
+   360	             "value": "22"
+   361	            },
+   362	            {
+   363	             "name": "type",
+   364	             "value": "blacklist"
+   365	            }
+   366	           ],
+   367	           "trigger": "exposed_ports"
+   368	          }
+   369	         ],
+   370	         "version": "1_0"
+   371	        },
+   372	        {
+   373	         "comment": "This policy provides out of the box rules around Dockerfile best practices.\nWe frequently update these policies and if you'd like to modify the policy you should use this as a base template to avoid modifications being overwritten.",
+   374	         "id": "dockerfile_best_practices",
+   375	         "name": "Default Configuration Policy - Dockerfile Best Practices",
+   376	         "rules": [
+   377	          {
+   378	           "action": "WARN",
+   379	           "gate": "vulnerabilities",
+   380	           "id": "rule_1FlKixNbbwnsUx8pJtX5xV8pboG",
+   381	           "params": [
+   382	            {
+   383	             "name": "max_days_since_sync",
+   384	             "value": "7"
+   385	            }
+   386	           ],
+   387	           "trigger": "stale_feed_data"
+   388	          },
+   389	          {
+   390	           "action": "WARN",
+   391	           "gate": "dockerfile",
+   392	           "id": "rule_1FwAx5doYKki82uxNWvrdc1zs8O",
+   393	           "params": [
+   394	            {
+   395	             "name": "instruction",
+   396	             "value": "RUN"
+   397	            },
+   398	            {
+   399	             "name": "check",
+   400	             "value": "like"
+   401	            },
+   402	            {
+   403	             "name": "value",
+   404	             "value": ".*apt-get upgrade.*"
+   405	            }
+   406	           ],
+   407	           "trigger": "instruction"
+   408	          },
+   409	          {
+   410	           "action": "WARN",
+   411	           "gate": "dockerfile",
+   412	           "id": "rule_1G7q8iETgn96DM2ol2fa7V25GdI",
+   413	           "params": [
+   414	            {
+   415	             "name": "instruction",
+   416	             "value": "RUN"
+   417	            },
+   418	            {
+   419	             "name": "check",
+   420	             "value": "like"
+   421	            },
+   422	            {
+   423	             "name": "value",
+   424	             "value": ".*yum upgrade.*"
+   425	            }
+   426	           ],
+   427	           "trigger": "instruction"
+   428	          },
+   429	          {
+   430	           "action": "WARN",
+   431	           "gate": "dockerfile",
+   432	           "id": "rule_1FwAx5Brg2RNEAbOoW0mxTLCNjr",
+   433	           "params": [
+   434	            {
+   435	             "name": "instruction",
+   436	             "value": "HEALTHCHECK"
+   437	            },
+   438	            {
+   439	             "name": "check",
+   440	             "value": "not_exists"
+   441	            }
+   442	           ],
+   443	           "trigger": "instruction"
+   444	          },
+   445	          {
+   446	           "action": "WARN",
+   447	           "gate": "dockerfile",
+   448	           "id": "rule_1FwAx9O6XGOnz18bInRu9VPSaej",
+   449	           "params": [
+   450	            {
+   451	             "name": "type",
+   452	             "value": "blacklist"
+   453	            },
+   454	            {
+   455	             "name": "users",
+   456	             "value": "root"
+   457	            }
+   458	           ],
+   459	           "trigger": "effective_user"
+   460	          },
+   461	          {
+   462	           "action": "WARN",
+   463	           "gate": "dockerfile",
+   464	           "id": "rule_1FwAx7op3c4lcSutHSevUDEAFmI",
+   465	           "params": [
+   466	            {
+   467	             "name": "type",
+   468	             "value": "blacklist"
+   469	            },
+   470	            {
+   471	             "name": "ports",
+   472	             "value": "22"
+   473	            }
+   474	           ],
+   475	           "trigger": "exposed_ports"
+   476	          },
+   477	          {
+   478	           "action": "WARN",
+   479	           "gate": "dockerfile",
+   480	           "id": "rule_1FwAx33SpKwPliPFh74GdlojO3b",
+   481	           "params": [
+   482	            {
+   483	             "name": "instruction",
+   484	             "value": "LABEL"
+   485	            },
+   486	            {
+   487	             "name": "check",
+   488	             "value": "="
+   489	            },
+   490	            {
+   491	             "name": "value",
+   492	             "value": "latest"
+   493	            }
+   494	           ],
+   495	           "trigger": "instruction"
+   496	          },
+   497	          {
+   498	           "action": "WARN",
+   499	           "gate": "dockerfile",
+   500	           "id": "rule_1GCUUvkHJ9qmIRjlLcafaAOTXGa",
+   501	           "params": [
+   502	            {
+   503	             "name": "instruction",
+   504	             "value": "ENV"
+   505	            },
+   506	            {
+   507	             "name": "check",
+   508	             "value": "like"
+   509	            },
+   510	            {
+   511	             "name": "value",
+   512	             "value": ".*(password|PASSWORD|passwd|PASSWD|AWS|secret|SECRET).*"
+   513	            }
+   514	           ],
+   515	           "trigger": "instruction"
+   516	          },
+   517	          {
+   518	           "action": "WARN",
+   519	           "gate": "dockerfile",
+   520	           "id": "rule_1FwAx2yR2myVxaaXMp5zleEUsKd",
+   521	           "params": [
+   522	            {
+   523	             "name": "instruction",
+   524	             "value": "USER"
+   525	            },
+   526	            {
+   527	             "name": "check",
+   528	             "value": "not_exists"
+   529	            }
+   530	           ],
+   531	           "trigger": "instruction"
+   532	          },
+   533	          {
+   534	           "action": "WARN",
+   535	           "gate": "dockerfile",
+   536	           "id": "rule_1FwAx2yR2myVxaaXMp5zleEUsKd",
+   537	           "params": [
+   538	            {
+   539	             "name": "instruction",
+   540	             "value": "ADD"
+   541	            },
+   542	            {
+   543	             "name": "check",
+   544	             "value": "exists"
+   545	            }
+   546	           ],
+   547	           "trigger": "instruction"
+   548	          }
+   549	         ],
+   550	         "version": "1_0"
+   551	        },
+   552	        {
+   553	         "comment": "This policy interprets NIST 800-190 controls and provides out of the box rules to detect image misconfiguration.\nWe frequently update these policies and if you'd like to modify the policy you should use this as a base template to avoid modifications being overwritten.",
+   554	         "id": "nist_800-190",
+   555	         "name": "Default Audit Policy - NIST 800-190",
+   556	         "rules": [
+   557	          {
+   558	           "action": "WARN",
+   559	           "gate": "vulnerabilities",
+   560	           "id": "rule_1FlKixNbbwnsUx8pXtX5xV8pboG",
+   561	           "params": [
+   562	            {
+   563	             "name": "max_days_since_sync",
+   564	             "value": "7"
+   565	            }
+   566	           ],
+   567	           "trigger": "stale_feed_data"
+   568	          },
+   569	          {
+   570	           "action": "WARN",
+   571	           "gate": "npms",
+   572	           "id": "rule_1GCOgC9QQulSxT9lLOcSKFl2STV",
+   573	           "params": [],
+   574	           "trigger": "unknown_in_feeds"
+   575	          },
+   576	          {
+   577	           "action": "WARN",
+   578	           "gate": "vulnerabilities",
+   579	           "id": "rule_1GCOg9G4MaGKY8nHvqJ8tQ4ZCIf",
+   580	           "params": [
+   581	            {
+   582	             "name": "package_type",
+   583	             "value": "non-os"
+   584	            },
+   585	            {
+   586	             "name": "severity_comparison",
+   587	             "value": "\u003e="
+   588	            },
+   589	            {
+   590	             "name": "severity",
+   591	             "value": "high"
+   592	            }
+   593	           ],
+   594	           "trigger": "package"
+   595	          },
+   596	          {
+   597	           "action": "WARN",
+   598	           "gate": "vulnerabilities",
+   599	           "id": "rule_1GCMueaFWaigiXsU2mBjHn4CSc2",
+   600	           "params": [
+   601	            {
+   602	             "name": "package_type",
+   603	             "value": "os"
+   604	            },
+   605	            {
+   606	             "name": "severity_comparison",
+   607	             "value": "\u003e="
+   608	            },
+   609	            {
+   610	             "name": "severity",
+   611	             "value": "high"
+   612	            }
+   613	           ],
+   614	           "trigger": "package"
+   615	          },
+   616	          {
+   617	           "action": "WARN",
+   618	           "gate": "dockerfile",
+   619	           "id": "rule_1GCMucV3SGGfEJljBxKH1fLmzOd",
+   620	           "params": [
+   621	            {
+   622	             "name": "instruction",
+   623	             "value": "USER"
+   624	            },
+   625	            {
+   626	             "name": "check",
+   627	             "value": "not_exists"
+   628	            }
+   629	           ],
+   630	           "trigger": "instruction"
+   631	          },
+   632	          {
+   633	           "action": "WARN",
+   634	           "gate": "dockerfile",
+   635	           "id": "rule_1GCNbqqMC7iEEr7wsKPiugNhlOc",
+   636	           "params": [
+   637	            {
+   638	             "name": "ports",
+   639	             "value": "22"
+   640	            },
+   641	            {
+   642	             "name": "type",
+   643	             "value": "blacklist"
+   644	            }
+   645	           ],
+   646	           "trigger": "exposed_ports"
+   647	          },
+   648	          {
+   649	           "action": "WARN",
+   650	           "gate": "secret_scans",
+   651	           "id": "rule_1GCNbpQw4L5QQ3XSc3Od3amcaAQ",
+   652	           "params": [
+   653	            {
+   654	             "name": "content_regex_name",
+   655	             "value": "['AWS_ACCESS_KEY', 'AWS_SECRET_KEY', 'PRIV_KEY', 'DOCKER_AUTH', 'API_KEY']"
+   656	            }
+   657	           ],
+   658	           "trigger": "content_regex_checks"
+   659	          },
+   660	          {
+   661	           "action": "WARN",
+   662	           "gate": "dockerfile",
+   663	           "id": "rule_1GCNxYBmHUAs7ApbCP3r2fFkGZI",
+   664	           "params": [
+   665	            {
+   666	             "name": "instruction",
+   667	             "value": "ENV"
+   668	            },
+   669	            {
+   670	             "name": "check",
+   671	             "value": "like"
+   672	            },
+   673	            {
+   674	             "name": "value",
+   675	             "value": ".*(password|PASSWORD|passwd|PASSWD|AWS|secret|SECRET).*"
+   676	            }
+   677	           ],
+   678	           "trigger": "instruction"
+   679	          },
+   680	          {
+   681	           "action": "WARN",
+   682	           "gate": "dockerfile",
+   683	           "id": "rule_1GCOgAvqdpL7yQ7oF5CzyTuCiMa",
+   684	           "params": [
+   685	            {
+   686	             "name": "instruction",
+   687	             "value": "HEALTHCHECK"
+   688	            },
+   689	            {
+   690	             "name": "check",
+   691	             "value": "not_exists"
+   692	            }
+   693	           ],
+   694	           "trigger": "instruction"
+   695	          },
+   696	          {
+   697	           "action": "WARN",
+   698	           "gate": "ruby_gems",
+   699	           "id": "rule_1GCOoz0dZJuCUoWGUorE5QJRbbT",
+   700	           "params": [],
+   701	           "trigger": "not_found_in_feed"
+   702	          },
+   703	          {
+   704	           "action": "WARN",
+   705	           "gate": "metadata",
+   706	           "id": "rule_1GCUV04MF8xH42qTPsYfS1H0UXa",
+   707	           "params": [
+   708	            {
+   709	             "name": "attribute",
+   710	             "value": "like_distro"
+   711	            },
+   712	            {
+   713	             "name": "check",
+   714	             "value": "not_in"
+   715	            },
+   716	            {
+   717	             "name": "value",
+   718	             "value": "alpine, busybox, centos, ubuntu, debian, fedora, ol"
+   719	            }
+   720	           ],
+   721	           "trigger": "attribute"
+   722	          },
+   723	          {
+   724	           "action": "WARN",
+   725	           "gate": "dockerfile",
+   726	           "id": "rule_1GCUUwMjZsOKhH1R0y4Jfis9bAk",
+   727	           "params": [
+   728	            {
+   729	             "name": "instruction",
+   730	             "value": "ADD"
+   731	            },
+   732	            {
+   733	             "name": "check",
+   734	             "value": "exists"
+   735	            }
+   736	           ],
+   737	           "trigger": "instruction"
+   738	          },
+   739	          {
+   740	           "action": "WARN",
+   741	           "gate": "dockerfile",
+   742	           "id": "rule_1GCUV2SJhuwNnhFdZI1BZ45FF5i",
+   743	           "params": [
+   744	            {
+   745	             "name": "users",
+   746	             "value": "root"
+   747	            },
+   748	            {
+   749	             "name": "type",
+   750	             "value": "blacklist"
+   751	            }
+   752	           ],
+   753	           "trigger": "effective_user"
+   754	          },
+   755	          {
+   756	           "action": "WARN",
+   757	           "gate": "files",
+   758	           "id": "rule_1GCUUvkHJ9qmIRjlLcafaAOTvGa",
+   759	           "params": [],
+   760	           "trigger": "suid_or_guid_set"
+   761	          }
+   762	         ],
+   763	         "version": "1_0"
+   764	        },
+   765	        {
+   766	         "comment": "This policy interprets PCI controls and provides out of the box rules to detect image misconfiguration.\nWe frequently update these policies and if you'd like to modify the policy you should use this as a base template to avoid modifications being overwritten.",
+   767	         "id": "pci",
+   768	         "name": "Default Audit Policy - PCI",
+   769	         "rules": [
+   770	          {
+   771	           "action": "WARN",
+   772	           "gate": "vulnerabilities",
+   773	           "id": "rule_1FlKixNbbNwnsUx8pXX5xV8pboG",
+   774	           "params": [
+   775	            {
+   776	             "name": "max_days_since_sync",
+   777	             "value": "7"
+   778	            }
+   779	           ],
+   780	           "trigger": "stale_feed_data"
+   781	          },
+   782	          {
+   783	           "action": "WARN",
+   784	           "gate": "files",
+   785	           "id": "rule_1GQfcID4qEqVofO7X131FjMeMyV",
+   786	           "params": [
+   787	            {
+   788	             "name": "regex_name",
+   789	             "value": ".*(admin|ADMIN|password|PASSWORD).*"
+   790	            }
+   791	           ],
+   792	           "trigger": "content_regex_match"
+   793	          },
+   794	          {
+   795	           "action": "STOP",
+   796	           "gate": "vulnerabilities",
+   797	           "id": "rule_1GQg23r1pCuRWIx7vQ5TxRIJ7uS",
+   798	           "params": [
+   799	            {
+   800	             "name": "package_type",
+   801	             "value": "all"
+   802	            },
+   803	            {
+   804	             "name": "severity_comparison",
+   805	             "value": "\u003e="
+   806	            },
+   807	            {
+   808	             "name": "severity",
+   809	             "value": "high"
+   810	            },
+   811	            {
+   812	             "name": "fix_available",
+   813	             "value": "true"
+   814	            }
+   815	           ],
+   816	           "trigger": "package"
+   817	          },
+   818	          {
+   819	           "action": "WARN",
+   820	           "gate": "secret_scans",
+   821	           "id": "rule_1GQgwOAxA3NM1haWLTOiVqfmvsA",
+   822	           "params": [
+   823	            {
+   824	             "name": "content_regex_name",
+   825	             "value": "['AWS_ACCESS_KEY', 'AWS_SECRET_KEY', 'PRIV_KEY', 'DOCKER_AUTH', 'API_KEY']"
+   826	            }
+   827	           ],
+   828	           "trigger": "content_regex_checks"
+   829	          },
+   830	          {
+   831	           "action": "WARN",
+   832	           "gate": "files",
+   833	           "id": "rule_1GQgwIBLieRQXkw6IFn2fEMgjMg",
+   834	           "params": [],
+   835	           "trigger": "suid_or_guid_set"
+   836	          },
+   837	          {
+   838	           "action": "WARN",
+   839	           "gate": "dockerfile",
+   840	           "id": "rule_1FwAx9O6XGOnz18bInRu9VPSaej",
+   841	           "params": [
+   842	            {
+   843	             "name": "type",
+   844	             "value": "blacklist"
+   845	            },
+   846	            {
+   847	             "name": "users",
+   848	             "value": "root"
+   849	            }
+   850	           ],
+   851	           "trigger": "effective_user"
+   852	          },
+   853	          {
+   854	           "action": "WARN",
+   855	           "gate": "dockerfile",
+   856	           "id": "rule_1GQgwJ32rk96G4wRsgbzNYy2vGN",
+   857	           "params": [
+   858	            {
+   859	             "name": "instruction",
+   860	             "value": "USER"
+   861	            },
+   862	            {
+   863	             "name": "check",
+   864	             "value": "not_exists"
+   865	            }
+   866	           ],
+   867	           "trigger": "instruction"
+   868	          }
+   869	         ],
+   870	         "version": "1_0"
+   871	        }
+   872	       ],
+   873	       "version": "1_0",
+   874	       "whitelisted_images": [],
+   875	       "whitelists": [
+   876	        {
+   877	         "comment": "Default exceptions list",
+   878	         "id": "global",
+   879	         "items": [],
+   880	         "name": "Default exceptions list",
+   881	         "version": "1_0"
+   882	        }
+   883	       ]
+   884	      },
+   885	      "result": {
+   886	       "bundle": {
+   887	        "blacklisted_images": [],
+   888	        "comment": "Default Sysdig policy bundle for new customers.",
+   889	        "id": "default",
+   890	        "mappings": [
+   891	         {
+   892	          "id": "mapping_1CI5tw3zxNL9b344sSsXBfth3dW",
+   893	          "image": {
+   894	           "type": "tag",
+   895	           "value": "*"
+   896	          },
+   897	          "name": "default",
+   898	          "policy_ids": [
+   899	           "default"
+   900	          ],
+   901	          "registry": "*",
+   902	          "repository": "*",
+   903	          "whitelist_ids": [
+   904	           "global"
+   905	          ]
+   906	         }
+   907	        ],
+   908	        "name": "Default Sysdig policy bundle",
+   909	        "policies": [
+   910	         {
+   911	          "comment": "System default policy",
+   912	          "id": "default",
+   913	          "name": "DefaultPolicy",
+   914	          "rules": [
+   915	           {
+   916	            "action": "WARN",
+   917	            "gate": "dockerfile",
+   918	            "id": "rule_1FlJOnK9qdRSRcTNrfz3IUZXbou",
+   919	            "params": [
+   920	             {
+   921	              "name": "instruction",
+   922	              "value": "HEALTHCHECK"
+   923	             },
+   924	             {
+   925	              "name": "check",
+   926	              "value": "not_exists"
+   927	             }
+   928	            ],
+   929	            "trigger": "instruction"
+   930	           },
+   931	           {
+   932	            "action": "WARN",
+   933	            "gate": "dockerfile",
+   934	            "id": "rule_1FwAx2yR2myVxaaXMp5zleEUpKd",
+   935	            "params": [
+   936	             {
+   937	              "name": "instruction",
+   938	              "value": "USER"
+   939	             },
+   940	             {
+   941	              "name": "check",
+   942	              "value": "not_exists"
+   943	             }
+   944	            ],
+   945	            "trigger": "instruction"
+   946	           },
+   947	           {
+   948	            "action": "WARN",
+   949	            "gate": "vulnerabilities",
+   950	            "id": "rule_1FlKixNbbwnsUx8pJtX5xV8uboG",
+   951	            "params": [
+   952	             {
+   953	              "name": "max_days_since_sync",
+   954	              "value": "7"
+   955	             }
+   956	            ],
+   957	            "trigger": "stale_feed_data"
+   958	           },
+   959	           {
+   960	            "action": "STOP",
+   961	            "gate": "vulnerabilities",
+   962	            "id": "rule_1FlKnkFbIN3fSvl71lHIxBXgh2s",
+   963	            "params": [
+   964	             {
+   965	              "name": "package_type",
+   966	              "value": "all"
+   967	             },
+   968	             {
+   969	              "name": "severity_comparison",
+   970	              "value": "\u003e="
+   971	             },
+   972	             {
+   973	              "name": "severity",
+   974	              "value": "high"
+   975	             },
+   976	             {
+   977	              "name": "fix_available",
+   978	              "value": "true"
+   979	             }
+   980	            ],
+   981	            "trigger": "package"
+   982	           },
+   983	           {
+   984	            "action": "WARN",
+   985	            "gate": "secret_scans",
+   986	            "id": "rule_1Ezo0nDiqv0I1wxZPl4MK0RLEAZ",
+   987	            "params": [
+   988	             {
+   989	              "name": "content_regex_name",
+   990	              "value": "['AWS_ACCESS_KEY', 'AWS_SECRET_KEY', 'PRIV_KEY', 'DOCKER_AUTH', 'API_KEY']"
+   991	             }
+   992	            ],
+   993	            "trigger": "content_regex_checks"
+   994	           },
+   995	           {
+   996	            "action": "WARN",
+   997	            "gate": "passwd_file",
+   998	            "id": "rule_1GB4xfQVikoJt0nKyAeUVJwYZYh",
+   999	            "params": [],
+  1000	            "trigger": "content_not_available"
+  1001	           },
+  1002	           {
+  1003	            "action": "WARN",
+  1004	            "gate": "files",
+  1005	            "id": "rule_1GB4xhDsvBbDT96h95bjxtONQS2",
+  1006	            "params": [],
+  1007	            "trigger": "suid_or_guid_set"
+  1008	           },
+  1009	           {
+  1010	            "action": "WARN",
+  1011	            "gate": "dockerfile",
+  1012	            "id": "rule_1GB4zh3sQYTEnQpa4EcYl34SZYN",
+  1013	            "params": [
+  1014	             {
+  1015	              "name": "ports",
+  1016	              "value": "22"
+  1017	             },
+  1018	             {
+  1019	              "name": "type",
+  1020	              "value": "blacklist"
+  1021	             }
+  1022	            ],
+  1023	            "trigger": "exposed_ports"
+  1024	           }
+  1025	          ],
+  1026	          "version": "1_0"
+  1027	         },
+  1028	         {
+  1029	          "comment": "This policy provides out of the box rules around Dockerfile best practices.\nWe frequently update these policies and if you'd like to modify the policy you should use this as a base template to avoid modifications being overwritten.",
+  1030	          "id": "dockerfile_best_practices",
+  1031	          "name": "Default Configuration Policy - Dockerfile Best Practices",
+  1032	          "rules": [
+  1033	           {
+  1034	            "action": "WARN",
+  1035	            "gate": "vulnerabilities",
+  1036	            "id": "rule_1FlKixNbbwnsUx8pJtX5xV8pboG",
+  1037	            "params": [
+  1038	             {
+  1039	              "name": "max_days_since_sync",
+  1040	              "value": "7"
+  1041	             }
+  1042	            ],
+  1043	            "trigger": "stale_feed_data"
+  1044	           },
+  1045	           {
+  1046	            "action": "WARN",
+  1047	            "gate": "dockerfile",
+  1048	            "id": "rule_1FwAx5doYKki82uxNWvrdc1zs8O",
+  1049	            "params": [
+  1050	             {
+  1051	              "name": "instruction",
+  1052	              "value": "RUN"
+  1053	             },
+  1054	             {
+  1055	              "name": "check",
+  1056	              "value": "like"
+  1057	             },
+  1058	             {
+  1059	              "name": "value",
+  1060	              "value": ".*apt-get upgrade.*"
+  1061	             }
+  1062	            ],
+  1063	            "trigger": "instruction"
+  1064	           },
+  1065	           {
+  1066	            "action": "WARN",
+  1067	            "gate": "dockerfile",
+  1068	            "id": "rule_1G7q8iETgn96DM2ol2fa7V25GdI",
+  1069	            "params": [
+  1070	             {
+  1071	              "name": "instruction",
+  1072	              "value": "RUN"
+  1073	             },
+  1074	             {
+  1075	              "name": "check",
+  1076	              "value": "like"
+  1077	             },
+  1078	             {
+  1079	              "name": "value",
+  1080	              "value": ".*yum upgrade.*"
+  1081	             }
+  1082	            ],
+  1083	            "trigger": "instruction"
+  1084	           },
+  1085	           {
+  1086	            "action": "WARN",
+  1087	            "gate": "dockerfile",
+  1088	            "id": "rule_1FwAx5Brg2RNEAbOoW0mxTLCNjr",
+  1089	            "params": [
+  1090	             {
+  1091	              "name": "instruction",
+  1092	              "value": "HEALTHCHECK"
+  1093	             },
+  1094	             {
+  1095	              "name": "check",
+  1096	              "value": "not_exists"
+  1097	             }
+  1098	            ],
+  1099	            "trigger": "instruction"
+  1100	           },
+  1101	           {
+  1102	            "action": "WARN",
+  1103	            "gate": "dockerfile",
+  1104	            "id": "rule_1FwAx9O6XGOnz18bInRu9VPSaej",
+  1105	            "params": [
+  1106	             {
+  1107	              "name": "type",
+  1108	              "value": "blacklist"
+  1109	             },
+  1110	             {
+  1111	              "name": "users",
+  1112	              "value": "root"
+  1113	             }
+  1114	            ],
+  1115	            "trigger": "effective_user"
+  1116	           },
+  1117	           {
+  1118	            "action": "WARN",
+  1119	            "gate": "dockerfile",
+  1120	            "id": "rule_1FwAx7op3c4lcSutHSevUDEAFmI",
+  1121	            "params": [
+  1122	             {
+  1123	              "name": "type",
+  1124	              "value": "blacklist"
+  1125	             },
+  1126	             {
+  1127	              "name": "ports",
+  1128	              "value": "22"
+  1129	             }
+  1130	            ],
+  1131	            "trigger": "exposed_ports"
+  1132	           },
+  1133	           {
+  1134	            "action": "WARN",
+  1135	            "gate": "dockerfile",
+  1136	            "id": "rule_1FwAx33SpKwPliPFh74GdlojO3b",
+  1137	            "params": [
+  1138	             {
+  1139	              "name": "instruction",
+  1140	              "value": "LABEL"
+  1141	             },
+  1142	             {
+  1143	              "name": "check",
+  1144	              "value": "="
+  1145	             },
+  1146	             {
+  1147	              "name": "value",
+  1148	              "value": "latest"
+  1149	             }
+  1150	            ],
+  1151	            "trigger": "instruction"
+  1152	           },
+  1153	           {
+  1154	            "action": "WARN",
+  1155	            "gate": "dockerfile",
+  1156	            "id": "rule_1GCUUvkHJ9qmIRjlLcafaAOTXGa",
+  1157	            "params": [
+  1158	             {
+  1159	              "name": "instruction",
+  1160	              "value": "ENV"
+  1161	             },
+  1162	             {
+  1163	              "name": "check",
+  1164	              "value": "like"
+  1165	             },
+  1166	             {
+  1167	              "name": "value",
+  1168	              "value": ".*(password|PASSWORD|passwd|PASSWD|AWS|secret|SECRET).*"
+  1169	             }
+  1170	            ],
+  1171	            "trigger": "instruction"
+  1172	           },
+  1173	           {
+  1174	            "action": "WARN",
+  1175	            "gate": "dockerfile",
+  1176	            "id": "rule_1FwAx2yR2myVxaaXMp5zleEUsKd",
+  1177	            "params": [
+  1178	             {
+  1179	              "name": "instruction",
+  1180	              "value": "USER"
+  1181	             },
+  1182	             {
+  1183	              "name": "check",
+  1184	              "value": "not_exists"
+  1185	             }
+  1186	            ],
+  1187	            "trigger": "instruction"
+  1188	           },
+  1189	           {
+  1190	            "action": "WARN",
+  1191	            "gate": "dockerfile",
+  1192	            "id": "rule_1FwAx2yR2myVxaaXMp5zleEUsKd",
+  1193	            "params": [
+  1194	             {
+  1195	              "name": "instruction",
+  1196	              "value": "ADD"
+  1197	             },
+  1198	             {
+  1199	              "name": "check",
+  1200	              "value": "exists"
+  1201	             }
+  1202	            ],
+  1203	            "trigger": "instruction"
+  1204	           }
+  1205	          ],
+  1206	          "version": "1_0"
+  1207	         },
+  1208	         {
+  1209	          "comment": "This policy interprets NIST 800-190 controls and provides out of the box rules to detect image misconfiguration.\nWe frequently update these policies and if you'd like to modify the policy you should use this as a base template to avoid modifications being overwritten.",
+  1210	          "id": "nist_800-190",
+  1211	          "name": "Default Audit Policy - NIST 800-190",
+  1212	          "rules": [
+  1213	           {
+  1214	            "action": "WARN",
+  1215	            "gate": "vulnerabilities",
+  1216	            "id": "rule_1FlKixNbbwnsUx8pXtX5xV8pboG",
+  1217	            "params": [
+  1218	             {
+  1219	              "name": "max_days_since_sync",
+  1220	              "value": "7"
+  1221	             }
+  1222	            ],
+  1223	            "trigger": "stale_feed_data"
+  1224	           },
+  1225	           {
+  1226	            "action": "WARN",
+  1227	            "gate": "npms",
+  1228	            "id": "rule_1GCOgC9QQulSxT9lLOcSKFl2STV",
+  1229	            "params": [],
+  1230	            "trigger": "unknown_in_feeds"
+  1231	           },
+  1232	           {
+  1233	            "action": "WARN",
+  1234	            "gate": "vulnerabilities",
+  1235	            "id": "rule_1GCOg9G4MaGKY8nHvqJ8tQ4ZCIf",
+  1236	            "params": [
+  1237	             {
+  1238	              "name": "package_type",
+  1239	              "value": "non-os"
+  1240	             },
+  1241	             {
+  1242	              "name": "severity_comparison",
+  1243	              "value": "\u003e="
+  1244	             },
+  1245	             {
+  1246	              "name": "severity",
+  1247	              "value": "high"
+  1248	             }
+  1249	            ],
+  1250	            "trigger": "package"
+  1251	           },
+  1252	           {
+  1253	            "action": "WARN",
+  1254	            "gate": "vulnerabilities",
+  1255	            "id": "rule_1GCMueaFWaigiXsU2mBjHn4CSc2",
+  1256	            "params": [
+  1257	             {
+  1258	              "name": "package_type",
+  1259	              "value": "os"
+  1260	             },
+  1261	             {
+  1262	              "name": "severity_comparison",
+  1263	              "value": "\u003e="
+  1264	             },
+  1265	             {
+  1266	              "name": "severity",
+  1267	              "value": "high"
+  1268	             }
+  1269	            ],
+  1270	            "trigger": "package"
+  1271	           },
+  1272	           {
+  1273	            "action": "WARN",
+  1274	            "gate": "dockerfile",
+  1275	            "id": "rule_1GCMucV3SGGfEJljBxKH1fLmzOd",
+  1276	            "params": [
+  1277	             {
+  1278	              "name": "instruction",
+  1279	              "value": "USER"
+  1280	             },
+  1281	             {
+  1282	              "name": "check",
+  1283	              "value": "not_exists"
+  1284	             }
+  1285	            ],
+  1286	            "trigger": "instruction"
+  1287	           },
+  1288	           {
+  1289	            "action": "WARN",
+  1290	            "gate": "dockerfile",
+  1291	            "id": "rule_1GCNbqqMC7iEEr7wsKPiugNhlOc",
+  1292	            "params": [
+  1293	             {
+  1294	              "name": "ports",
+  1295	              "value": "22"
+  1296	             },
+  1297	             {
+  1298	              "name": "type",
+  1299	              "value": "blacklist"
+  1300	             }
+  1301	            ],
+  1302	            "trigger": "exposed_ports"
+  1303	           },
+  1304	           {
+  1305	            "action": "WARN",
+  1306	            "gate": "secret_scans",
+  1307	            "id": "rule_1GCNbpQw4L5QQ3XSc3Od3amcaAQ",
+  1308	            "params": [
+  1309	             {
+  1310	              "name": "content_regex_name",
+  1311	              "value": "['AWS_ACCESS_KEY', 'AWS_SECRET_KEY', 'PRIV_KEY', 'DOCKER_AUTH', 'API_KEY']"
+  1312	             }
+  1313	            ],
+  1314	            "trigger": "content_regex_checks"
+  1315	           },
+  1316	           {
+  1317	            "action": "WARN",
+  1318	            "gate": "dockerfile",
+  1319	            "id": "rule_1GCNxYBmHUAs7ApbCP3r2fFkGZI",
+  1320	            "params": [
+  1321	             {
+  1322	              "name": "instruction",
+  1323	              "value": "ENV"
+  1324	             },
+  1325	             {
+  1326	              "name": "check",
+  1327	              "value": "like"
+  1328	             },
+  1329	             {
+  1330	              "name": "value",
+  1331	              "value": ".*(password|PASSWORD|passwd|PASSWD|AWS|secret|SECRET).*"
+  1332	             }
+  1333	            ],
+  1334	            "trigger": "instruction"
+  1335	           },
+  1336	           {
+  1337	            "action": "WARN",
+  1338	            "gate": "dockerfile",
+  1339	            "id": "rule_1GCOgAvqdpL7yQ7oF5CzyTuCiMa",
+  1340	            "params": [
+  1341	             {
+  1342	              "name": "instruction",
+  1343	              "value": "HEALTHCHECK"
+  1344	             },
+  1345	             {
+  1346	              "name": "check",
+  1347	              "value": "not_exists"
+  1348	             }
+  1349	            ],
+  1350	            "trigger": "instruction"
+  1351	           },
+  1352	           {
+  1353	            "action": "WARN",
+  1354	            "gate": "ruby_gems",
+  1355	            "id": "rule_1GCOoz0dZJuCUoWGUorE5QJRbbT",
+  1356	            "params": [],
+  1357	            "trigger": "not_found_in_feed"
+  1358	           },
+  1359	           {
+  1360	            "action": "WARN",
+  1361	            "gate": "metadata",
+  1362	            "id": "rule_1GCUV04MF8xH42qTPsYfS1H0UXa",
+  1363	            "params": [
+  1364	             {
+  1365	              "name": "attribute",
+  1366	              "value": "like_distro"
+  1367	             },
+  1368	             {
+  1369	              "name": "check",
+  1370	              "value": "not_in"
+  1371	             },
+  1372	             {
+  1373	              "name": "value",
+  1374	              "value": "alpine, busybox, centos, ubuntu, debian, fedora, ol"
+  1375	             }
+  1376	            ],
+  1377	            "trigger": "attribute"
+  1378	           },
+  1379	           {
+  1380	            "action": "WARN",
+  1381	            "gate": "dockerfile",
+  1382	            "id": "rule_1GCUUwMjZsOKhH1R0y4Jfis9bAk",
+  1383	            "params": [
+  1384	             {
+  1385	              "name": "instruction",
+  1386	              "value": "ADD"
+  1387	             },
+  1388	             {
+  1389	              "name": "check",
+  1390	              "value": "exists"
+  1391	             }
+  1392	            ],
+  1393	            "trigger": "instruction"
+  1394	           },
+  1395	           {
+  1396	            "action": "WARN",
+  1397	            "gate": "dockerfile",
+  1398	            "id": "rule_1GCUV2SJhuwNnhFdZI1BZ45FF5i",
+  1399	            "params": [
+  1400	             {
+  1401	              "name": "users",
+  1402	              "value": "root"
+  1403	             },
+  1404	             {
+  1405	              "name": "type",
+  1406	              "value": "blacklist"
+  1407	             }
+  1408	            ],
+  1409	            "trigger": "effective_user"
+  1410	           },
+  1411	           {
+  1412	            "action": "WARN",
+  1413	            "gate": "files",
+  1414	            "id": "rule_1GCUUvkHJ9qmIRjlLcafaAOTvGa",
+  1415	            "params": [],
+  1416	            "trigger": "suid_or_guid_set"
+  1417	           }
+  1418	          ],
+  1419	          "version": "1_0"
+  1420	         },
+  1421	         {
+  1422	          "comment": "This policy interprets PCI controls and provides out of the box rules to detect image misconfiguration.\nWe frequently update these policies and if you'd like to modify the policy you should use this as a base template to avoid modifications being overwritten.",
+  1423	          "id": "pci",
+  1424	          "name": "Default Audit Policy - PCI",
+  1425	          "rules": [
+  1426	           {
+  1427	            "action": "WARN",
+  1428	            "gate": "vulnerabilities",
+  1429	            "id": "rule_1FlKixNbbNwnsUx8pXX5xV8pboG",
+  1430	            "params": [
+  1431	             {
+  1432	              "name": "max_days_since_sync",
+  1433	              "value": "7"
+  1434	             }
+  1435	            ],
+  1436	            "trigger": "stale_feed_data"
+  1437	           },
+  1438	           {
+  1439	            "action": "WARN",
+  1440	            "gate": "files",
+  1441	            "id": "rule_1GQfcID4qEqVofO7X131FjMeMyV",
+  1442	            "params": [
+  1443	             {
+  1444	              "name": "regex_name",
+  1445	              "value": ".*(admin|ADMIN|password|PASSWORD).*"
+  1446	             }
+  1447	            ],
+  1448	            "trigger": "content_regex_match"
+  1449	           },
+  1450	           {
+  1451	            "action": "STOP",
+  1452	            "gate": "vulnerabilities",
+  1453	            "id": "rule_1GQg23r1pCuRWIx7vQ5TxRIJ7uS",
+  1454	            "params": [
+  1455	             {
+  1456	              "name": "package_type",
+  1457	              "value": "all"
+  1458	             },
+  1459	             {
+  1460	              "name": "severity_comparison",
+  1461	              "value": "\u003e="
+  1462	             },
+  1463	             {
+  1464	              "name": "severity",
+  1465	              "value": "high"
+  1466	             },
+  1467	             {
+  1468	              "name": "fix_available",
+  1469	              "value": "true"
+  1470	             }
+  1471	            ],
+  1472	            "trigger": "package"
+  1473	           },
+  1474	           {
+  1475	            "action": "WARN",
+  1476	            "gate": "secret_scans",
+  1477	            "id": "rule_1GQgwOAxA3NM1haWLTOiVqfmvsA",
+  1478	            "params": [
+  1479	             {
+  1480	              "name": "content_regex_name",
+  1481	              "value": "['AWS_ACCESS_KEY', 'AWS_SECRET_KEY', 'PRIV_KEY', 'DOCKER_AUTH', 'API_KEY']"
+  1482	             }
+  1483	            ],
+  1484	            "trigger": "content_regex_checks"
+  1485	           },
+  1486	           {
+  1487	            "action": "WARN",
+  1488	            "gate": "files",
+  1489	            "id": "rule_1GQgwIBLieRQXkw6IFn2fEMgjMg",
+  1490	            "params": [],
+  1491	            "trigger": "suid_or_guid_set"
+  1492	           },
+  1493	           {
+  1494	            "action": "WARN",
+  1495	            "gate": "dockerfile",
+  1496	            "id": "rule_1FwAx9O6XGOnz18bInRu9VPSaej",
+  1497	            "params": [
+  1498	             {
+  1499	              "name": "type",
+  1500	              "value": "blacklist"
+  1501	             },
+  1502	             {
+  1503	              "name": "users",
+  1504	              "value": "root"
+  1505	             }
+  1506	            ],
+  1507	            "trigger": "effective_user"
+  1508	           },
+  1509	           {
+  1510	            "action": "WARN",
+  1511	            "gate": "dockerfile",
+  1512	            "id": "rule_1GQgwJ32rk96G4wRsgbzNYy2vGN",
+  1513	            "params": [
+  1514	             {
+  1515	              "name": "instruction",
+  1516	              "value": "USER"
+  1517	             },
+  1518	             {
+  1519	              "name": "check",
+  1520	              "value": "not_exists"
+  1521	             }
+  1522	            ],
+  1523	            "trigger": "instruction"
+  1524	           }
+  1525	          ],
+  1526	          "version": "1_0"
+  1527	         }
+  1528	        ],
+  1529	        "version": "1_0",
+  1530	        "whitelisted_images": [],
+  1531	        "whitelists": [
+  1532	         {
+  1533	          "comment": "Default exceptions list",
+  1534	          "id": "global",
+  1535	          "items": [],
+  1536	          "name": "Default exceptions list",
+  1537	          "version": "1_0"
+  1538	         }
+  1539	        ]
+  1540	       },
+  1541	       "created_at": 1603278503,
+  1542	       "evaluation_problems": [],
+  1543	       "final_action": "stop",
+  1544	       "final_action_reason": "policy_evaluation",
+  1545	       "image_digest": "sha256:36c7b282abd0186e01419f2e58743e1bf635808231049bbc9d77e59e3a8e4914",
+  1546	       "image_id": "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1547	       "last_modified": 1603278503,
+  1548	       "matched_blacklisted_images_rule": false,
+  1549	       "matched_mapping_rule": {
+  1550	        "id": "mapping_1CI5tw3zxNL9b344sSsXBfth3dW",
+  1551	        "image": {
+  1552	         "type": "tag",
+  1553	         "value": "*"
+  1554	        },
+  1555	        "name": "default",
+  1556	        "policy_ids": [
+  1557	         "default"
+  1558	        ],
+  1559	        "registry": "*",
+  1560	        "repository": "*",
+  1561	        "whitelist_ids": [
+  1562	         "global"
+  1563	        ]
+  1564	       },
+  1565	       "matched_whitelisted_images_rule": false,
+  1566	       "result": {
+  1567	        "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a": {
+  1568	         "result": {
+  1569	          "final_action": "stop",
+  1570	          "header": [
+  1571	           "Image_Id",
+  1572	           "Repo_Tag",
+  1573	           "Trigger_Id",
+  1574	           "Gate",
+  1575	           "Trigger",
+  1576	           "Check_Output",
+  1577	           "Gate_Action",
+  1578	           "Whitelisted",
+  1579	           "Policy_Id"
+  1580	          ],
+  1581	          "row_count": 34,
+  1582	          "rows": [
+  1583	           [
+  1584	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1585	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1586	            "41cb7cdf04850e33a11f80c42bf660b3",
+  1587	            "dockerfile",
+  1588	            "instruction",
+  1589	            "Dockerfile directive 'HEALTHCHECK' not found, matching condition 'not_exists' check",
+  1590	            "warn",
+  1591	            false,
+  1592	            "default"
+  1593	           ],
+  1594	           [
+  1595	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1596	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1597	            "1571e70ee221127984dcf585a56d4cff",
+  1598	            "dockerfile",
+  1599	            "instruction",
+  1600	            "Dockerfile directive 'USER' not found, matching condition 'not_exists' check",
+  1601	            "warn",
+  1602	            false,
+  1603	            "default"
+  1604	           ],
+  1605	           [
+  1606	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1607	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1608	            "ALAS-2020-1490+httpd",
+  1609	            "vulnerabilities",
+  1610	            "package",
+  1611	            "HIGH Vulnerability found in os package type (rpm) - httpd (fixed in: 2.4.46-1.amzn2)(ALAS-2020-1490 - https://alas.aws.amazon.com/AL2/ALAS-2020-1490.html)",
+  1612	            "stop",
+  1613	            false,
+  1614	            "default"
+  1615	           ],
+  1616	           [
+  1617	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1618	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1619	            "ALAS-2020-1490+httpd-filesystem",
+  1620	            "vulnerabilities",
+  1621	            "package",
+  1622	            "HIGH Vulnerability found in os package type (rpm) - httpd-filesystem (fixed in: 2.4.46-1.amzn2)(ALAS-2020-1490 - https://alas.aws.amazon.com/AL2/ALAS-2020-1490.html)",
+  1623	            "stop",
+  1624	            false,
+  1625	            "default"
+  1626	           ],
+  1627	           [
+  1628	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1629	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1630	            "ALAS-2020-1490+httpd-tools",
+  1631	            "vulnerabilities",
+  1632	            "package",
+  1633	            "HIGH Vulnerability found in os package type (rpm) - httpd-tools (fixed in: 2.4.46-1.amzn2)(ALAS-2020-1490 - https://alas.aws.amazon.com/AL2/ALAS-2020-1490.html)",
+  1634	            "stop",
+  1635	            false,
+  1636	            "default"
+  1637	           ],
+  1638	           [
+  1639	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1640	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1641	            "ALAS-2019-1298+libnghttp2",
+  1642	            "vulnerabilities",
+  1643	            "package",
+  1644	            "HIGH Vulnerability found in os package type (rpm) - libnghttp2 (fixed in: 1.39.2-1.amzn2)(ALAS-2019-1298 - https://alas.aws.amazon.com/AL2/ALAS-2019-1298.html)",
+  1645	            "stop",
+  1646	            false,
+  1647	            "default"
+  1648	           ],
+  1649	           [
+  1650	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1651	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1652	            "ALAS-2020-1445+libnghttp2",
+  1653	            "vulnerabilities",
+  1654	            "package",
+  1655	            "HIGH Vulnerability found in os package type (rpm) - libnghttp2 (fixed in: 1.41.0-1.amzn2)(ALAS-2020-1445 - https://alas.aws.amazon.com/AL2/ALAS-2020-1445.html)",
+  1656	            "stop",
+  1657	            false,
+  1658	            "default"
+  1659	           ],
+  1660	           [
+  1661	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1662	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1663	            "ALAS-2020-1466+libxml2",
+  1664	            "vulnerabilities",
+  1665	            "package",
+  1666	            "HIGH Vulnerability found in os package type (rpm) - libxml2 (fixed in: 2.9.1-6.amzn2.4.1)(ALAS-2020-1466 - https://alas.aws.amazon.com/AL2/ALAS-2020-1466.html)",
+  1667	            "stop",
+  1668	            false,
+  1669	            "default"
+  1670	           ],
+  1671	           [
+  1672	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1673	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1674	            "ALAS-2019-1342+mod_http2",
+  1675	            "vulnerabilities",
+  1676	            "package",
+  1677	            "HIGH Vulnerability found in os package type (rpm) - mod_http2 (fixed in: 1.15.3-2.amzn2)(ALAS-2019-1342 - https://alas.aws.amazon.com/AL2/ALAS-2019-1342.html)",
+  1678	            "stop",
+  1679	            false,
+  1680	            "default"
+  1681	           ],
+  1682	           [
+  1683	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1684	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1685	            "ALAS-2020-1493+mod_http2",
+  1686	            "vulnerabilities",
+  1687	            "package",
+  1688	            "HIGH Vulnerability found in os package type (rpm) - mod_http2 (fixed in: 1.15.14-2.amzn2)(ALAS-2020-1493 - https://alas.aws.amazon.com/AL2/ALAS-2020-1493.html)",
+  1689	            "stop",
+  1690	            false,
+  1691	            "default"
+  1692	           ],
+  1693	           [
+  1694	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1695	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1696	            "ALAS-2020-1384+nss",
+  1697	            "vulnerabilities",
+  1698	            "package",
+  1699	            "HIGH Vulnerability found in os package type (rpm) - nss (fixed in: 3.44.0-7.amzn2)(ALAS-2020-1384 - https://alas.aws.amazon.com/AL2/ALAS-2020-1384.html)",
+  1700	            "stop",
+  1701	            false,
+  1702	            "default"
+  1703	           ],
+  1704	           [
+  1705	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1706	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1707	            "ALAS-2020-1384+nss-sysinit",
+  1708	            "vulnerabilities",
+  1709	            "package",
+  1710	            "HIGH Vulnerability found in os package type (rpm) - nss-sysinit (fixed in: 3.44.0-7.amzn2)(ALAS-2020-1384 - https://alas.aws.amazon.com/AL2/ALAS-2020-1384.html)",
+  1711	            "stop",
+  1712	            false,
+  1713	            "default"
+  1714	           ],
+  1715	           [
+  1716	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1717	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1718	            "ALAS-2020-1384+nss-tools",
+  1719	            "vulnerabilities",
+  1720	            "package",
+  1721	            "HIGH Vulnerability found in os package type (rpm) - nss-tools (fixed in: 3.44.0-7.amzn2)(ALAS-2020-1384 - https://alas.aws.amazon.com/AL2/ALAS-2020-1384.html)",
+  1722	            "stop",
+  1723	            false,
+  1724	            "default"
+  1725	           ],
+  1726	           [
+  1727	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1728	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1729	            "ALAS-2020-1406+openssl-libs",
+  1730	            "vulnerabilities",
+  1731	            "package",
+  1732	            "HIGH Vulnerability found in os package type (rpm) - openssl-libs (fixed in: 1.0.2k-19.amzn2.0.3)(ALAS-2020-1406 - https://alas.aws.amazon.com/AL2/ALAS-2020-1406.html)",
+  1733	            "stop",
+  1734	            false,
+  1735	            "default"
+  1736	           ],
+  1737	           [
+  1738	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1739	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1740	            "ALAS-2019-1344+php",
+  1741	            "vulnerabilities",
+  1742	            "package",
+  1743	            "CRITICAL Vulnerability found in os package type (rpm) - php (fixed in: 5.4.16-46.amzn2.0.2)(ALAS-2019-1344 - https://alas.aws.amazon.com/AL2/ALAS-2019-1344.html)",
+  1744	            "stop",
+  1745	            false,
+  1746	            "default"
+  1747	           ],
+  1748	           [
+  1749	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1750	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1751	            "ALAS-2019-1344+php-cli",
+  1752	            "vulnerabilities",
+  1753	            "package",
+  1754	            "CRITICAL Vulnerability found in os package type (rpm) - php-cli (fixed in: 5.4.16-46.amzn2.0.2)(ALAS-2019-1344 - https://alas.aws.amazon.com/AL2/ALAS-2019-1344.html)",
+  1755	            "stop",
+  1756	            false,
+  1757	            "default"
+  1758	           ],
+  1759	           [
+  1760	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1761	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1762	            "ALAS-2019-1344+php-common",
+  1763	            "vulnerabilities",
+  1764	            "package",
+  1765	            "CRITICAL Vulnerability found in os package type (rpm) - php-common (fixed in: 5.4.16-46.amzn2.0.2)(ALAS-2019-1344 - https://alas.aws.amazon.com/AL2/ALAS-2019-1344.html)",
+  1766	            "stop",
+  1767	            false,
+  1768	            "default"
+  1769	           ],
+  1770	           [
+  1771	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1772	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1773	            "ALAS-2019-1230+python",
+  1774	            "vulnerabilities",
+  1775	            "package",
+  1776	            "HIGH Vulnerability found in os package type (rpm) - python (fixed in: 2.7.16-1.amzn2.0.1)(ALAS-2019-1230 - https://alas.aws.amazon.com/AL2/ALAS-2019-1230.html)",
+  1777	            "stop",
+  1778	            false,
+  1779	            "default"
+  1780	           ],
+  1781	           [
+  1782	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1783	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1784	            "ALAS-2019-1258+python",
+  1785	            "vulnerabilities",
+  1786	            "package",
+  1787	            "HIGH Vulnerability found in os package type (rpm) - python (fixed in: 2.7.16-2.amzn2.0.1)(ALAS-2019-1258 - https://alas.aws.amazon.com/AL2/ALAS-2019-1258.html)",
+  1788	            "stop",
+  1789	            false,
+  1790	            "default"
+  1791	           ],
+  1792	           [
+  1793	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1794	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1795	            "ALAS-2019-1230+python-libs",
+  1796	            "vulnerabilities",
+  1797	            "package",
+  1798	            "HIGH Vulnerability found in os package type (rpm) - python-libs (fixed in: 2.7.16-1.amzn2.0.1)(ALAS-2019-1230 - https://alas.aws.amazon.com/AL2/ALAS-2019-1230.html)",
+  1799	            "stop",
+  1800	            false,
+  1801	            "default"
+  1802	           ],
+  1803	           [
+  1804	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1805	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1806	            "ALAS-2019-1258+python-libs",
+  1807	            "vulnerabilities",
+  1808	            "package",
+  1809	            "HIGH Vulnerability found in os package type (rpm) - python-libs (fixed in: 2.7.16-2.amzn2.0.1)(ALAS-2019-1258 - https://alas.aws.amazon.com/AL2/ALAS-2019-1258.html)",
+  1810	            "stop",
+  1811	            false,
+  1812	            "default"
+  1813	           ],
+  1814	           [
+  1815	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1816	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1817	            "ALAS-2020-1394+sqlite",
+  1818	            "vulnerabilities",
+  1819	            "package",
+  1820	            "HIGH Vulnerability found in os package type (rpm) - sqlite (fixed in: 3.7.17-8.amzn2.1.1)(ALAS-2020-1394 - https://alas.aws.amazon.com/AL2/ALAS-2020-1394.html)",
+  1821	            "stop",
+  1822	            false,
+  1823	            "default"
+  1824	           ],
+  1825	           [
+  1826	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1827	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1828	            "ALAS-2019-1239+vim-minimal",
+  1829	            "vulnerabilities",
+  1830	            "package",
+  1831	            "HIGH Vulnerability found in os package type (rpm) - vim-minimal (fixed in: 8.1.1602-1.amzn2)(ALAS-2019-1239 - https://alas.aws.amazon.com/AL2/ALAS-2019-1239.html)",
+  1832	            "stop",
+  1833	            false,
+  1834	            "default"
+  1835	           ],
+  1836	           [
+  1837	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1838	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1839	            "639f6f1177735759703e928c14714a59",
+  1840	            "files",
+  1841	            "suid_or_guid_set",
+  1842	            "SUID or SGID found set on file /usr/bin/chage. Mode: 0o104755",
+  1843	            "warn",
+  1844	            false,
+  1845	            "default"
+  1846	           ],
+  1847	           [
+  1848	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1849	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1850	            "c2e44319ae5b3b040044d8ae116d1c2f",
+  1851	            "files",
+  1852	            "suid_or_guid_set",
+  1853	            "SUID or SGID found set on file /usr/bin/gpasswd. Mode: 0o104755",
+  1854	            "warn",
+  1855	            false,
+  1856	            "default"
+  1857	           ],
+  1858	           [
+  1859	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1860	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1861	            "698044205a9c4a6d48b7937e66a6bf4f",
+  1862	            "files",
+  1863	            "suid_or_guid_set",
+  1864	            "SUID or SGID found set on file /usr/bin/mount. Mode: 0o104755",
+  1865	            "warn",
+  1866	            false,
+  1867	            "default"
+  1868	           ],
+  1869	           [
+  1870	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1871	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1872	            "463a9a24225c26f7a5bf3f38908e5cb3",
+  1873	            "files",
+  1874	            "suid_or_guid_set",
+  1875	            "SUID or SGID found set on file /usr/bin/newgrp. Mode: 0o104755",
+  1876	            "warn",
+  1877	            false,
+  1878	            "default"
+  1879	           ],
+  1880	           [
+  1881	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1882	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1883	            "320a97c6816565eedf3545833df99dd0",
+  1884	            "files",
+  1885	            "suid_or_guid_set",
+  1886	            "SUID or SGID found set on file /usr/bin/su. Mode: 0o104755",
+  1887	            "warn",
+  1888	            false,
+  1889	            "default"
+  1890	           ],
+  1891	           [
+  1892	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1893	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1894	            "e7573262736ef52353cde3bae2617782",
+  1895	            "files",
+  1896	            "suid_or_guid_set",
+  1897	            "SUID or SGID found set on file /usr/bin/umount. Mode: 0o104755",
+  1898	            "warn",
+  1899	            false,
+  1900	            "default"
+  1901	           ],
+  1902	           [
+  1903	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1904	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1905	            "addbb93c22e9b0988b8b40392a4538cb",
+  1906	            "files",
+  1907	            "suid_or_guid_set",
+  1908	            "SUID or SGID found set on file /usr/bin/write. Mode: 0o102755",
+  1909	            "warn",
+  1910	            false,
+  1911	            "default"
+  1912	           ],
+  1913	           [
+  1914	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1915	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1916	            "3456a263793066e9b5063ada6e47917d",
+  1917	            "files",
+  1918	            "suid_or_guid_set",
+  1919	            "SUID or SGID found set on file /usr/libexec/dbus-1/dbus-daemon-launch-helper. Mode: 0o104750",
+  1920	            "warn",
+  1921	            false,
+  1922	            "default"
+  1923	           ],
+  1924	           [
+  1925	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1926	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1927	            "3e5fad1c039f3ecfd1dcdc94d2f1f9a0",
+  1928	            "files",
+  1929	            "suid_or_guid_set",
+  1930	            "SUID or SGID found set on file /usr/libexec/utempter/utempter. Mode: 0o102711",
+  1931	            "warn",
+  1932	            false,
+  1933	            "default"
+  1934	           ],
+  1935	           [
+  1936	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1937	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1938	            "abb121e9621abdd452f65844954cf1c1",
+  1939	            "files",
+  1940	            "suid_or_guid_set",
+  1941	            "SUID or SGID found set on file /usr/sbin/pam_timestamp_check. Mode: 0o104755",
+  1942	            "warn",
+  1943	            false,
+  1944	            "default"
+  1945	           ],
+  1946	           [
+  1947	            "2d0c3b6b1a9b0f6a8bfc156261056589416ca50279e058cea8d184647fef646a",
+  1948	            "docker.io/amazon/amazon-ecs-sample:latest",
+  1949	            "34de21e516c0ca50a96e5386f163f8bf",
+  1950	            "files",
+  1951	            "suid_or_guid_set",
+  1952	            "SUID or SGID found set on file /usr/sbin/unix_chkpwd. Mode: 0o104755",
+  1953	            "warn",
+  1954	            false,
+  1955	            "default"
+  1956	           ]
+  1957	          ]
+  1958	         }
+  1959	        },
+  1960	        "policy_data": [],
+  1961	        "policy_name": "",
+  1962	        "whitelist_data": [],
+  1963	        "whitelist_names": []
+  1964	       },
+  1965	       "status": "fail",
+  1966	       "tag": "docker.io/amazon/amazon-ecs-sample:latest",
+  1967	       "user_id": "tenant_1jBE4X3ct49tqsPKsgB3axgT9Ak"
+  1968	      }
+  1969	     },
+  1970	     "last_evaluation": "2020-10-21T11:08:23Z",
+  1971	     "policyId": "default",
+  1972	     "status": "fail"
+  1973	    }
+  1974	   ]
+  1975	  }
+  1976	 }
+  1977	]View the full result @ ***/#/scanning/scan-results/docker.io%2Famazon%2Famazon-ecs-sample%3Alatest/sha256:36c7b282abd0186e01419f2e58743e1bf635808231049bbc9d77e59e3a8e4914/summaries
+  1978	PDF report of the scan results can be generated with -R option.
+  1979	
+  1980	Cleaning up docker container: 7bb6ad85a9c2161326d6671a4c85839ac6a3e282d2499251e236a5368290984a
+  1981	Removing temporary folder created /tmp/sysdig/sysdig-inline-scan-1603278342
+  1982	
+  1983	[Container] 2020/10/21 11:08:29 Command did not exit successfully docker run --rm -v /var/run/docker.sock:/var/run/docker.sock $SCAN_IMAGE_NAME analyze -s $SYSDIG_SECURE_ENDPOINT -k $SYSDIG_SECURE_TOKEN $REPOSITORY exit status 1
+  1984	[Container] 2020/10/21 11:08:29 Phase complete: BUILD State: FAILED
+  1985	[Container] 2020/10/21 11:08:29 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock $SCAN_IMAGE_NAME analyze -s $SYSDIG_SECURE_ENDPOINT -k $SYSDIG_SECURE_TOKEN $REPOSITORY. Reason: exit status 1
+  1986	[Container] 2020/10/21 11:08:29 Entering phase POST_BUILD

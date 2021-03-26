@@ -1,7 +1,7 @@
 ---
-title: "4.4 Configure workshop specific requirements"
+title: "3.4 Configure workshop specific requirements"
 chapter: false
-weight: 13
+weight: 24
 ---
 
 ## Configure workspace for Sysdig Workshop
@@ -25,8 +25,12 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
 
 
 ```sh
-# Update awscli
-sudo pip install --upgrade awscli && hash -r
+# Uninstall awscli v1 and install awscli v2
+sudo pip uninstall awscli -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+hash  -r
 
 # Install jq command-line tool for parsing JSON, and bash-completion
 sudo yum -y install jq gettext bash-completion moreutils
@@ -59,6 +63,8 @@ aws configure get default.region
 
 # Validate that our IAM role is valid.
 aws sts get-caller-identity --query Arn | grep Sysdig-Workshop-Admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
+
+
 ```
 
 {{% notice warning %}}
