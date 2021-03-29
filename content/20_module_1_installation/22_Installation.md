@@ -62,4 +62,4 @@ You will first see the stack "Sysdig-CloudVision" in "CREATE_IN_PROGRESS" state.
 
 ![Create complete](/images/cloudsec-site/cloudformation/installation/installation_complete.png)
 
-Once the CF Template has successfully deployed, you can continue with the workshop.
+There is one last step to complete once the CF Template has successfully deployed - enable the “Sysdig AWS Best Practices” policy in the Sysdig UI.
