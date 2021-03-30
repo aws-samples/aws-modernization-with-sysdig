@@ -1,11 +1,11 @@
----
-title: "Modifying a Falco Rule for CloudTrail"
-chapter: false
-weight: 54
-author: "John Fitzpatrick"
-date: 2021-03-18,
-draft: true
----
+# ---
+# title: "Modifying a Falco Rule for CloudTrail"
+# chapter: false
+# weight: 54
+# author: "John Fitzpatrick"
+# date: 2021-03-18,
+# draft: true
+# ---
 
 **Updating Falco rules can take 20mins to filter through, so removing this from the workshop**
 **Keeping it here as we can still use the steps in a video script**
