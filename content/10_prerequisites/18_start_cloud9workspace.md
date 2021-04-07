@@ -26,10 +26,12 @@ We will use Amazon Cloud9 to access our AWS account via the AWS CLI in this Work
 
 5 . Select the default instance type **t3.medium**
 
-6 . Leave all the other settings as default and click **Next step** followed by **Create environment**
+6 . Expand **Network settings (Advanced)** and under **Subnet**, select a subnet in **us-east-1a** availability zone.
+
+7 . Leave all the other settings as default and click **Next step** followed by **Create environment**
 
 <!-- ![Deploy Cloud9](/images/10_prerequisites/cloud9.gif) -->
-<img src=/images/10_prerequisites/cloud9.gif width="75%" height="57%">
+<!-- <img src=/images/10_prerequisites/cloud9.gif width="75%" height="57%"> -->
 
 {{% notice info %}}
 This will take about 1-2 minutes to provision
