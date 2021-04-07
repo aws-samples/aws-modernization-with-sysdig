@@ -47,16 +47,6 @@ To illustrate automated scanning, we will now deploy a sample ECS cluster that s
 
     ![ECS Cluster](/images/40_module_2/image7.png)
 
-    Or by executing the following
-
-    ```
-    STACKNAME=amazon-ecs-cli-setup-tutorial
-    for resource in Vpc PubSubnetAz1 PubSubnetAz2
-    do
-      aws cloudformation describe-stack-resources --stack-name $STACKNAME --query 'StackResources[?LogicalResourceId=='"'$resource'"'].PhysicalResourceId' --output text
-    done
-    ```
-
 
     The `deploy-amazon-ecs-sample.sh` script will
 
@@ -130,3 +120,16 @@ To illustrate automated scanning, we will now deploy a sample ECS cluster that s
 
 
     ![Sample PHP App](/images/simple_php_app.png)
+
+
+### Obtain VPC & Subnet Info
+
+You can execute the following to obtain the VPC & Subnet information
+
+```
+STACKNAME=amazon-ecs-cli-setup-tutorial
+for resource in Vpc PubSubnetAz1 PubSubnetAz2
+do
+  aws cloudformation describe-stack-resources --stack-name $STACKNAME --query 'StackResources[?LogicalResourceId=='"'$resource'"'].PhysicalResourceId' --output text
+done
+```
