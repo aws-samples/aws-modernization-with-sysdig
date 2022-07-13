@@ -1,7 +1,7 @@
 ---
-title: "3.3 Attach IAM Role"
+title: "Attach IAM Role"
 chapter: false
-weight: 22
+weight: 2
 ---
 
 ## Attach the IAM role to your Workspace

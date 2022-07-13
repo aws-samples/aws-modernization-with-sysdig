@@ -1,8 +1,35 @@
----
-title: "1. Sign-up for a Sysdig Trial account"
-chapter: false
-weight: 12
----
+
++++
+title = "1. Installation"
+chapter = true
+weight = 20
++++
+
+*Estimated duration: less than 5 minutes.*
+
+# Module 1: Installation
+
+<!-- There are two steps in setting up **Sysdig Secure for cloud** in AWS -->
+
+**Sysdig Secure for cloud** is provisioned in AWS by simply deploying a CloudFormation Template. This single CloudFormation Template will deploy
+
+ - Cloud Security Posture Management and Compliance
+ - Threat Investigation based on CloudTrail
+ - ECR Image Registry Scanning
+ - Fargate Image Scanning
+
+
+As part of this deployment process you will need to provide your
+
+ - Sysdig Secure API Token
+ - Sysdig Secure API Endpoint
+
+If you do not have a Sysdig account, then you can follow the steps [here](/0-prerequisites/2-sysdig_account.html) to create a free trial Sysdig Account.
+
+Once you have these you can continue to deploy the Sysdig Secure for cloud CloudFormation Template
+
+<!--
+## Create a Sysdig Trial Account
 
 You need a Sysdig Secure account to complete this workshop. In particular you will need to make a note of your account's associated API token & API Endpoint to configure the integrations.
 
@@ -24,4 +51,4 @@ You need a Sysdig Secure account to complete this workshop. In particular you wi
         **IMPORTANT:** Make sure you **DO NOT** use the **Sysdig Monitor** API Token, or the Access Token!
 
 
-<img src=/images/10_prerequisites/apiValues.gif width="100%" >
+<img src=/images/10_prerequisites/apiValues.gif width="100%" > -->
