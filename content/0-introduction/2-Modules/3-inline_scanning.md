@@ -1,9 +1,9 @@
+---
+title:  "Image Scanning Technical Description"
+weight: 08
+chapter: false
+---
 
-+++
-title = "Image Scanning Technical Description"
-chapter = false
-weight = 08
-+++
 
 There are two general approaches to scanning images in Sysdig - backend scanning or inline scanning.  The reasons why you might choose one over the other is best explained by an understanding of how scanning works under the hood.
 

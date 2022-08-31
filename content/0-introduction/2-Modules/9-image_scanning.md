@@ -4,7 +4,8 @@ chapter = false
 weight = 03
 +++ -->
 
-Sysdig Secure provides a comprehensive suite of tools to enhance and compliance across your application's ecosystem.   One critical part of this is scanning the images in your registry.
+Sysdig Secure provides a comprehensive suite of tools to enhance and compliance across your application's ecosystem. 
+One critical part of this is scanning the images in your registry.
 
 Sysdig’s **ImageVision** technology identifies vulnerabilities and misconfigurations by automating scanning within CI/CD pipelines and registries, as well as implementing registry scanning inline. It also blocks vulnerabilities pre-production, monitors for new CVEs at runtime, and helps you map a critical vulnerability back to an application and dev team.
 

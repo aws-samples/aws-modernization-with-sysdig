@@ -1,7 +1,7 @@
 ---
-title: "1. Sign-up for a Sysdig Trial account"
+title: "Sysdig Secure Account"
 chapter: false
-weight: 12
+weight: 1
 ---
 
 You need a Sysdig Secure account to complete this workshop. In particular you will need to make a note of your account's associated API token & API Endpoint to configure the integrations.
