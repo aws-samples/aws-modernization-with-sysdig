@@ -1,5 +1,10 @@
 name: Deploy preview to AWS S3
 
+env:
+ BUCKET: awsworkshop-review
+ BUCKETREGION: sa-east-1
+ AWS_PROFILE: default
+
 on:
   workflow_dispatch:
     inputs:
@@ -15,11 +20,25 @@ jobs:
 
     steps:
       # Checks out the repository under $GITHUB_WORKSPACE, so the job can access it
-      - name: Check out main
+      - name: Checkout main
         uses: actions/checkout@v2
       
-      - name: Build
-        run: hugo --minify
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.BUCKETREGION }}
+      
+      - name: Clean and build
+        run: 
+          rm -rf public/* \ 
+          hugo --minify
         
       - name: Deploy
-        run: sh ./create-and-and-deploy-s3-website.sh
+        run: 
+          # Create Bucket, set policy, upload content
+          aws s3api create-bucket --bucket $BUCKET --region ${{ env.BUCKETREGION }} --create-bucket-configuration LocationConstraint=${{ env.BUCKETREGION }} \ 
+          aws s3api put-bucket-policy --bucket ${{ env.BUCKET }} --policy file://s3_bucket_policy.json \ 
+          aws s3 cp . s3://${{ env.BUCKET }}/ --profile ${{ env.AWS_PROFILE }} --recursive \ 
+          open http://${{ env.BUCKET }}.s3-website-${{ env.BUCKETREGION }}.amazonaws.com
