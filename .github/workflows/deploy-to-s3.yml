@@ -7,11 +7,6 @@ env:
 
 on:
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Preview of the build'     
-        required: false
-        type: boolean
 
 jobs:
   build-and-deploy:
