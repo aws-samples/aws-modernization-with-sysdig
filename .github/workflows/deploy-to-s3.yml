@@ -33,7 +33,7 @@ jobs:
       - name: Clean and build
         run: 
           rm -rf public/* \ 
-          hugo --minify
+          hugo
         
       - name: Deploy
         run: 
