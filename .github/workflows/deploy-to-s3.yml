@@ -9,18 +9,17 @@ on:
         type: boolean
 
 jobs:
-  build:
+  build-and-deploy:
     
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
+      # Checks out the repository under $GITHUB_WORKSPACE, so the job can access it
       - name: Check out main
-        uses: actions/checkout@main
-          
-      - name: Deploy site
-        uses: plopcas/hugo-s3-action@v1.3.0
-        env:
-          AWS_REGION: 'sa-east-1'
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          MINIFY: 'true'
+        uses: actions/checkout@v2
+      
+      - name: Build
+        run: hugo --minify
+        
+      - name: Deploy
+        run: sh ./create-and-and-deploy-s3-website.sh
