@@ -43,7 +43,7 @@ jobs:
         run: rm -rf public/*
           
       - name: Build
-        run: hugo ---minify
+        run: hugo --minify
                   
       - name: Deploy
         run: |
