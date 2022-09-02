@@ -49,9 +49,7 @@ jobs:
         run: |
           # Create Bucket, set policy, upload content
           aws s3 mb s3://$BUCKET --region $BUCKETREGION
-          echo "aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json"
-          aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json
-          echo "aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive"
+          # aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json
           aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive
           open http://$BUCKET.s3-website-$BUCKETREGION.amazonaws.com
         env:
