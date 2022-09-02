@@ -35,7 +35,7 @@ jobs:
       
       - name: Clean and build
         run: |
-          rm -rf public/* \ 
+          rm -rf public/*
           hugo
         
       - name: Deploy
