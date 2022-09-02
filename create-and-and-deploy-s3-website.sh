@@ -73,9 +73,7 @@ aws s3api put-bucket-policy --bucket $BUCKET --policy file://policy.json
 
 # To upload content to S3 bucket $BUCKET, move to that directory, then run the following
 # aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive
-
 #open http://$BUCKET.s3-website-$BUCKETREGION.amazonaws.com
- 
 #################
 
 # Create the content
