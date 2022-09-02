@@ -33,10 +33,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.BUCKETREGION }}
       
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.102.3'
+          extended: true    
+      
       - name: Clean and build
         run: |
           rm -rf public/*
-          hugo
+          hugo ---minify
         
       - name: Deploy
         run: |
