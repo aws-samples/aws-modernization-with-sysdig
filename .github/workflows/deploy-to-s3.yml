@@ -39,7 +39,6 @@ jobs:
           hugo
         
       - name: Deploy
-        echo: 
         run: |
           # Create Bucket, set policy, upload content
           echo "aws s3api create-bucket --bucket $BUCKET --region $BUCKETREGION --create-bucket-configuration LocationConstraint=$BUCKETREGION"
