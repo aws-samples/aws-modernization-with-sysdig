@@ -39,11 +39,12 @@ jobs:
           hugo-version: '0.102.3'
           extended: true    
       
-      - name: Clean and build
-        run: |
-          rm -rf public/*
-          hugo ---minify
-        
+      - name: Clean
+        run: rm -rf public/*
+          
+      - name: Build
+        run: hugo ---minify
+                  
       - name: Deploy
         run: |
           # Create Bucket, set policy, upload content
