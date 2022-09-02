@@ -49,11 +49,20 @@ jobs:
       - name: Build
         run: hugo --minify
                   
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload S3
+        id: S3
+        with:
+          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ env.BUCKET }}
+          source_dir: '.'           
+                  
       - name: Deploy / Upload content
         run: 
           # aws s3 mb s3://$BUCKET --region $BUCKETREGION
           # aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json
-          aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive
-          open http://$BUCKET.s3-website-$BUCKETREGION.amazonaws.com
+          # aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive
+          echo Preview url http://$BUCKET.s3-website-$BUCKETREGION.amazonaws.com
         env:
            AWS_DEFAULT_REGION: ${{ env.BUCKETREGION }}
