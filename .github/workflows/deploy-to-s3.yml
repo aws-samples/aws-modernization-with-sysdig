@@ -1,3 +1,7 @@
+## Prerrequisites:
+# 1. Have an AWS account with a key-pair and set the secrets
+# 2. Create the S3 bucket manually and set the proper json policies
+
 name: Deploy preview to AWS S3
 
 env:
