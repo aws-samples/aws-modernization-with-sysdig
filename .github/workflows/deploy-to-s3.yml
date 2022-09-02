@@ -34,14 +34,18 @@ jobs:
           aws-region: ${{ env.BUCKETREGION }}
       
       - name: Clean and build
-        run: 
+        run: |
           rm -rf public/* \ 
           hugo
         
       - name: Deploy
-        run: 
+        echo: 
+        run: |
           # Create Bucket, set policy, upload content
-          aws s3api create-bucket --bucket $BUCKET --region $BUCKETREGION --create-bucket-configuration LocationConstraint=$BUCKETREGION \ 
-          aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json \ 
-          aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive \ 
+          echo aws s3api create-bucket --bucket $BUCKET --region $BUCKETREGION --create-bucket-configuration LocationConstraint=$BUCKETREGION
+          aws s3api create-bucket --bucket $BUCKET --region $BUCKETREGION --create-bucket-configuration LocationConstraint=$BUCKETREGION
+          echo aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json
+          aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json
+          echo aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive
+          aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive
           open http://$BUCKET.s3-website-$BUCKETREGION.amazonaws.com
