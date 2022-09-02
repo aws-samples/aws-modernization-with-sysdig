@@ -41,7 +41,7 @@ jobs:
       - name: Deploy
         run: 
           # Create Bucket, set policy, upload content
-          aws s3api create-bucket --bucket $BUCKET --region ${{ env.BUCKETREGION }} --create-bucket-configuration LocationConstraint=${{ env.BUCKETREGION }} \ 
-          aws s3api put-bucket-policy --bucket ${{ env.BUCKET }} --policy file://s3_bucket_policy.json \ 
-          aws s3 cp . s3://${{ env.BUCKET }}/ --profile ${{ env.AWS_PROFILE }} --recursive \ 
-          open http://${{ env.BUCKET }}.s3-website-${{ env.BUCKETREGION }}.amazonaws.com
+          aws s3api create-bucket --bucket $BUCKET --region $BUCKETREGION --create-bucket-configuration LocationConstraint=$BUCKETREGION \ 
+          aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json \ 
+          aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive \ 
+          open http://$BUCKET.s3-website-$BUCKETREGION.amazonaws.com
