@@ -1,7 +1,8 @@
+
 +++
 title = "4. Threat Detection"
 chapter = true
-weight = 50
+weight = 57
 +++
 
 # Module 4: Threat Detection based on CloudTrail

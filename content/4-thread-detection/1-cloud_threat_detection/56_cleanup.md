@@ -1,7 +1,7 @@
 ---
 title: "Cleanup"
 chapter: false
-weight: 56
+weight: 6
 ---
 
 1. Delete the log group created to test the Falco rule modification

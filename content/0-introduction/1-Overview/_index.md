@@ -35,9 +35,9 @@ For a detailed description of these Sysdig Secure for cloudSysdig Secure for clo
 
  We will also look at how to use Falco to perform 'runtime' security and compliance in the context of your AWS environment using Sysdig's CloudConnector's integration with AWS CloudTrail. -->
 
- Expected Duration:
+### Expected Duration:
 
- * 2-3 Hours
+* 2-3 Hours
 
  Target Audience:
 

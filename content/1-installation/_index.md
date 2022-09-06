@@ -16,8 +16,8 @@ weight = 20
 
 There are multiple ways to provision **Sysdig Secure for cloud** in AWS:
 
-- [Terraform-based]()
-- [CloudFormation Template (CFT)-based]()
+- [Terraform-based](/1-installation/1-terraform.html)
+- [CloudFormation Template (CFT)-based](/1-installation/2-cloudformation.html)
 
 Pick one of the available methods to continue with this workshop. 
 We recommend you to follow the Terraform-based method. But following one or the other depends on the user preferences and previous experience with each of the tools (Terraform or AWS CloudFormation).
