@@ -1,7 +1,7 @@
 ---
 title: "Checking Security Findings in Sysdig Secure"
 chapter: false
-weight: 53
+weight: 3
 ---
 
 Sysdig Secure give you a single pane of glass to view all activity across your infrastructure and applications.

@@ -1,7 +1,7 @@
 ---
 title: "Detecting Runtime Cloud Security Threats"
 chapter: false
-weight: 52
+weight: 2
 ---
 
 

@@ -9,19 +9,26 @@ There are no dependencies between modules.
 
 
 
-Module # | Feature | Description
------------- | ------------- | -------------
-This section | Introduction | Learn about the Innovator Island application.
-[Prerequisites]({{< ref "/0-prerequisites/_index.md" >}})| Setup | Prerequisites to setup the workshop.
-
-[lol]({{< ref "/0-prerequisites/3-cloud9/_index.md" >}})
-
-[1](../) | Deploy the application | Deploy the initial frontend and backend applications.
-[2](../2-realtime.html) | Ride wait times | Integrate your application with the ride systems so guests can see wait times.
-[3](../3-photos.html) | Ride photos | Build a photo processing flow so guests can take selfies around the park.
-[4](../4-translate.html) | Translation | Help international guests understand the app by adding language translation.
-
-[Cleanup](../9-cleanup.html) | Cleanup workshop resources | How to remove all of the workshop's resources from your account.
+Module | Submodule | Use-case | Description | ETA
+------------ | ------------ | ------------- | ------------- | -------------
+This section | Submodule | Workshop Intro | What's this workshop about and what can you learn here? | -------------
+[Prerequisites](../../0-prerequisites.html) | | Workshop setup | Prerequisites to setup the workshop. | -------------
+[1. Installation](../../1-installation.html) | Terraform | Deploy Sysdig Secure for CLoud | Deploy the Sysdig Stack to secure your AWS workloads | -------------
+&nbsp; | CloudFormation | Deploy Sysdig Secure for CLoud | Deploy the Sysdig Stack to secure your AWS workloads | -------------
+[2. Vulnerability Management](../../2-vulnerability-management.html) | Submodule | Image Scanning | desc | -------------
+&nbsp; | Submodule | Image Scanning | desc | -------------
+[3. Security Posture](../../3-posture.html) | Submodule | Posture | desc | -------------
+[4. Threat Detection](../../4-thread-detection.html) | Submodule | Translation | desc.translation. | -------------
+&nbsp; | Submodule | Translation | desc.translation. | -------------
+&nbsp; | Submodule | Translation | desc.translation. | -------------
+[Cleanup](../9-cleanup.html) | Submodule | Cleanup workshop resources | How to remove all of the workshop's resources from your account. | -------------
 
 If you run out of time in the workshop, don't panic! 
 These instructions are public and they are available after your workshop ends.
+
+
+<!--TODO: remove all the technical information under this section and include into the relevant sections on each module as:
+
+- intro / technical background
+- final dig deeper section
+-->

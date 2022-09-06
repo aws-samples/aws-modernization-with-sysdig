@@ -1,8 +1,8 @@
 
 +++
-title = "3. Cloud Security Posture Management"
+title = "3. Legacy CSPM"
 chapter = true
-weight = 40
+weight = 3
 +++
 
 # Module 3: Cloud Security Posture Management and Compliance
@@ -26,4 +26,4 @@ You also can run benchmarks against Linux hosts, Docker, and Kubernetes clusters
 
 <!-- ![AWS Foundation Benchmark](/images/cloudsec-site/cloud_bench/kubernetes_bench.png) -->
 
-<!-- ## Reference Architecture -->
+## Reference Architecture
