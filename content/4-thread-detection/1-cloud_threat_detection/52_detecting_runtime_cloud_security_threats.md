@@ -5,7 +5,9 @@ weight: 2
 ---
 
 
-Let's look at an example of AWS threat detection in action with CloudTrail and the Sysdig Secure for Cloud.  We want to generate an event to trigger the **"Delete Bucket Encryption"** rule from the **"Sysdig AWS Notable Events"** policy.
+Let's look at an example of AWS threat detection in action with CloudTrail and the Sysdig Secure for Cloud.  We want to generate an event to trigger the **"Delete Bucket Encryption"** rule from the **"Sysdig AWS Notable Events"** policy so **make sure you activate this policy* before continuing or Sysdig will not register the event that you - acting as the red team - are going to generate.
+
+##### Lets be naughty and generate a suspicious event
 
 The first part is to be able to generate the suspicious event from the AWS side. To do so we'll create an S3 bucket, and make it public.
 

@@ -1,7 +1,7 @@
 
 +++
 title = "4. Threat Detection"
-chapter = true
+chapter = false
 weight = 57
 +++
 
