@@ -63,4 +63,4 @@ Sysdig Secure Runtime Policies are a combination of rules about activities an en
 
 6. You can click on **AWS CloudTrail security event** to view the Runtime Policy again.
 
-In the next step we'll go ahead and trigger a Falco rule to see it in action.
+In the next step we'll play the red team and generate a suspicious event so that a Falco rule is triggered and we can see it in action.
