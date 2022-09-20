@@ -27,3 +27,4 @@ Sysdig Secure give you a single pane of glass to view all activity across your i
 TIP: You can see the events also from the **Insights > Cloud Events** Dashboard. 
 
     ![Cloud Events](/images/cloudtrail_event03.png)
+
