@@ -22,8 +22,12 @@ S3 bucket names are globally unique, so we'll use **your initials** in **lower c
 1. Now create the S3 bucket, ensuring the bucket name is in lowercase.
 
     ```
-    BUCKETNAME="${INITIALS,,}"-$(date +%s)
-    aws s3api create-bucket --bucket $BUCKETNAME --acl public-read
+    BUCKETNAME="vulnerablebucket"-$(date +%s)
+
+    aws s3api create-bucket \
+      --bucket $BUCKETNAME\
+      --region sa-east-1 \
+      --create-bucket-configuration LocationConstraint=sa-east-1
     ```
 
 1. Now delete the S3 bucket's encryption.  This should be considered a potential security threat.

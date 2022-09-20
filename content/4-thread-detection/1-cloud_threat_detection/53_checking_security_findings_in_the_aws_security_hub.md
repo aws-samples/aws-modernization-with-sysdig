@@ -12,7 +12,7 @@ Sysdig Secure give you a single pane of glass to view all activity across your i
 
 2. Click on **Delete Bucket Encryption**
 
-    ![Sysdig Events](/images/cloudtrail_event03.png)
+    ![Sysdig Events](/images/cloudtrail_event03b.png)
 
     You will see information relating to this event, including
 
@@ -23,3 +23,7 @@ Sysdig Secure give you a single pane of glass to view all activity across your i
      - Account ID
 
     As these are standard Sysdig event, you can easily create alerts and notifications as with any other events.
+
+TIP: You can see the events also from the **Insights > Cloud Events** Dashboard. 
+
+    ![Cloud Events](/images/cloudtrail_event03.png)
