@@ -24,7 +24,9 @@ Sysdig Secure give you a single pane of glass to view all activity across your i
 
     As these are standard Sysdig event, you can easily create alerts and notifications as with any other events.
 
-TIP: You can see the events also from the **Insights > Cloud Events** Dashboard. 
-
+    TIP: You can see the events also from the **Insights > Cloud Events** Dashboard. 
+    
     ![Cloud Events](/images/cloudtrail_event03.png)
+
+    
 

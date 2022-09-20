@@ -22,7 +22,7 @@ S3 bucket names are globally unique, so we'll use **your initials** in **lower c
 1. Now create the S3 bucket, ensuring the bucket name is in lowercase.
 
     ```
-    BUCKETNAME="vulnerablebucket"-$(date +%s)
+    BUCKETNAME="$INITIALS-testbucket"-$(date +%s)
 
     aws s3api create-bucket \
       --bucket $BUCKETNAME\
