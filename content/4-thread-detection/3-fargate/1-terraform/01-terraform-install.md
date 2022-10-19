@@ -7,6 +7,7 @@ weight = 1
 In this step you'll deploying a Sysdig serverless agent using Terraform. 
 Follow the instructions below to recreate a complete production environment for Fargate. 
 
+
 ## Prepare the orchestrator and demo environment
 
 1. Download the assets for this demo in your working station with:
@@ -57,6 +58,7 @@ Follow the instructions below to recreate a complete production environment for 
     AGENT_PORT=6443
     SECURE_API_TOKEN=17f4f4k3-f4k3-f4k3-f4k3-f4k317eaa84d
     ```
+
 
 ## Instrument your Fargate task definition (*load.tf*).
 
@@ -164,8 +166,8 @@ elements to secure your workloads with the Sysdig Serverless Agent.
 
     The first security alerts will pop up in your Sysdig Secure Events feed right after the deployment is completed.
 
-## Visualize runtime security threads from Fargate in Sysdig Secure
 
+## Visualize runtime security threads from Fargate in Sysdig Secure
 
 This application has a basic behavior: writing under `/bin`.
 Sysdig Secure includes by default a *Falco Rule* detecting this behavior.
@@ -179,7 +181,7 @@ Sysdig Secure includes by default a *Falco Rule* detecting this behavior.
 2. Select the triggered event and review in the lateral view all the information available.
 
     From here you can visualize:
-    = The policy and rule that was triggered by the event
+    - The policy and rule that was triggered by the event
     - The Fargate instance identifier
     - AWS Region
     - Container name
@@ -189,13 +191,20 @@ Sysdig Secure includes by default a *Falco Rule* detecting this behavior.
 
 ---
 
-You have finished this practice. Now you are ready to **Detect Runtime security threads in your AWS Fargate workloads with Sysdig Secure**.
+You have finished this practice. 
+
+During this section you replicated a production Fargate environment.
+You instrumented an existing Fargate task definition to detect runtime security threats
+with the Sysdig Serverless Agent.
+
+Now you are ready to **Detect Runtime security threads in your AWS Fargate workloads with Sysdig Secure**.
+
 
 ## Clean-up
 
-To delete the resources created, execute:
+To delete the resources created during this part of the training, execute:
 
-```
+```bash
 terraform destroy \
   -var "prefix=training" \
   -var="region=us-east-1" \
@@ -206,9 +215,9 @@ terraform destroy \
   -auto-approve
 ```
 
-Logs:
+Then, wait 2-3 minutes for all the resources to be destroyed. These are the logs:
 
-```
+```logs
 (...)
 aws_vpc.vpc: Still destroying... [id=vpc-030d18345999b0ac8, 1m50s elapsed]
 aws_vpc.vpc: Still destroying... [id=vpc-030d18345999b0ac8, 2m0s elapsed]
