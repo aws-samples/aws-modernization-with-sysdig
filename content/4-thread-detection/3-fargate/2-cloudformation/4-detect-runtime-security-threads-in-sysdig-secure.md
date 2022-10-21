@@ -5,7 +5,7 @@ chapter = true
 weight = 50
 +++
 
-This application is writting under `/bin`, what is not a good practice. Luckily, by default you have a *Falco Rule* that detects this behaviour and a *Sysdig Policy* using this rule. So, you should get a notification out of the box.
+This application is writing under `/bin`, what is not a good practice. Luckily, by default you have a *Falco Rule* that detects this behaviour and a *Sysdig Policy* using this rule. So, you should get a notification out of the box.
 
 1. Browse to [Sysdig Secure > Events](https://secure.sysdig.com/#/events/?last=600)
 

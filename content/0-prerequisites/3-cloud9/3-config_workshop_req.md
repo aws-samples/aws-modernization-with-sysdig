@@ -50,7 +50,8 @@ done
 rm -vf ${HOME}/.aws/credentials
 
 # Set the ACCOUNT_ID and the region to work with our desired region
-export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
+export AWS_REGION=$(aws configure get region)
+#export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 test -n "$AWS_REGION" && echo AWS_REGION is "$AWS_REGION" || echo AWS_REGION is not set
 
 # Configure .bash_profile
@@ -59,6 +60,7 @@ echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
 echo "export AWS_REGION=${AWS_REGION}" |
 tee -a ~/.bash_profile
 aws configure set default.region ${AWS_REGION}
+aws configure set AWSACCOUNT.region ${AWS_REGION}
 aws configure get default.region
 
 # Validate that our IAM role is valid.
