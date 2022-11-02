@@ -1,5 +1,5 @@
 ---
-title: "AWS Fargate and ECS Security"
+title: "AWS Fargate and Amazon ECS Security"
 draft: false
 weight: 05
 ---
@@ -14,4 +14,4 @@ For example, think of some **credentials** mistakenly included in an image, late
 
 Or consider a **known vulnerability**. Imagine you deploy a Fargate task to manage your API, and that it uses an old HTTP library version that ignores the setting to limit a request size. That could be catastrophic! Say you expect requests no bigger than 1MB, but a malicious actor exploits this vulnerability to send requests as big as 80GB. This will absolutely take a toll in your AWS bill, and might cause your service to throttle.
 
-Those are serious threats. In this workshop you will see how Sysdig helps circumvent these threats by automating the scanning of images both at rest in Amazon ECR, as well as in ECS/Fargate, for known vulnerabilities and issues.
+In this workshop you will see how Sysdig helps circumvent these threats by automating the scanning of images both at rest in Amazon ECR, as well as in ECS/Fargate, for known vulnerabilities and issues.
