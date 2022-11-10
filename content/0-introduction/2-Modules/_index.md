@@ -32,3 +32,7 @@ These instructions are public and they are available after your workshop ends.
 - intro / technical background
 - final dig deeper section
 -->
+
+
+curl -s "http://localhost:8080/ui/" | grep -q "Falcosidekick UI" \
+|| fail-message "Falcosidekick-ui is not working properly"

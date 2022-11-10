@@ -24,7 +24,8 @@ In this workshop, you will learn how Sysdig Secure for cloud gives you **a unifi
 
 In this workshop, we will guide you through the following specific Sysdig Secure for cloud integrations provided for Amazon Web Services
 
-  - Amazon ECR Image Registry Scanning
+  - Amazon ECR Image Registry Scanning- [Workshop Overview](#workshop-overview)
+    - [Expected Duration:](#expected-duration)
   - Amazon ECS & Fargate Image Scanning
   - Cloud Security Posture Management and Compliance
   - Threat Detection based on CloudTrail

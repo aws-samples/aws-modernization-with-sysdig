@@ -64,7 +64,18 @@ aws configure get default.region
 # Validate that our IAM role is valid.
 aws sts get-caller-identity --query Arn | grep Sysdig-Workshop-Admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
 
-
+# the next instructions will create an EKS cluster for the Actionable Compliance and Runtime Security sections
+# stimated time <10m
+# download and deploy EKS cluster from Hashicorp demo
+git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
+cd learn-terraform-provision-eks-cluster
+# change machine types for first instance type
+sed 's/t3.small/t3.large/g' eks-cluster.tf
+# deploy cluster
+terraform init && terraform apply -auto-approve
+# configure kubectl
+aws eks --region $(terraform output -raw region) update-kubeconfig \
+    --name $(terraform output -raw cluster_name)
 ```
 
 {{% notice warning %}}

@@ -1,4 +1,3 @@
-
 +++
 title = "Cleanup"
 chapter = true
@@ -16,5 +15,5 @@ Uninstalling Sysdig Secure for cloud is **not** part of this workshop (just when
 To uninstall it, just execute:
 
 ```
-terraform destroy
+terraform destroy --auto-approve
 ```

@@ -31,36 +31,40 @@ DEMO:
 
 ## About this module
 
-In this module, you will learn about Security Posture, Compliance and remediation for compliance issues. 
+In this module, you will learn about Security Posture and Actionable Compliance. 
 
-You will use Sysdig Secure to get an overview of your cloud and Kubernetes security posture and will take action to remediate a couple of detected issues. 
+You will use Sysdig Secure to get an overview of your Cloud (CSPM) and Kubernetes (KSPM) security posture and will take action to remediate a couple of detected issues. 
 
 You will also use the *IaC Security* feature to automatically fix one posture issue with the new Sysdig Secure integration with GitHub.
 
 
 ## Intro to posture
 
-What is security posture? Definition.
+Security Posture is a wide term used to describe 
+what's the security status of key assets of a company: workloads, cloud resources, permissions, etc.
 
-How is it different to other solutions?
+Most of the tools available provides a set of controls to check,
+but no actions or remediations to fix the issue.
+Sysdig Secure Actionable Compliance is able to detect posture issues and remediate them inmediatly.
 
-Sysdig Secure Posture & Compliance is able to detect posture issues and remediate them inmediatly.
-
+Adding to this, Actionable Compliance includes the next set of features:
 
 - No event-based. There's no need for a security incident to happen to fetch the data. Relevant APIs are fetched periodically to retrieve the latest data to evaluate your security posture status.
-- Sysdig AC persists the resources in its backend, and fetch it at regular intervals.
+- Sysdig AC persists the resources in its backend, and fetch it at regular intervals. This means that there's no need to reevaluate the compliance status of a given resource when there are changes in a benchmark.
 
 
 ## Requirements
 
+- Sysdig Secure SaaS account
+- A cloud account connected to Sysdig Secure
 - For KSPM, you need to deploy the agent with the option `kspm.deploy` enabled.
-- For automatic remediation (the habilit to open a PR with the fix automatically) IaC Security needs to be enabled.
+- For automatic remediation (open a PR with the fix automatically) IaC Security needs to be enabled.
 
 
 ## Terminology
 
-The Sysdig Docs provides a [glossary of relevant terminology](https://docs.sysdig.com/en/docs/sysdig-secure/posture/compliance/actionable-compliance/#appendix) to the compliance topic. Here you can find an overview of the main concepts
-Control:
+The Sysdig Docs provides a [glossary of relevant terminology](https://docs.sysdig.com/en/docs/sysdig-secure/posture/compliance/actionable-compliance/#appendix) to Actionable Compliance terms that is recommended to review before continuing.
+
 
 ## Status of a control
 

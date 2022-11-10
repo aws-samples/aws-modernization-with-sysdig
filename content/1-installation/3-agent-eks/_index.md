@@ -1,33 +1,41 @@
 
 +++
-title = "Cloud: CloudFormation-based"
+title = "EKS: Install the Sysdig Agents"
 chapter = true
-weight = 2
+weight = 3
 +++
 
-{{% notice note %}}
-Don't follow this steps if you already installed Sysdig Secure for Cloud with Terraform.
-{{% /notice %}}
+## Install the Sysdig Agents in an EKS cluster
 
-## Connect your Cloud Account
+The next steps will deploy the Sysdig Agents in the EKS deployed during the prerequisites step.
 
-The next steps will deploy Sysdig Secure for cloud using AWS CloudFormation. To connect your cloud account to Sysdig and deploy the CF Template:
+1. Log into Sysdig Secure, and browse to **Get Started**, then **Install the Agent > Helm**.
 
-1. Log into Sysdig Secure, and browse to **Getting Started**, then **Connect your Cloud Account**, then click **Launch Stack**
+    ![Install with Helm](/images/Get_Started.png)
 
-    ![Connect your Cloud Account](/images/Get_Started.png)
+    You can fill from the form the cluster name, or completely remove this option from your helm install command.
+    Copy the content to your preferred IDE and add a parameter to enable KSPM:
 
-    {{% notice note %}}
-    Make sure you switch to your desired AWS region for deployment of the associated resources.  For the purposes of the workshop, make sure you're in US-East (i.e. 'N. Virginia').
-    {{% /notice %}}
+    ```
+    --set kspm.deploy=true
+    ```
 
-    The AWS Console should open the CF Template
+    At the end, you should have something similar to this:
 
-    <!-- [Sysdig Secure for cloud CloudFormation template](https://console.aws.amazon.com/cloudformation/home?#/stacks/quickCreate?stackName=Sysdig-CloudVision&templateURL=https://cf-templates-cloudvision-ci.s3-eu-west-1.amazonaws.com/master/entry-point.yaml) -->
-
-    ![Cloud Security CloudFormation Stack](/images/CloudSecurityCloudFormationStack-with-notes2.png)
-
-    Mandatory parameters are:
+    ```
+    kubectl create ns sysdig-agent
+    helm repo add sysdig https://charts.sysdig.com
+    helm repo update
+    helm install sysdig-agent --namespace sysdig-agent \
+        --set global.sysdig.accessKey=d5ef4566-d0c2-4174-92eb-0727fc0991f3 \
+        --set agent.sysdig.settings.collector=collector-static.sysdigcloud.com \
+        --set agent.sysdig.settings.collector_port=6443 \
+        --set global.clusterConfig.name=<CLUSTER_NAME> \
+        --set nodeAnalyzer.nodeAnalyzer.apiEndpoint=secure.sysdig.com \
+        --set nodeAnalyzer.secure.vulnerabilityManagement.newEngineOnly=true \
+        --set kspm.deploy=true \
+        sysdig/sysdig-deploy
+    ```
 
     - **Stack Name**: You can leave this as its default 'Sysdig-CloudVision'
 
