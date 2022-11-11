@@ -5,7 +5,6 @@ chapter = true
 weight = 40
 +++
 
-
 Now you are going to deploy a new instrumented task in Fargate. To do so, you are going to create a new *CloudFormation Template (CFT)*.
 
 Review the *CFT* provided at the bottom of this page before you deploy it. It uses the *sysdiglabs/writer-to-bin* image. This app just *writes under bin*. Once this workload is instrumented and deployed, this simple action will be detected by the agent *Runtime Detection engine* and will trigger an event in *Sysdig Secure*.

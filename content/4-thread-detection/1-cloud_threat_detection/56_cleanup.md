@@ -16,7 +16,7 @@ weight: 6
     aws s3api delete-bucket --bucket $BUCKETNAME
     ```
 
-1. Remove CloudConnector Integration
+1. Remove Sysdig Secure for Cloud Integration (CloudVision) in case you want to get rid of it
 
     ```
     aws cloudformation delete-stack --stack-name CloudConnector

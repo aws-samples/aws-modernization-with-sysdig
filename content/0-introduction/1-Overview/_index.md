@@ -30,7 +30,7 @@ In this workshop, we will guide you through the following specific Sysdig Secure
   - Cloud Security Posture Management and Compliance
   - Threat Detection based on CloudTrail
 
-For a detailed description of these Sysdig Secure for cloudSysdig Secure for cloud integrations, please refer to the [Sysdig Secure for cloud documentation](https://cloudsec.sysdig.com/aws/).
+For a detailed description of these Sysdig Secure for cloud integrations, please refer to the [Sysdig Secure for cloud documentation](https://cloudsec.sysdig.com/aws/).
 
 <!-- In particular, we'll guide you on how to implement **ECS Fargate image scanning** with Sysdig Secure. The resulting solution will automatically scan any container image instance that is executed, and will warn you with reports about any vulnerabilities or misconfigurations in your workload. It will do this **without leaving your AWS workflow**, and without data leaving your AWS infrastructure.
 
@@ -47,4 +47,4 @@ For a detailed description of these Sysdig Secure for cloudSysdig Secure for clo
 * SysAdmins
 * Developers
 
- Some experience/knowledge with AWS is helpful but the workshop will provide instructions to run through the workshop with no issues and if you are attending one of our live workshop sessions there will be folks to help assist with issues that come up
+Some experience with AWS is helpful but the workshop will provide instructions to help you run through the workshop. If you are attending one of our live workshop sessions there will be helpers to assist you with any issues you encounter.

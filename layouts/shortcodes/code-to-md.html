@@ -1,0 +1,7 @@
+{{ $file := .Get 0 }}
+{{ $lang := .Get 1 }}
+{{ (print "```" $lang " {linenos=inline}" ) }}
+{{ $file | readFile | safeHTML }} 
+{{ (print "```") }}
+{{ (print "\n" ) }}
+

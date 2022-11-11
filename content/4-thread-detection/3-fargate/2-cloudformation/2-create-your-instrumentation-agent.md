@@ -5,6 +5,11 @@ chapter = true
 weight = 30
 +++
 
+<!-- 
+This step can be skipped with the new installation method they created, 
+update in the next iteration, it eases a lot the process. Review the docs.
+ -->
+
 Once your Orchestrator Agent is deployed and you have the *Orchestrator Host* and *Port* from the output tab in the previous step, you are ready to instrument your tasks running in Fargate.
 
 1. Go to Cloud9 and download the required tooling. You just need to execute:

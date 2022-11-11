@@ -5,9 +5,17 @@ weight: 2
 ---
 
 
-Let's look at an example of AWS threat detection in action with CloudTrail and the Sysdig CloudConnector.  To do so we'll create an S3 bucket, and make it public.
+Let's look at an example of AWS threat detection in action with CloudTrail and Sysdig Secure for Cloud.
+We want to generate an event to trigger the **"Delete Bucket Encryption"** rule from the **"Sysdig AWS Notable Events"** policy.
+So, **make sure you activate this policy* before continuing or 
+Sysdig will not register the event that you - acting as the red team - are going to generate.
 
-S3 bucket names are globally unique, so we'll use **your initials** in **lower case** combined with a timestamp to formoudtrailssdsss the bucket name.
+
+##### Lets be naughty and generate a suspicious event
+
+The first part is to be able to generate the suspicious event from the AWS side. To do so we'll create an S3 bucket, and make it public.
+
+S3 bucket names are globally unique, so we'll use **your initials** in **lower case** combined with a timestamp to form the bucket name.
 
 1. Log into Cloud9 Workspace, and set your initials as an environment variable
 
@@ -15,20 +23,24 @@ S3 bucket names are globally unique, so we'll use **your initials** in **lower c
     INITIALS=<your initials>
     ```
 
-1. Now create the S3 bucket, ensuring the bucket name is in lowercase.
+2. Now create the S3 bucket, ensuring the bucket name is in lowercase.
 
     ```
-    BUCKETNAME="${INITIALS,,}"-$(date +%s)
-    aws s3api create-bucket --bucket $BUCKETNAME --acl public-read
+    BUCKETNAME="$INITIALS-testbucket"-$(date +%s)
+
+    aws s3api create-bucket \
+      --bucket $BUCKETNAME\
+      --region sa-east-1 \
+      --create-bucket-configuration LocationConstraint=sa-east-1
     ```
 
-1. Now delete the S3 bucket's encryption.  This should be considered a potential security threat.
+3. Now delete the S3 bucket's encryption.  This should be considered a potential security threat.
 
     ```
     aws s3api delete-bucket-encryption --bucket $BUCKETNAME
     ```
 
-1. You can view details of this event by browsing to [CloudTrail](https://console.aws.amazon.com/cloudtrail/home) then 'Event History'
+4. You can view details of this event by browsing to [CloudTrail](https://console.aws.amazon.com/cloudtrail/home) then 'Event History'
 
     ![CloudTrail](/images/cloudtrail03.png)
 
@@ -44,5 +56,4 @@ S3 bucket names are globally unique, so we'll use **your initials** in **lower c
       - **eventName**: Specifies the type of event.
       - **requestParameters**: Contains all of the parameters related to the request.
 
-
-The Falco rule should have triggered creating an event in Sysdig Secure, so we'll look at that next.
+The Falco rule should have already been triggered, hence creating an event in Sysdig Secure. We'll look at that next.
