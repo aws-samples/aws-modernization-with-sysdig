@@ -1,9 +1,8 @@
-
-+++
-title = "3. Legacy CSPM"
-chapter = true
-weight = 3
-+++
+---
+title: "3. Legacy CSPM"
+chapter: true
+weight: 3
+---
 
 # Module 3: Cloud Security Posture Management and Compliance
 

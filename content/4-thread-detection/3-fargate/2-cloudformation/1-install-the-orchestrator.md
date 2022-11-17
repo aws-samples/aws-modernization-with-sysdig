@@ -1,9 +1,8 @@
-
-+++
-title = "Install the Orchestrator"
-chapter = false
-weight = 20
-+++
+---
+title: "Install the Orchestrator"
+chapter: false
+weight: 20
+---
 
 In this step you'll be installing the **Orchestrator Agent** with CloudFormation.
 

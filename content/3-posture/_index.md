@@ -1,8 +1,8 @@
-+++
-title = "3. Posture"
-chapter = true
-weight = 40
-+++
+---
+title: "3. Posture"
+chapter: true
+weight: 40
+---
 
 <!-- 
 SOURCES:

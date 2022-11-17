@@ -1,9 +1,8 @@
-
-+++
-title = "Detect Threads in Secure"
-chapter = true
-weight = 50
-+++
+---
+title: "Detect Threads in Secure"
+chapter: true
+weight: 50
+---
 
 This application is writing under `/bin`, what is not a good practice. Luckily, by default you have a *Falco Rule* that detects this behaviour and a *Sysdig Policy* using this rule. So, you should get a notification out of the box.
 

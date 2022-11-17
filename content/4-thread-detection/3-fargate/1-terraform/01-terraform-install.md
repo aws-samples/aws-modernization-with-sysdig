@@ -1,11 +1,17 @@
-+++
-title = "Terraform Installer"
-chapter = false
-weight = 1
-+++
+---
+title: "Terraform Installer"
+chapter: true
+weight: 1
+---
 
-In this step you'll deploying a Sysdig serverless agent using Terraform. 
-Follow the instructions below to recreate a complete production environment for Fargate. 
+In this step you'll deploying a Sysdig serverless agent for Fargate using Terraform.
+
+Follow the instructions below to recreate a complete production environment for Fargate.
+
+## Requisites
+
+- Sysdig Secure account
+- Terraform
 
 
 ## Prepare the orchestrator and demo environment

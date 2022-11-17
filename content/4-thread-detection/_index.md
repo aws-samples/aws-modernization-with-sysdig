@@ -1,9 +1,8 @@
-
-+++
-title = "4. Threat Detection"
-chapter = false
-weight = 57
-+++
+---
+title: "4. Threat Detection"
+chapter: false
+weight: 57
+---
 
 # Module 4: Cloud Threat Detection based on Cloudtrail
 

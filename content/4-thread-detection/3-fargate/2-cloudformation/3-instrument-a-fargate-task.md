@@ -1,9 +1,8 @@
-
-+++
-title = "Instrumenting a Fargate task"
-chapter = true
-weight = 40
-+++
+---
+title: "Instrumenting a Fargate task"
+chapter: true
+weight: 40
+---
 
 Now you are going to deploy a new instrumented task in Fargate. To do so, you are going to create a new *CloudFormation Template (CFT)*.
 

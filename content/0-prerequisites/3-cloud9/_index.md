@@ -4,57 +4,52 @@ chapter: true
 weight: 3
 ---
 
-[AWS Cloud9](https://aws.amazon.com/cloud9/) is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your laptop for this workshop.
+[AWS Cloud9](https://aws.amazon.com/cloud9/) is a cloud-based integrated development environment (IDE)
+that lets you write, run, and debug your code from anywhere with just a browser.
+It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages.
 
-We will use Amazon Cloud9 to access our AWS account via the AWS CLI in this Workshop. There are a few steps to complete to set this up
+You will use _Amazon Cloud9_ to access our AWS account via the AWS CLI in this Workshop. There are a few steps to complete to set this up
 
-1. Create a new Cloud9 IDE environment
-2. Create an IAM role for your workspace
-3. Attach the IAM role to your workspace
-4. Configure workshop specific requirements
+1. Create and configure a new Cloud9 IDE environment
+2. Create and attach an IAM role for your workspace
+3. Configure workshop specific requirements
 
 
 ## Create a new Cloud9 IDE environment
 
-1 . Within the AWS console, use the region drop list to select **us-east-1 (N. Virginia)**.  This will ensure the workshop script provisions the resources in this same region..
+1. Navigate to the [cloud9 console](https://console.aws.amazon.com/cloud9/home)
+   or just search for it under the **AWS console services** menu.
 
-2 . Navigate to the [cloud9 console](https://console.aws.amazon.com/cloud9/home) or just search for it under the **AWS console services** menu.
+2. Click the **Create environment** button
+   and name it  `sysdig-workshop`. Then click **Next step**.
 
-3 . Click the **Create environment** button
+3. Select the default instance type: **t3.medium**.
 
-4 . For the name use `sysdig-workshop`, then click **Next step**
+4. Expand **Network settings (Advanced)** and under **Subnet**,
+   select a subnet in **us-east-1a** availability zone.
 
-5 . Select the default instance type **t3.medium**
+5. Leave all the other settings as default
+   and click **Next step** followed by **Create environment**.
 
-6 . Expand **Network settings (Advanced)** and under **Subnet**, select a subnet in **us-east-1a** availability zone.
+    ![Deploy Cloud9](/images/10_prerequisites/cloud9.gif)
 
-7 . Leave all the other settings as default and click **Next step** followed by **Create environment**
-
-<!-- ![Deploy Cloud9](/images/10_prerequisites/cloud9.gif) -->
-<!-- <img src=/images/10_prerequisites/cloud9.gif width="75%" height="57%"> -->
-
-{{% notice info %}}
+    {{% notice info %}}
 This will take about 1-2 minutes to provision
 {{% /notice %}}
 
-### Configure Cloud9 IDE environment
+
+## Configure Cloud9 IDE environment
 
 When the environment comes up, customize the environment by:
 
-1 . Close the **welcome page** tab
+1. Closing the **welcome page** tab.
+2. Closing the **lower work area** tab.
+3. Opening a new **terminal** tab in the main work area.
+4. Hiding the left hand environment explorer
+   by clicking on the left side **environment** tab.
 
-2 . Close the **lower work area** tab
+    ![Deploy Cloud9](/images/10_prerequisites/cloud9config.gif)
 
-3 . Open a new **terminal** tab in the main work area.
-
-4 . Hide the left hand environment explorer by clicking on the left side **environment** tab.
-
-<img src=/images/10_prerequisites/cloud9config.gif width="75%" height="57%">
-
-{{% notice tip %}}
-If you don't like this dark theme, you can change it from the **View / Themes** Cloud9 workspace menu.
-{{% /notice %}}
-
-{{% notice tip %}}
+    {{% notice tip %}}
 Cloud9 requires third-party-cookies. You can whitelist the [specific domains]( https://docs.aws.amazon.com/cloud9/latest/user-guide/troubleshooting.html#troubleshooting-env-loading).  You are having issues with this, Ad blockers, javascript disablers, and tracking blockers should be disabled for the cloud9 domain, or connecting to the workspace might be impacted.
 {{% /notice %}}

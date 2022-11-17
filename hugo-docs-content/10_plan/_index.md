@@ -1,8 +1,8 @@
-+++
-title = "Plan"
-chapter = true
-weight = 10
-+++
+---
+title: "Plan"
+chapter: true
+weight: 10
+---
 
 # Plan
 

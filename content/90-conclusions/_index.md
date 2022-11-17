@@ -1,8 +1,8 @@
-+++
-title = "Conclusions"
-chapter = true
-weight = 60
-+++
+---
+title: "Conclusions"
+chapter: true
+weight: 60
+---
 
 # Conclusions
 

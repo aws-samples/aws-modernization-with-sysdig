@@ -1,9 +1,8 @@
-
-+++
-title = "Cleanup"
-chapter = true
-weight = 2
-+++
+---
+title: "Cleanup"
+chapter: true
+weight: 2
+---
 
 ## Cleanup
 
