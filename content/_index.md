@@ -82,7 +82,7 @@ the following Sysdig Secure features available today for AWS:
    - _Fargate_ Serverless Runtime Threat Detection
 
 For a detailed description of these Sysdig Secure for cloud integrations with AWS,
-please refer to the [Sysdig Secure for cloud documentation](https://cloudsec.sysdig.com/).
+please refer to the [Sysdig Secure for cloud documentation](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/).
 
 ![Sysdig Secure for cloud overview](/images/cloudvision.png)
 

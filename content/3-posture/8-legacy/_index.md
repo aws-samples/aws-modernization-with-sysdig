@@ -1,7 +1,7 @@
 ---
-title: "3. Legacy CSPM"
+title: "1. CSPM (legacy)"
 chapter: true
-weight: 3
+weight: 1
 ---
 
 # Module 3: Cloud Security Posture Management and Compliance
@@ -22,7 +22,3 @@ Integrated into the platform are workload compliance reports that show you what 
 You also can run benchmarks against Linux hosts, Docker, and Kubernetes clusters for reports on best practices requirements on those resource settings to maximize security.
 
 ![Benchmark](/images/cloud_benchmark_03.png)
-
-<!-- ![AWS Foundation Benchmark](/images/cloudsec-site/cloud_bench/kubernetes_bench.png) -->
-
-## Reference Architecture

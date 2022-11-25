@@ -4,6 +4,10 @@ chapter: true
 weight: 20
 ---
 
+{{% notice info %}}
+None of these installers enable Fargate Runtime Threat Detection. For this feature, it is required to follow a different installation method (covered in [Module 4.3](/4-thread-detection/3-fargate.html)).
+{{% /notice %}}
+
 In this first section you will learn:
 - How to deploy Sysdig Secure for Cloud
   - [with Terraform](/1-install/1-terraform.html)
@@ -20,9 +24,7 @@ and previous experience with each of the tools (Terraform or AWS CloudFormation)
   check the [docs to learn more about them](https://docs.sysdig.com/en/docs/installation/sysdig-agent/agent-installation/).
 
 
-{{% notice info %}}
-None of these installers enable Fargate Runtime Threat Detection. For this feature, it is required to follow a different installation method (covered in [Module 4.3](/4-thread-detection/3-fargate.html)).
-{{% /notice %}}
+
 
 
 ## Features enabled by each installer

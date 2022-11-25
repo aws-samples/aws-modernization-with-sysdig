@@ -8,14 +8,13 @@ weight: 1
 ## A new paradigm for security platforms
 
 Before describing the Sysdig platform, it is good to get an overview of the new
-categories for modern security platforms that are emerging ³ for cloud.
+categories for modern IT security tools that are emerging ³ for cloud.
 
 ![Cloud Security Platforms](/images/00_introduction/cloudplatforms.png)
 
-- **Cloud Workloads protection platform (CWPP)**: these platforms are focused on securing 
-  _the whole DevOps workflow_. They secure workloads, typically providing cloud-based 
-  security solutions that protect instances on different cloud vendors like AWS.
-  These security suites or tools are focused on one, some or all of the next use cases:
+- **Cloud Workloads protection platform (CWPP)**: This segment might look like a dropbox
+  category with a set of heterogeneus tools. But they all share a common goal:
+  workload protection in its different stages. It includes:
     - Runtime Detection
     - System hardening
     - Vulnerability Management
@@ -23,8 +22,10 @@ categories for modern security platforms that are emerging ³ for cloud.
     - Compliance
     - Incident Response
 
-- **Cloud Security Posture Management (CSPM)**: this kind of tools are focused on protecting the cloud control plane,
-  basically tracking cloud resources and verifying the static configuration of the cloud.
+- **Cloud Security Posture Management (CSPM)**: security in cloud environments is not all about the workloads.
+  The cloud where the workloads are running also need to be protected by the final user.
+  This tools are designed to identify misconfiguration issues and compliance risks in the cloud.
+  Tracking cloud resources and verifying the static configuration of the cloud is the main goal of these tools.
   Some CSPM solutions will add extended capabilities, like providing remediation.
   Also, one of the main use cases of CSPM is to check that cloud settings are following best practices.
 
@@ -34,13 +35,12 @@ categories for modern security platforms that are emerging ³ for cloud.
   And hence, suggest policy modifications to enforce least privilege access.
 
 - **Cloud-native application protection platform (CNAPP)**: it provides more than CWPP-CSPM convergence.
-  Firstly, CWPP vendors are looking to posture to provide workload context. 
-  Secondly, CSPMs are challenged to provide more and more visibility while “drilling down” into the workload.
   CNAPP integrates CSPM and CWPP to offer both, and potentially augments them
-  with additional cloud security capabilities.
+  with additional cloud security capabilities, like Infrastructure as Code Scanning,
+  extended monitoring capabilities and more.
 
 In this scenario, it is easy to find tools targeted to an specific security area,
-with no real support to the others. Some customers decide to approach cloud
+with no real support work with other tools. Some customers decide to approach cloud
 security with different tools to cover all the different use cases.
 But this lack of integration might have negative consequences.
 

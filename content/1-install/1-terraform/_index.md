@@ -131,11 +131,11 @@ There are multiples alternatives to this, like [S3](https://www.terraform.io/lan
 
     ```
     terraform {
-    backend "s3" {
-        bucket = "ssfc-terraform-state"
-        key    = "path/to/my/key"
-        region = "us-east-1"
-    }
+        backend "s3" {
+            bucket = "ssfc-terraform-state"
+            key    = "path/to/my/key"
+            region = "us-east-1"
+        }
     }
     ```
 

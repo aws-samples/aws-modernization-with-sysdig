@@ -1,9 +1,20 @@
 ---
-title: "3.1. Actionable Compliance"
+title: "3. Actionable Compliance"
 chapter: true
-weight: 1
+weight: 3
 ---
 
+{{% notice info %}}
+*This section will be updated soon with the new Actionable Compliance and remediation capabilities for IaC. It will replace the CSPM section.*
+{{% /notice %}}
+
+<!-- 
+## Requirements
+
+- Sysdig Secure SaaS account
+- A cloud account connected to Sysdig Secure
+- For KSPM, you need to deploy the agent with the option `kspm.deploy` enabled.
+- For automatic remediation (open a PR with the fix automatically) IaC Security needs to be enabled.
 
 
 ## What is Compliance?
@@ -27,9 +38,13 @@ and suggest and apply remediation to those not meeting the standard.
 ## Actionable Compliance
 
 
-## Terminology
-
-The Sysdig Docs provides a [glossary of relevant terminology](https://docs.sysdig.com/en/docs/sysdig-secure/posture/compliance/actionable-compliance/#appendix) to Actionable Compliance terms that is recommended to review before continuing.
-
-
 ## Remediations: types
+
+### Status of a control
+
+- Pass
+- Fail
+- Accept risk: a failed control can be removed from the failed score. 
+
+remediations: types -->
+

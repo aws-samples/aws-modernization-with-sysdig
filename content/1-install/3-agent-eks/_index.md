@@ -101,13 +101,15 @@ The Kubernetes Admission Controller (AC) will enable the
 
 ### Agents
 
-Check that the installation was successful in the
-[**Integrations > Data Sources > Sysdig Agents** section](https://secure.sysdig.com/#/data-sources/agents).
+Check that the _Agent_ installation was successful in the 
+**Integrations > Data Sources >** [**Sysdig Agents** section](https://secure.sysdig.com/#/data-sources/agents).
 
 ### Admission Controller:
 
-1. Check that the installation was successful generating an event that will be registered in the k8s API:
+Check that the _Admission Controller_ installation was successful by
+generating an event that will be registered in the k8s API:
 
+1. Trigger the event with:
     ```bash
     kubectl exec -n sysdig-agent \
         $(kubectl -n sysdig-agent get pod -l app=sysdig-agent \
@@ -117,7 +119,7 @@ Check that the installation was successful in the
 
 2. Then, visit the
    [**Events** section](https://secure.sysdig.com/#/events?groupBy=policy&last=86400&severities=high%2Cmedium%2Clow%2Cnone)
-    and some events should appear from the cluster after you select the *Info* level.
+    and it will show up after you select the *Info* level.
 
     ![Event triggered](/images/1-installation/event.png)
 

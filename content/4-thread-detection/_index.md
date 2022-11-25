@@ -1,34 +1,52 @@
 ---
 title: "4. Threat Detection"
-chapter: false
+chapter: true
 weight: 57
 ---
+
+{{% notice info %}}
+*Estimated module duration: 30-40 minutes.*
+{{% /notice %}}
+
 
 # Module 4: Cloud Threat Detection based on Cloudtrail
 
 ## Module Overview
 
-Estimated time to finish module: 30 minutes - 1 hour
+In this module you will learn about Threat Detection, this includes:
+
+1. Cloud Runtime Security with CloudTrail
+2. Runtime Security with Falco in EKS
+3. Runtime Security in serverless Fargate
+
+
+## Runtime Threat Detection
+
+After the image scanning is done, you might think that all the work is completed and your application is safe to be deployed and used.
+
+Reality is that not all vulnerabilities are known and indexed in a vulnerability database
+(remembed this is part of [how image scanning works](/2-vulnerability-management/9-digdeeper.html)). But there are ways to reduce this risk: enter Runtime Security.
+
+With Runtime Security you can stay safe against 
+zero-day vulnerabilities, but also agains threats harder to detect like file access (data leaks) or
+privilege escalation attempts.
+
+Runtime Security can be applied to cloud, Linux, containers, Kubernetes and serverless workloads like **Fargate**.
+
+In this module you will learn about Falco. 
+Falco is an open source threat detection language that is widely used to detect and alert on runtime abnormalities, and can also be used to detect changes within the AWS environment.
+
+
+## Cloud Threat Detection
+
+Using Falco to detect and alert on AWS configuration changes is similar to runtime detections of your application stack.  This makes Sysdig Secure your central location to detect and alert on all aspects of your security posture.
+
+AWS provides a rich environment upon which to base your application, but it's not without its risks.  There are many places where bad actors can create harm, for example exposing data by making S3 buckets public, deleting bucket encryption, disabling MFA for an account, adding/removing IAM policies.
 
 Every action taken over your infrastructure resources results in an entry in AWS CloudTrail. This includes all AWS account activity, actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.  This event history is extremely useful for detecting unwanted or unexpected activity involving your AWS resources, however it's quite noisy, and being JSON, it's not really human readable so can be hard to understand.
 
-Also, as your infrastructure grows and the number of AWS services are released, the amount of events and operational trails can become so huge that analyzing them is no longer practical.  
-
-In this module we will explain how to audit AWS CloudTrail events with Sysdig.  Once Sysdig **Secure for cloud** is deployed in your infrastructure, every CloudTrail entry is analysed in real time, and evaluated against a flexible set of security rules based on Falco.
-
-This allows you to detect misconfigurations and unexpected or unwanted activity quickly and raise notifications or automate reactions when something, or someone, creates, deletes or modifies your cloud resources, hence protecting you from compromised cloud accounts or involuntary human error.
-
-A rich set of Falco rules are included corresponding to security standards and benchmarks like NIST 800-53, PCI DSS, SOC 2, MITRE ATT&CK®, CIS AWS, AWS Foundational Security Best Practices.
+An important thing to note is Sysdig remains your single reference point for all infrastructure & runtime security configuration as well as associated events and alerts.
 
 
-## Reference Architecture of Sysdig secure for Cloud
 
-Similar to ECS Fargate serverless, incoming CloudTrail events are fetched and stored in an S3 bucket. A subscription in the SNS topic will then forward the events to the **Sysdig CloudVision** endpoint. The CloudVision will then analyze each event against a configured set of **Falco rules**.
 
-![Reference Architecture](/images/50_module_3/image6.png)
-
-Sysdig CloudVision provides several **notification options**, including sending security findings to Sysdig Backend, as well as AWS Security Hub and AWS CloudWatch, so you can review the security events without leaving your AWS console.
-
-![Reference Architecture](/images/50_module_3/image4.png)
-
-An important to note is Sysdig remains your single reference point for all infrastructure & runtime security configuration as well as associated events and alerts.
