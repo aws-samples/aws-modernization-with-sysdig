@@ -5,7 +5,7 @@ weight: 1
 ---
 
 {{% notice info %}}
-*Estimated sub-module duration: 2-5 minutes.*
+*Estimated sub-module duration: 3-5 minutes.*
 {{% /notice %}}
 
 
@@ -19,7 +19,6 @@ To learn more about this, review the docs [here](https://docs.sysdig.com/en/docs
 
 ## Requirements
 
-<!-- Can we automate a script that checks for the user if all those permissions are meet? Here we don't need them because the environment is properly configured, but it might be useful for the general user experience. -->
 To install the Sysdig Secure for AWS integration, it is required:
 - Terraform installed in your host (v.3.1+).
 - Sysdig Secure SaaS account with administrator permissions.
@@ -28,36 +27,44 @@ To install the Sysdig Secure for AWS integration, it is required:
 ## Install
 
 1. Log into Sysdig Secure, and browse to **Integrations > Data Sources > Cloud Accounts**, 
-then [**Connect Cloud Account > AWS > Terraform Single Account**](https://secure.sysdig.com/#/data-sources/cloud-accounts?setupModalEnv=AWS&installContentDisplayType=tabular&accountType=single).
+then click on [**Connect Cloud Account > AWS > Terraform Single Account**](https://secure.sysdig.com/#/data-sources/cloud-accounts?setupModalEnv=AWS&installContentDisplayType=tabular&accountType=single).
 
     ![Install with Terraform](/images/1-installation/aws.png)
 
-2. Add the aws region (for example `us-east-1`) and
-   create a `sysdig-aws-install.tf` file with the output from the previous step.
+2. In the menu, insert a valid aws region (for this workshop, use `us-east-1`)
+   and copy the resulting content.
 
-3. Deploying the Vulnerability Management (Image Scanning) *submodules*.
+3. Go to the terminal window and
+   create a folder with the `main.tf` file inside.
+   Copy the terraform manifest from the previous step in this file.
 
-    This submodules are disabled in the default installed. To include them, 
-    include the next input variables in the Terraform definition:
+   ```
+    cd ~
+    mkdir tf-sysdig-secure-cloud && cd $_
+    touch main.tf
+   ```
+
+4. Some components (*Vulnerability Management*) are disabled by default.
+   To include them, add the next input variables inside of the `"secure-for-cloud_example_single-account"` module definition.
+   Be careful with indenting:
 
     ```terraform
-    deploy_image_scanning_ecs = true
-    deploy_image_scanning_ecr = true
+        deploy_image_scanning_ecs = true
+        deploy_image_scanning_ecr = true
     ```
 
     The final result should look like this:
 
     {{% code-to-md "/static/code/cloudvision/aws-single-tf.tf" "terraform" %}}
 
-4. Launch Terraform with:
+5. Now, just initialize and execute Terraform with:
 
     ```bash
-    terraform init \
-    && terraform apply --auto-approve
+    terraform init && \
+    terraform apply --auto-approve
     ```
 
-
-5. Wait until the installation finishes.
+6. Wait until the installation finishes.
     You'll see the Terraform logs displaying the progress of the install
     (it should not take more than 2 minutes to deploy):
 
@@ -106,15 +113,7 @@ then [**Connect Cloud Account > AWS > Terraform Single Account**](https://secure
     Apply complete! Resources: 53 added, 0 changed, 0 destroyed.
     ```
 
-
-## Review accounts connected
-
-There are [different methods](https://docs.sysdig.com/en/docs/installation/sysdig-secure-for-cloud/deploy-sysdig-secure-for-cloud-on-aws/#confirm-the-services-are-working) to check that the installation was successful. 
-
-Visit the Data Sources [**Data Sources > Cloud Accounts**](https://secure.sysdig.com/#/data-sources/cloud-accounts)
-to review that an account with your Account ID is connected.
-
-![Cloud Account Connected](/images/1-installation/cloudaccountsconnected.png)
+To learn how to check that the installation was successful, visit the [next section](/1-install/3-cloudreviewaccounts.html).
 
 
 ## Digging deeper
@@ -122,14 +121,30 @@ to review that an account with your Account ID is connected.
 Although it is not part of this workshop, it is recommended to store
 the state of the Terraform deployment on a backed-up backend.
 
-By default (method used on the steps above), Terraform stores its state on `local`.
+By default, Terraform stores its state on `local`.
+Run the next command to view the state file:
 
-There are multiples alternatives to this, like [S3](https://www.terraform.io/language/settings/backends/s3).
+```
+cat *.tfstate
+```
 
-1. Create an S3 backed and name it `ssfc-terraform-state`.
-2. Add the next module information to the `sysdig-aws-install.tf` you created above:
+This file describes the infrastructure that
+were created after the `terraform apply` command is executed.
+The next time you run Terraform, it will compare
+the state file (real state) with the definition of the infrastructure (expected state)
+and will make all the necessary changes for this two files to match.
 
-    ```
+This file is important, as it describes what's the real status of your infrastructure.
+If this file is lost, Terraform will think the resources were never created.
+This will create some trouble.
+Toi avoid this, Terraform recommends keeping the state remotely.
+
+There are multiples alternatives, like storing the state in [S3](https://www.terraform.io/language/settings/backends/s3).
+
+1. Create an S3 backed and name it `ssfc-terraform-state` and a key to access its contents.
+2. Add the next module information to the `main.tf` you created above:
+
+    ```terraform
     terraform {
         backend "s3" {
             bucket = "ssfc-terraform-state"
@@ -141,6 +156,6 @@ There are multiples alternatives to this, like [S3](https://www.terraform.io/lan
 
 3. Reapply the terraform manifest.
 
-    ```
+    ```bash
     terraform apply --auto-approve
     ```

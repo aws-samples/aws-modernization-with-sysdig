@@ -20,13 +20,13 @@ this is a intro to the workshop:
 
 Welcomed to this workshop!
 
-If you are here, you probably are - or you are about to be - aware about that
-the challenges securing _cloud-native_ applications.
+If you are here, you are aware about some of
+the challenges of securing _cloud-native_ applications.
 
 
 ## Nature of _Cloud-Native_ applications
 
-The security of _Cloud-Native_ applications is not an easy duty, even for professionals.
+Securing _Cloud-Native_ applications is not an easy duty, even for professionals.
 Part of this complexity can be explained by a set of unique attributes ¹. These applications typically are:
 
 - A combination of microservices applications (often based on Linux containers).

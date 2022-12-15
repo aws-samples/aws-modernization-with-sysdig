@@ -22,7 +22,7 @@ There are no requirements for this method.
 ## Install
 
 1. Log into Sysdig Secure, and browse to **Integrations > Data Sources > Cloud Accounts**, 
-then [**Connect Cloud Account > AWS > Cloud Formation Template**](https://secure.sysdig.com/#/data-sources/cloud-accounts?setupModalEnv=AWS&installContentDisplayType=tabular&accountType=cft).
+then click on [**Connect Cloud Account > AWS > Cloud Formation Template**](https://secure.sysdig.com/#/data-sources/cloud-accounts?setupModalEnv=AWS&installContentDisplayType=tabular&accountType=cft).
 
     ![Install with Terraform](/images/1-installation/aws-cft.png)
 
@@ -76,11 +76,4 @@ For the purposes of the workshop, make sure you're in `us-east-1` (i.e. 'N. Virg
     ![Create complete](/images/cloudsec-site/cloudformation/installation/installation_complete.png)
 
 
-## Review accounts connected
-
-There are [different methods](https://docs.sysdig.com/en/docs/installation/sysdig-secure-for-cloud/deploy-sysdig-secure-for-cloud-on-aws/#confirm-the-services-are-working) to check that the installation was successful. 
-
-Visit the Data Sources [**Data Sources > Cloud Accounts**](https://secure.sysdig.com/#/data-sources/cloud-accounts)
-to review that an account with your Account ID is connected.
-
-![Cloud Account Connected](/images/1-installation/cloudaccountsconnected.png)
+To learn how to check that the installation was successful, visit the [next section](/1-install/3-cloudreviewaccounts.html).
