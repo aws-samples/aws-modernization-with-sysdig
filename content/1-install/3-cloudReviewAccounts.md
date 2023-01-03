@@ -16,6 +16,3 @@ dashboard to review that an account with your *Account ID* is connected.
 If this is your first install, you'll find a unique entry
 (instead of multiples, like in the image above).
 Check that the displayed *Account ID* matches your AWS's *Account ID*.
-
-
-Insert here image with the top right corner.

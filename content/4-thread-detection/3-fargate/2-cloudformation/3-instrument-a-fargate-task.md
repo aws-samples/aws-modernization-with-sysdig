@@ -24,7 +24,7 @@ Review the *CFT* provided at the bottom of this page before you deploy it. It us
           Type: AWS::EC2::VPC::Id
 ```
 
-2. Go to [*Create Stack CloudFormation form*](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template). Or go to CloudFormation and click on *Create Stack*.
+2. Go to [*Create Stack CloudFormation form*](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template). Or go to CloudFormation and click on *Create Stack*.
 
 3. Select *Create template in Designer* and click *Create template in designer*. From here, switch to the Template tab (bottom of the page) and copy your template (remember to instrument it as instructed).
 

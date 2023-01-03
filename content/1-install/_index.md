@@ -9,19 +9,19 @@ None of these installers enable Fargate Runtime Threat Detection. For this featu
 {{% /notice %}}
 
 In this first section you will learn:
-- How to deploy Sysdig Secure for Cloud. There are two alternative methods:
-  - [with Terraform](/1-install/1-terraform.html).
-  - [with CloudFormation](/1-install/2-cloudFormation.html).
+1. How to deploy Sysdig Secure for Cloud. There are two alternative methods:
 
-    {{% notice note %}}
-Pick one of the available methods to continue with this workshop. 
-But following one or the other depends on the user preferences
-and previous experience with each of the tools (Terraform or AWS CloudFormation).
-{{% /notice %}}
+     - [with Terraform](/1-install/1-terraform.html).
+     - [with CloudFormation](/1-install/2-cloudFormation.html).
 
-- How to [deploy the Sysdig Agents with Helm](/1-install/3-agent-eks.html) in an EKS Cluster.
+2. How to [deploy the Sysdig Agents with Helm](/1-install/3-agent-eks.html) in an EKS Cluster.
   There are [multiple methods](https://docs.sysdig.com/en/docs/installation/sysdig-agent/agent-installation/) to install a Sysdig Agent that are not covered in this workshop.
 
+    {{% notice note %}}
+For the Cloud installers (Terraform and CloudFormation) choose just one of the available methods to continue with this workshop. 
+Following one or the other depends on the user preferences
+and previous experience with each of the tools.
+{{% /notice %}}
 
 ## Features enabled by each installer
 
@@ -43,6 +43,4 @@ and previous experience with each of the tools (Terraform or AWS CloudFormation)
       - CIEM
       - Runtime Thread Detection in EKS
       - KSCM: Actionable Compliance and IaC Remediation
-
-3. Along with the Sysdig Agents, a **Kubernetes Admission Controller** will be deployed. This component is used to:
-      - Get Kubernetes Audit logs from the EKS cluster.
+      - **Kubernetes Admission Controller** for cluster Audit logging in EKS

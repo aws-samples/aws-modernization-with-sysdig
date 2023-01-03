@@ -28,20 +28,19 @@ the EKS deployed during the prerequisites step.
 
     ![Install with Helm](/images/1-installation/agentInstall.png)
 
-2. The Kubernetes Admission Controller (AC) enable the 
-   [Kubernetes Audit Logging Capabilities of Sysdig Secure](https://docs.sysdig.com/en/docs/sysdig-secure/secure-events/kubernetes-audit-logging/#kubernetes-audit-logging)
+2. The **Sysdig's Admission Controller (AC) for Kubernetes** is not deployed by default.
+   This component enables the [Kubernetes Audit Logging Capabilities of Sysdig Secure](https://docs.sysdig.com/en/docs/sysdig-secure/secure-events/kubernetes-audit-logging/#kubernetes-audit-logging)
    among other features (for example, vulnerability management for your k8s images).
-   
-   Update the secureAPIToken parameter below with your **Sysdig Secure API Token** available in
-   your account [**Settings**](https://us2.app.sysdig.com/secure/#/settings/user).
-   Remember to add the trailing `\` at the end of the new options.
 
-   In your IDE, add the next options to the command above:
-   
-   ```
-   --set admissionController.enabled=true \
-   --set global.sysdig.secureAPIToken=036cf4k3-f4k3-f4k3-f4k3-... \
-   ```
+   In your IDE, add the two next helm parameters to the command copied above
+   and update the *secureAPIToken* value with your **API Token** available in
+   your account [**Settings**](https://us2.app.sysdig.com/secure/#/settings/user)
+   (remember to add the trailing `\` at the end of the new options):
+
+    ```
+    --set admissionController.enabled=true \
+    --set global.sysdig.secureAPIToken=036cf4k3-f4k3-f4k3-f4k3-... \
+    ```
 
 3. Execute the resulting command in your terminal.
    The Sysdig Agents are being deployed now on each of the nodes of the cluster.
@@ -63,16 +62,35 @@ the EKS deployed during the prerequisites step.
     ```
 
 4. Finally, visit the [**Runtime Policies** section](https://secure.sysdig.com/#/policies)
-   and enable the *Sysdig K8s Activity Logs* and *Sysdig K8s Notable Events* policies.
-   This policy will alert about each and every K8s Audit Event.
+   and filter the list of policies by type: *Kubernetes Audit*.
+   Then, enable the *Sysdig K8s Activity Logs* and *Sysdig K8s Notable Events* policies.
+   These policies will alert about each and every K8s Audit Event in your EKS cluster.
 
+    ![Policies](/images/1-installation/Policies.png)
 
 ## Review installation
+
 
 ### Agents
 
 Check that the _Agent_ installation was successful in the 
 **Integrations > Data Sources >** [**Sysdig Agents** section](https://secure.sysdig.com/#/data-sources/agents).
+
+![Agents](/images/1-installation/agents.png)
+
+The EKS cluster will also be visible in the 
+[**Managed Kubernetes**](https://us2.app.sysdig.com/secure/#/data-sources/managed-kubernetes)
+section.
+
+![Managedk8s](/images/1-installation/managedk8s.png)
+
+
+Alternatively, you can check the logs of the agent pod:
+
+```
+kubectl logs -l app.kubernetes.io/name=agent -n sysdig-agent --tail=-1 | grep "Sending scraper version" 
+```
+
 
 ### Admission Controller:
 
@@ -93,7 +111,7 @@ generating an event that will be registered in the k8s API:
    [**Events** section](https://secure.sysdig.com/#/events?groupBy=policy&last=86400&severities=high%2Cmedium%2Clow%2Cnone)
     and it will show up after you select the *Info* level.
 
-    ![Event triggered](/images/1-installation/event.png)
+    ![Event triggered](/images/1-installation/events.png)
 
 
 3. Alternatively, check the admission-controller pod logs:
@@ -104,6 +122,8 @@ generating an event that will be registered in the k8s API:
         --tail=-1 --follow=false
     ```
 
+    Every action against the K8s API Server will generate an entry in the logs
+    (based on the configured logging level).
     You should see something like this:
 
     ```logs

@@ -24,7 +24,7 @@ During this module, you will deploy and review the required assets to complete t
 
 Create a Terraform manifest with the network definition and deploy the stack necessary for this demo to run.
 
-1. Access your [Cloud9](https://console.aws.amazon.com/cloud9/home/product) instance previously created.
+1. Access your [Cloud9](https://us-east-1.console.aws.amazon.com/cloud9/home/product) instance previously created.
 
 2. Download the required assets.
 

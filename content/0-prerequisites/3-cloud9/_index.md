@@ -19,7 +19,9 @@ You will use _Amazon Cloud9_ to access our AWS account via the AWS CLI in this W
 ## Create a new Cloud9 IDE environment
 
 To access a Cloud9 instance, networking is required.
-Create a VPC for the Cloud9 instance. Follow this link to
+Create a VPC for the Cloud9 instance:
+
+1. Follow this link to
 [**create VPC**](https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#CreateVpc:createMode=vpcWithResources),
 select **VPC and More** 
 and click on **Create VPC** to generate the networking components.
@@ -34,8 +36,9 @@ Then, to create and confiure the Cloud9 instance for this workshop:
     - *Platform*: **Amazon Linux 2**.
     - *Connection*: **Secure Shell (SSH)**.
 
-3. Expand **VPC settings** under **Network settings** and check that the VPC created above
-   and one of the subnets are selected.
+3. Expand **VPC settings** under **Network settings**
+   and select the VPC created above
+   and one of its subnets (select a *public* one).
    Click **Create** and then open the new workstation.
 
     ![Deploy Cloud9](/images/10_prerequisites/cloud9.gif)
@@ -63,7 +66,7 @@ Cloud9 requires third-party-cookies. You can whitelist the [specific domains]( h
 {{% /notice %}}
 
 
-## Set persmissions for your workspace
+## Set permissions for your workspace
 
 {{% notice info %}}
 Cloud9 normally manages IAM credentials dynamically. This isn't currently compatible with
@@ -78,7 +81,7 @@ and attach the new role to it.
    
    ![image](/images/10_prerequisites/iamRoleWorkspace.gif)
 
-2. Follow [this deep link to create an IAM role with Administrator access.](https://console.aws.amazon.com/iam/home#/roles$new?step=review&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::aws:policy%2FAdministratorAccess)
+2. Follow [this deep link to create an IAM role with Administrator access.](https://us-east-1.console.aws.amazon.com/iam/home#/roles$new?step=review&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::aws:policy%2FAdministratorAccess)
    
 3. Confirm that **AWS service** and **EC2** are selected,
    then click **Next: Permissions**. Check **AdministratorAccess**,
@@ -106,7 +109,8 @@ Your workstation is ready to start the workshop.Starting from here, when you see
 
    ```bash
    git clone https://github.com/sysdiglabs/aws-modernization-with-sysdig
-   cp aws-modernization-with-sysdig/static/code ./
+   cp -r ./aws-modernization-with-sysdig/static/code/* ./
+   rm -rf ./aws-modernization-with-sysdig
    ./ws_general_requirements.sh
    ```
 
@@ -116,10 +120,15 @@ This script will check the status of the attached IAM role: if it is not valid, 
 
 1. If you are going to run the Runtime Security and Actionable Compliance modules for EKS, 
    launch a new EKS cluster with the next command.
-   (The EKS cluster deployment in AWS will take about 10 minutes to complete).
-
+   
    ```bash
    ./create_eks.sh
    ```
 
-   There's no need to wait until the EKS provisioner is done. Open a new Terminal and continue from there with the workshop until the script is done.
+      {{% notice info %}}
+The EKS cluster deployment in AWS will take about 10 minutes to complete.
+There's no need to wait until the EKS provisioner is done. Open a new Terminal and continue from there with the workshop until the script is done.
+{{% /notice %}}
+
+
+  

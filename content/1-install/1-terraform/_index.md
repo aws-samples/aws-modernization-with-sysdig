@@ -125,7 +125,7 @@ By default, Terraform stores its state on `local`.
 Run the next command to view the state file:
 
 ```
-cat *.tfstate
+cat terraform.tfstate
 ```
 
 This file describes the infrastructure that

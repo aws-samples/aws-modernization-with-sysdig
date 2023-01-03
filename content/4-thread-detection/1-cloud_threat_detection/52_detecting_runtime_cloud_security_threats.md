@@ -40,7 +40,7 @@ S3 bucket names are globally unique, so we'll use **your initials** in **lower c
     aws s3api delete-bucket-encryption --bucket $BUCKETNAME
     ```
 
-4. You can view details of this event by browsing to [CloudTrail](https://console.aws.amazon.com/cloudtrail/home) then 'Event History'
+4. You can view details of this event by browsing to [CloudTrail](https://us-east-1.console.aws.amazon.com/cloudtrail/home) then 'Event History'
 
     ![CloudTrail](/images/cloudtrail03.png)
 

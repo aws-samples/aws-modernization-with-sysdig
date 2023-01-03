@@ -25,7 +25,7 @@ Your account must have the ability to create new IAM roles and scope other IAM p
 
 2. Once you have an AWS account, ensure you are following the remaining workshop steps
 as an IAM user with administrator access to the AWS account:
-[Create a new IAM user to use for the workshop](https://console.aws.amazon.com/iam/home?#/users$new). To do so, follow the next steps:
+[Create a new IAM user to use for the workshop](https://us-east-1.console.aws.amazon.com/iam/home?#/users$new). To do so, follow the next steps:
 
    1. Enter the user details:
         ![Sysdig Trial](/images/10_prerequisites/iam-1-create-user.png)
