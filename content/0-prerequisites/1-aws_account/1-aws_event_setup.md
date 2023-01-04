@@ -1,5 +1,5 @@
 ---
-title: "Attending an AWS hosted event"
+title: "AWS hosted event"
 chapter: false
 weight: 2
 ---
@@ -13,27 +13,28 @@ If you are currently logged in to an AWS Account, you can logout using this [lin
 
 ### Create AWS Account
 
-1 . Connect to the portal by clicking the button or browsing to [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/). The following screen shows up. Enter the provided hash in the text box. The button on the bottom right corner changes to **Accept Terms & Login**. Click on that button to continue.
+1. Connect in a new browser tab to the _Event Engine_ portal by browsing to
+   [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/).
+   Enter the provided hash in the text box. 
+   The button on the bottom right corner changes to **Accept Terms & Login**.
+   Click on that button to continue.
 
-![Event Engine](/images/10_prerequisites/event-engine-initial-screen.png)
+    ![Event Engine](/images/10_prerequisites/event-engine-initial-screen.png)
 
-{{% notice tip %}}
-Leave the Event Engine tab open (A new tab will be used for the next step)
+    {{% notice tip %}}
+Leave the Event Engine tab open (A new tab will be used for the next step).
 {{% /notice %}}
 
-2 . Choose **AWS Console**, then **Open AWS Console**.
+1. Choose **AWS Console**, then **Open AWS Console**.
 
+    ![Event Engine Dashboard](/images/10_prerequisites/event-engine-dashboard.png)
 
-![Event Engine Dashboard](/images/10_prerequisites/event-engine-dashboard.png)
+2. Use a single region for the duration of this workshop.
+   This workshop has been tested using  `us-east-1` (US East - N.Virginia).
+   Please select **US East (N.Virginia)** in the top right corner.
 
-3 . Use a single region for the duration of this workshop. This workshop supports the following regions:
+    ![Event Engine Region](/images/10_prerequisites/event-engine-region.png)
 
-* us-east-1 (US East - N.Virginia)
-
-Please select **US East (N.Virginia)** in the top right corner.
-
-![Event Engine Region](/images/10_prerequisites/event-engine-region.png)
-
-{{% notice warning %}}
-This account will expire at the end of the workshop and the all the resources created will be automatically deprovision-ed. You will not be able to access this account after today.
+    {{% notice warning %}}
+This account will expire at the end of the workshop and the all the resources created will be automatically deprovisioned. You will not be able to access this account after today.
 {{% /notice %}}

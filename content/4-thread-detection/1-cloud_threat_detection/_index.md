@@ -4,7 +4,19 @@ chapter: true
 weight: 1
 ---
 
+In this section we will explain how to audit AWS CloudTrail events with Sysdig. Once Sysdig **Secure for cloud** is deployed in your infrastructure, every CloudTrail entry is analysed in real time, and evaluated against a flexible set of security rules based on Falco.
+
+
+This allows you to detect misconfigurations and unexpected or unwanted activity quickly and raise notifications or automate reactions when something, or someone, creates, deletes or modifies your cloud resources, hence protecting you from compromised cloud accounts or involuntary human error.
+
+A rich set of Falco rules are included corresponding to security standards and benchmarks like NIST 800-53, PCI DSS, SOC 2, MITRE ATT&CK®, CIS AWS, AWS Foundational Security Best Practices.
+
+
+### Policies
+
 Sysdig Secure Runtime Policies are a combination of rules about activities an enterprise wants to detect in an environment, the actions that should be taken if the policy rule is breached. In the case of Cloud Security, these may relate to activities within your AWS account, such as users being created or updated, S3 buckets being manipulated or the execution of an interactive command.
+
+Let's start:
 
 1. Browse to Sysdig Secure, and navigate to 'Policies > Runtime Policies', filter by '**AWS CloudTrail**' from the 'Select policy type' dropdown and highlight the '**Sysdig AWS Threat Detection**' policy
 

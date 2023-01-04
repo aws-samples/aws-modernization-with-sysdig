@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "Secure DevOps with AWS & Sysdig"
+title = "Sysdig Secure for AWS"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "true"

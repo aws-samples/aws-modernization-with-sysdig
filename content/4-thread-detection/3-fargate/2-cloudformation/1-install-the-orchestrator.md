@@ -1,9 +1,8 @@
-
-+++
-title = "Install the Orchestrator"
-chapter = false
-weight = 20
-+++
+---
+title: "Install the Orchestrator"
+chapter: false
+weight: 20
+---
 
 In this step you'll be installing the **Orchestrator Agent** with CloudFormation.
 
@@ -28,7 +27,7 @@ And now, follow the next steps:
 1. A *Sysdig orchestrator Agent CloudFormation* blueprint is provided in the assets file below 
    and in the course assets that you downloaded for this module.
 
-2. Go to [*CloudFormation Create Stack form*](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template). Or go to *CloudFormation* in your *AWS Console* and click on **Create Stack**.
+2. Go to [*CloudFormation Create Stack form*](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template). Or go to *CloudFormation* in your *AWS Console* and click on **Create Stack**.
 
 3. Select **Create template in Designer** and click **Create template in designer**. From here, switch to the **Template** tab (bottom of the Dashboard) and copy the [orchestrator agent template]({{< ref "#sysdig-orchestrator-agent-yaml" >}}) replacing all the existing content.
 

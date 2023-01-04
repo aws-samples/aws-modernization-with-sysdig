@@ -1,9 +1,8 @@
-
-+++
-title = "Instrumentation Agents"
-chapter = true
-weight = 30
-+++
+---
+title: "Instrumentation Agents"
+chapter: true
+weight: 30
+---
 
 <!-- 
 This step can be skipped with the new installation method they created, 

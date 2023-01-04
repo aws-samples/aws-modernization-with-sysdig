@@ -1,14 +1,12 @@
-+++
-title = "Conclusions"
-chapter = true
-weight = 60
-+++
+---
+title: "Conclusions"
+chapter: true
+weight: 60
+---
 
 # Conclusions
 
-{{% children showhidden="false" %}}
-
-There are several **key points** on Sysdig's approach to Amazon ECR and Amazon Fargate image scanning:
+There are several **key points** on Sysdig's approach to Image Scanning (Amazon ECR and Amazon Fargate):
 
  - There is **no need to build specific pipelines for each image.** The scan will be automatically triggered for any workload that is executed in ECS Fargate across your whole infrastructure, or uploaded to ECR.
 
@@ -21,3 +19,5 @@ Keep in mind that this approach is only part of the solution. You can further st
 AWS security can save your infrastructure from failing at its worst moment. It will protect you and your customer data against misconfigurations, a security compromise, or your wallet from unexpected fees.
 
 CloudTrail is a great source of truth, as it can see everything that is happening in your AWS accounts. Leverage Sysdig Secure by deploying Sysdig CloudConnector for CloudTrail and obtaining the runtime visibility you need to implement AWS threat detection. Its out-of-the-box set of Falco rules for CloudTrail minimizes the setup effort, response time, and resources needed for investigating security events.
+
+<!-- {{% children showhidden="true" %}} -->
