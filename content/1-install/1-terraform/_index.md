@@ -49,8 +49,7 @@ then click on [**Connect Cloud Account > AWS > Terraform Single Account**](https
    Be careful with indenting:
 
     ```terraform
-        deploy_image_scanning_ecs = true
-        deploy_image_scanning_ecr = true
+        deploy_beta_image_scanning_ecr = true
     ```
 
     The final result should look like this:

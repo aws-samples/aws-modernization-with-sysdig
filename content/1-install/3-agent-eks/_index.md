@@ -38,8 +38,8 @@ the EKS deployed during the prerequisites step.
    (remember to add the trailing `\` at the end of the new options):
 
     ```
-    --set admissionController.enabled=true \
-    --set global.sysdig.secureAPIToken=036cf4k3-f4k3-f4k3-f4k3-... \
+        --set admissionController.enabled=true \
+        --set global.sysdig.secureAPIToken=036cf4k3-f4k3-f4k3-f4k3-... \
     ```
 
 3. Execute the resulting command in your terminal.
@@ -67,6 +67,8 @@ the EKS deployed during the prerequisites step.
    These policies will alert about each and every K8s Audit Event in your EKS cluster.
 
     ![Policies](/images/1-installation/Policies.png)
+
+    After this, filter too by `AWS CloudTrail` and enable all the available policies.
 
 ## Review installation
 
