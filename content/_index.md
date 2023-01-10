@@ -45,8 +45,8 @@ an integrated approach to security that the _good old_ security tools can not pr
 
 This workshop will provide you with a holistic view of continuous cloud and workload security;
 from development to runtime.
-During the next hours, you will learn about key security concepts, supplemented with
-insights and real scenarios where you will practice how protect modern cloud applications.
+During the next 2-3 hours, you will learn about key security concepts, supplemented with
+insights and real scenarios where you will practice how to protect modern cloud applications.
 
 Although this workshop approaches security from a Sysdig-*centric* perspective,
 the concepts and practice included will be useful for
@@ -70,7 +70,6 @@ the following Sysdig Secure features available today for AWS:
 
 - Vulnerability Management
    - AWS ECR Image Registry Scanning
-   - Fargate on ECS Image Scanning
  - Security Posture:
    - Cloud Security Posture Management (_CSPM_), including _CIS AWS Benchmark compliance_
    - Kubernetes Security Posture Management (_KSPM_)
@@ -82,7 +81,7 @@ the following Sysdig Secure features available today for AWS:
    - _Fargate_ Serverless Runtime Threat Detection
 
 For a detailed description of these Sysdig Secure for cloud integrations with AWS,
-please refer to the [Sysdig Secure for cloud documentation](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/).
+please refer to the [Sysdig Secure for cloud documentation](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/aws).
 
 ![Sysdig Secure for cloud overview](/images/cloudvision.png)
 
@@ -108,7 +107,7 @@ to assist you with any issues you encounter.
 
 ## Expected Duration:
 
-_4 Hours_. For a detailed time estimation per module, visit the [modules section](/0-introduction.html).
+_2-3 Hours_. For a detailed time estimation per module, visit the [modules section](/0-introduction.html).
 
 ---
 

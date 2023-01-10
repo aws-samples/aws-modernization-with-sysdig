@@ -26,7 +26,7 @@ Create a VPC for the Cloud9 instance:
 select **VPC and More** 
 and click on **Create VPC** to generate the networking components.
 
-Then, to create and confiure the Cloud9 instance for this workshop:
+Then, to create and configure the Cloud9 instance for this workshop:
 
 1. [Follow this link](https://us-east-1.console.aws.amazon.com/cloud9control/home?region=us-east-1#/create/)
    to create the IDE. Name it `sysdig-workshop`.

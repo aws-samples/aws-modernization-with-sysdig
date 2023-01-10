@@ -12,12 +12,12 @@ the terraform installer instructions.
 In this step you'll deploying a Sysdig serverless agent using CloudFormation. 
 Follow the instructions below to recreate a complete production environment for Fargate. 
 
+
 ## Prerequisites
 
 During this module, you will deploy and review the required assets to complete this demo:
 - *AWS VPC* and *subnetworks*. 
 - *Sysdig Secure* account (follow the instructions below to get a new account if needed)
-
 
 
 ## Prerequisites: Networking

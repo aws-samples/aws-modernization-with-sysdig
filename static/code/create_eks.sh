@@ -17,3 +17,12 @@ terraform init && terraform apply -auto-approve
 # configure kubectl
 aws eks --region $(terraform output -raw region) update-kubeconfig \
     --name $(terraform output -raw cluster_name)
+
+# falco event generator 
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm repo update
+helm upgrade --install event-generator falcosecurity/event-generator \
+  --namespace event-generator \
+  --create-namespace \
+  --set config.loop=true \
+  --set config.actions=""
