@@ -16,10 +16,3 @@ To remove the agents for your cluster, you just need to remove the namespace.
 ```
 kubectl delete ns sysdig-agent
 ```
-
-To remove the agents for your cluster, you just need to remove the namespace.
-
-```
-kubectl delete ns sysdig-admission-controller
-```
-

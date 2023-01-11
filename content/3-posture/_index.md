@@ -6,12 +6,7 @@ weight: 40
 
 
 {{% notice info %}}
-*Estimated module duration: 30-40 minutes.*
-{{% /notice %}}
-
-
-{{% notice info %}}
-The new Actionable Compliance views have been recently released and are not generaly available.
+The new Actionable Compliance views have been recently released and are not generally available.
 This workshop includes the previous version of Compliance and will be updated with the latests updates soon.
 Contact your Sysdig representative to learn more about this features.
 {{% /notice %}}
@@ -20,11 +15,11 @@ Contact your Sysdig representative to learn more about this features.
 
 ## About this module
 
-In this module, you will learn about Security Posture and  Compliance. 
+In this module, you will learn about Security Posture and Compliance. 
 
 You will use Sysdig Secure to get an overview of your Cloud (CSPM) and Kubernetes (KSPM) security posture and will take action to remediate a couple of detected issues. 
 
-You will also use the *IaC Security* feature to automatically fix one posture issue with the new Sysdig Secure integration with GitHub.
+<!-- You will also use the *IaC Security* feature to automatically fix one posture issue with the new Sysdig Secure integration with GitHub. -->
 
 
 ## Intro to posture
@@ -33,8 +28,8 @@ Security Posture is a wide term used to describe
 what's the security status of key assets of a company: workloads, cloud resources, permissions, etc.
 
 Most of the tools available provides a set of controls to check,
-but no actions or remediations to fix the issue.
-Sysdig Secure Actionable Compliance is able to detect posture issues and remediate them inmediatly.
+but no actions or remediation steps to fix the issue.
+Sysdig Secure Actionable Compliance is able to detect posture issues and remediate them immediately.
 
 Adding to this, Sysdig Compliance includes the next set of features:
 

@@ -4,11 +4,6 @@ chapter: true
 weight: 1
 ---
 
-{{% notice info %}}
-*Estimated sub-module duration: 3-5 minutes.*
-{{% /notice %}}
-
-
 {{% notice note %}}
 This steps will explain how to deploy the Sysdig Secure Cloud stack
 for AWS with Terraform for a **single account**. 

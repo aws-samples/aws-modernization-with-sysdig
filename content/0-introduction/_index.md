@@ -74,19 +74,15 @@ Except of the _4.3 Fargate_ module, that does not require to follow the installa
 
 Module | Submodule | Use-case | Description | ETA
 ------------ | ------------ | ------------- | ------------- | -------------
-[Prerequisites](../../0-prerequisites.html) | | Workshop setup | Prerequisites to setup the workshop. | -------------
-[1. Install](../../1-install.html) | Terraform | Deploy Sysdig Secure for Cloud | Deploy the Sysdig Stack to secure your AWS workloads | -------------
-&nbsp; | CloudFormation | Deploy Sysdig Secure for Cloud | Deploy the Sysdig Stack to secure your AWS workloads | -------------
-&nbsp; | Sysdig Agents | Deploy Sysdig Secure for k8s Workloads | Deploy Sysdig Agents in EKS | -------------
-[2. Vulnerability Management](../../2-vulnerability-management.html) | ECR Registry Scanning | Scan images from ECR automatically | Scan your ECR Registry images automatically | -------------
-&nbsp; | Fargate on ECS Image Scanning | Image Scanning | Vulnerabilities from container images at runtime | -------------
-[3. Security Posture](../../3-posture.html) | CSPM | Cloud Security Posture Management | Insights, Benchmarks and Compliance | -------------
-&nbsp; | KSPM | Kubernetes Security Posture Management | Meet compliance assessment for your EKS clusters | -------------
-&nbsp; | CIEM | Cloud Infrastructure Entitlements Management | Set minimum permissions required for users | -------------
-[4. Threat Detection](../../4-thread-detection.html) | CloudTrail | Runtime Cloud Security | Protect your cloud environments at runtime. | -------------
-&nbsp; | EKS | Runtime Security for EKS | Protect your AWS Managed k8s from runtime threats. | -------------
-&nbsp; | Fargate | Runfime Security for Fargate | Serverless Runtime Protection | -------------
-[Cleanup](../9-cleanup.html) | Submodule | Cleanup workshop resources | How to remove all of the workshop's resources from your account. | -------------
+[Prerequisites](../../0-prerequisites.html) | | Workshop setup | Prerequisites to setup the workshop. | 20 min.
+[1. Install](../../1-install.html) | Terraform | Deploy Sysdig Secure for Cloud | Deploy the Sysdig Stack to secure your AWS workloads | 10 min.
+&nbsp; | CloudFormation | Deploy Sysdig Secure for Cloud | Deploy the Sysdig Stack to secure your AWS workloads | 10 min.
+&nbsp; | Sysdig Agents | Deploy Sysdig Secure for k8s Workloads | Deploy Sysdig Agents in EKS | 10 min.
+[2. Vulnerability Management](../../2-vulnerability-management.html) | ECR Registry Scanning | Scan images from ECR automatically | Scan your ECR Registry images automatically | 20 min.
+[3. Security Posture](../../3-posture.html) | CSPM | Cloud Security Posture Management | Insights, Benchmarks and Compliance | 15 min.
+[4. Threat Detection](../../4-thread-detection.html) | CloudTrail | Runtime Cloud Security | Protect your cloud environments at runtime. | 10 min.
+&nbsp; | EKS | Runtime Security for EKS | Protect your AWS Managed k8s from runtime threats. | 15 min.
+&nbsp; | Fargate | Runfime Security for Fargate | Serverless Runtime Protection | 20 min.
 
 If you run out of time in the workshop, don't panic! 
 These instructions are public and they are available after your workshop ends.

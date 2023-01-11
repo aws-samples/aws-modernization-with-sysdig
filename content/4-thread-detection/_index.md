@@ -4,11 +4,6 @@ chapter: true
 weight: 57
 ---
 
-{{% notice info %}}
-*Estimated module duration: 30-40 minutes.*
-{{% /notice %}}
-
-
 # Module 4: Cloud Threat Detection based on Cloudtrail
 
 ## Module Overview
