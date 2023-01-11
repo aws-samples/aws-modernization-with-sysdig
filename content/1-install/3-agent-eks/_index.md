@@ -4,11 +4,6 @@ chapter: true
 weight: 4
 ---
 
-{{% notice info %}}
-*Estimated module duration: 5-10 minutes.*
-{{% /notice %}}
-
-
 ## Requirements
 
 - EKS cluster (deployed in the last step [here](/0-prerequisites/3-cloud9.html))

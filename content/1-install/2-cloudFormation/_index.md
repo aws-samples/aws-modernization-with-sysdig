@@ -4,10 +4,6 @@ chapter: true
 weight: 2
 ---
 
-{{% notice info %}}
-*Estimated sub-module duration: 5-10 minutes.*
-{{% /notice %}}
-
 {{% notice note %}}
 Don't follow this steps if you already installed Sysdig Secure for Cloud with Terraform
 in the previous step.

@@ -6,6 +6,7 @@ weight: 3
 
 {{% notice info %}}
 *This section will be updated soon with the new Actionable Compliance and remediation capabilities for IaC. It will replace the CSPM section.*
+Learn more about it [here](https://sysdig.com/blog/security-infrastructure-as-code-sysdig/).
 {{% /notice %}}
 
 <!-- 
