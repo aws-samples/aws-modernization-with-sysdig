@@ -5,7 +5,7 @@ weight: 1
 ---
 
 {{% notice note %}}
-This steps will explain how to deploy the Sysdig Secure Cloud stack
+These steps will explain how to deploy the Sysdig Secure Cloud stack
 for AWS with Terraform for a **single account**. 
 It is not within the scope of this workshop to explain how to deploy it in an **organization account**.
 To learn more about this, review the docs [here](https://docs.sysdig.com/en/docs/installation/sysdig-secure-for-cloud/deploy-sysdig-secure-for-cloud-on-aws/#for-organizationalmanagement-account).
@@ -123,19 +123,19 @@ cat terraform.tfstate
 ```
 
 This file describes the infrastructure that
-were created after the `terraform apply` command is executed.
+is created after the `terraform apply` command is executed.
 The next time you run Terraform, it will compare
 the state file (real state) with the definition of the infrastructure (expected state)
-and will make all the necessary changes for this two files to match.
+and will make all the necessary changes for these two files to match.
 
 This file is important, as it describes what's the real status of your infrastructure.
 If this file is lost, Terraform will think the resources were never created.
 This will create some trouble.
-Toi avoid this, Terraform recommends keeping the state remotely.
+To avoid this, Terraform recommends keeping the state remotely.
 
 There are multiples alternatives, like storing the state in [S3](https://www.terraform.io/language/settings/backends/s3).
 
-1. Create an S3 backed and name it `ssfc-terraform-state` and a key to access its contents.
+1. Create an S3 bucket and name it `ssfc-terraform-state` and a key to access its contents.
 2. Add the next module information to the `main.tf` you created above:
 
     ```terraform
