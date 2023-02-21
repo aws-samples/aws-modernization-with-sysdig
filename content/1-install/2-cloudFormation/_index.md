@@ -35,6 +35,11 @@ For the purposes of the workshop, make sure you're in `us-east-1` (i.e. 'N. Virg
     The AWS Console should open the CF Template:
 
     1. Paste the *Sysdig Secure API Token*.
+       From the screenshot below: 
+       A. Change the stack string if you want a different name.
+       B. Add Make sure you provide the API Token from the previous Sysdig UI.
+       C. Select the services you wish to deploy if you want to customize the deployment.
+       D. Check both tick boxes.
 
     ![Cloud Security CloudFormation Stack](/images/CloudSecurityCloudFormationStack-with-notes2.png)
 
