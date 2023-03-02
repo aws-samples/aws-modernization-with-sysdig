@@ -1,8 +1,8 @@
-+++
-title = "What's the story?"
-chapter = false
-weight = 1
-+++
+---
+title: "What's the story?"
+chapter: false
+weight: 1
+---
 
 Think about what you want to accomplish and how you want to educate users about your product.  What is the use case or problem that your product solves for the end user and develop a story around it.  Two things to have in the back of your mind while you think about this: 1. Customers don't buy products they buy solutions to their problems and 2. Make learning fun, have a nice story that can entertain them while educating them at the same time.  We have all sat through those boring click and paste workshops, don't make yours one of them.
 

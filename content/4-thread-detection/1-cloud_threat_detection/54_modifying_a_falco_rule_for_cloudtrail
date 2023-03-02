@@ -1,0 +1,88 @@
+# ---
+# title: "Modifying a Falco Rule for CloudTrail"
+# chapter: false
+# weight: 4
+# author: "John Fitzpatrick"
+# date: 2021-03-18,
+# draft: true
+# ---
+
+**Updating Falco rules can take 20mins to filter through, so removing this from the workshop**
+**Keeping it here as we can still use the steps in a video script**
+
+Using Sysdig CloudConnector, you are not limited to the out-of-the-box rules provided. You can modify existing rules, or write your own tailored to your own needs.
+
+So, let’s try first modifying a rule. The rule **AWS command executed on unused region** checks if a resource is created in a region that you are not permitted to use - the prohibited regions are specified in Falco list called **disallowed_aws_regions**.
+
+  ![Sysdig Events](/images/falco_02.png)
+
+<!--
+```
+- list: disallowed_aws_regions
+  items: []
+
+- rule: AWS command executed on unused region
+  desc: Detect AWS command execution on unused regions
+  condition: >
+    not jevt.value[/errorCode] exists and
+    jevt.value[/awsRegion] in (disallowed_aws_regions)
+  output: >
+    An AWS command has been executed on an unused region
+    (requesting user=%jevt.value[/userIdentity/arn],
+     requesting IP=%jevt.value[/sourceIPAddress],
+     AWS region=%jevt.value[/awsRegion]
+  priority: CRITICAL
+  tags: [cloud, source=cloudtrail, aws]
+  source: k8s_audit
+``` -->
+
+Lets assume for the purposes of this lab that you are not permitted to use AWS regions **us-west-1** or **us-west-2**.
+
+<!--
+For the *disallowed_aws_regions* empty list that is included, so we are going to extend it to include **us-west-1** and **us-west-2**. Let's update that list to add those regions.
+
+```
+  - list: disallowed_aws_regions
+    items: [us-west-1, us-west-2]
+    append: true
+
+``` -->
+
+
+<!-- 1. To create a `disallowed_aws_regions.yaml` file in a `rules` directory, you can run the following -->
+
+1. Navigate to 'Policies > Falco Lists'
+
+1. Click on **disallowed_aws_regions**, then **Edit**
+
+1. Add '**us-west-1, us-west-2**'
+
+    ![Sysdig Events](/images/falco_05.png)
+
+1. Click **Save** then **Done**
+
+    The rules and policies are read from Sysdig Secure every 5 minutes.
+
+    Now let's create another S3 bucket, but specify the prohibited region **us-west-2** and watch it trigger a security alert.
+
+1. Check your initials are set in the environment variable `INITIALS` from before (these should already be set)
+
+    ```
+    echo $INITIALS
+    ```
+
+    If not you can run `INITIALS=<your initials>` as before
+
+1. Now create the new S3 bucket, but this time in **us-west-1** (the `date` command will ensure the bucket name is different to previous one).
+
+    ```
+    NEWBUCKETNAME="${INITIALS,,}"-$(date +%s)
+    aws s3api create-bucket --bucket $NEWBUCKETNAME --acl public-read --region us-west-1 --create-bucket-configuration LocationConstraint=us-west-1
+    ```
+
+    CloudTrail takes up to several minutes to provide the events. When the event is available, the rule will be triggered and we will see a new security event in Sysdig Secure.
+
+    **Event screenshot here.**
+
+
+     ![Triggered Security Event](/images/cloudtrail_event04.png)

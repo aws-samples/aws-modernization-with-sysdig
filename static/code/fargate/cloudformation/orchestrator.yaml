@@ -1,0 +1,248 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Sysdig AWS support
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+    - Label:
+        default: Sysdig Settings
+      Parameters:
+      - SysdigAccessKey
+      - SysdigCollectorHost
+      - SysdigCollectorPort
+    - Label:
+        default: Network Settings
+      Parameters:
+      - VPC
+      - SubnetA
+      - SubnetB
+    - Label:
+        default: Advanced Settings
+      Parameters:
+      - SysdigAgentTags
+      - SysdigOrchestratorAgentImage
+      - SysdigCheckCollectorCertificate
+    ParameterLabels:
+      VPC:
+        default: VPC Id
+      SubnetA:
+        default: Subnet A
+      SubnetB:
+        default: Subnet B
+      SysdigAccessKey:
+        default: Sysdig Access Key
+      SysdigCollectorHost:
+        default: Sysdig Collector Host
+      SysdigCollectorPort:
+        default: Sysdig Collector Port
+      SysdigAgentTags:
+        default: Agent Tags
+      SysdigOrchestratorAgentImage:
+        default: Sysdig Orchestrator Agent Image
+      SysdigCheckCollectorCertificate:
+        default: Check Collector SSL Certificate
+
+Parameters:
+  VPC:
+    Type: AWS::EC2::VPC::Id
+    Description: VPC where your service is deployed
+  SubnetA:
+    Type: AWS::EC2::Subnet::Id
+    Description: A subnet that can access internet and is reachable by instrumented services
+  SubnetB:
+    Type: AWS::EC2::Subnet::Id
+    Description: A subnet that can access internet and is reachable by instrumented services
+  SysdigAccessKey:
+    Type: String
+  SysdigOrchestratorAgentImage:
+    Type: String
+    Default: quay.io/sysdig/orchestrator-agent:latest
+  SysdigCollectorHost:
+    Type: String
+    Default: collector.sysdigcloud.com
+  SysdigCollectorPort:
+    Type: String
+    Default: "6443"
+  SysdigAgentTags:
+    Type: String
+    Description: Enter a comma-separated list of tags (eg. role:webserver,location:europe).
+    Default: ""
+  SysdigCheckCollectorCertificate:
+    Type: String
+    Default: "true"
+
+Outputs:
+  OrchestratorHost:
+    Description: Host to which fargate workload agents need to connect
+    Value: !GetAtt SysdigLoadBalancer.DNSName
+  OrchestratorPort:
+    Description: The port the fargate workload agent needs to connect to
+    Value: "6667"
+
+Resources:
+  SysdigAgentCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      Tags:
+        - Key: application
+          Value: sysdig
+
+  SysdigOrchestratorAgentLogs:
+    Type: AWS::Logs::LogGroup
+
+  SysdigOrchestratorAgentExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy'
+      Tags:
+        - Key: application
+          Value: sysdig
+  SysdigOrchestratorAgentTaskRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: 'sts:AssumeRole'
+      # ManagedPolicyArns:
+      #   -
+      Policies:
+        - PolicyName: root
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+                # Permissions given in the default iam role for ecs tasks
+              - Effect: Allow
+                Action:
+                  - "ecr:GetAuthorizationToken"
+                  - "ecr:BatchCheckLayerAvailability"
+                  - "ecr:GetDownloadUrlForLayer"
+                  - "ecr:BatchGetImage"
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "*"
+      Tags:
+        - Key: application
+          Value: sysdig
+  SysdigOrchestratorAgentSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow agentino to connect
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 6667
+          ToPort: 6667
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: application
+          Value: sysdig
+  SysdigOrchestratorAgent:
+    Type: AWS::ECS::TaskDefinition
+    DependsOn: SysdigOrchestratorAgentLogs
+    Properties:
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - FARGATE
+      Cpu: 2048
+      Memory: 8GB
+      ExecutionRoleArn: !Ref SysdigOrchestratorAgentExecutionRole
+      TaskRoleArn: !Ref SysdigOrchestratorAgentTaskRole
+      ContainerDefinitions:
+        - Name: OrchestratorAgent
+          Image: !Ref SysdigOrchestratorAgentImage
+          Environment:
+            - Name: ACCESS_KEY
+              Value: !Ref SysdigAccessKey
+            - Name: COLLECTOR
+              Value: !Ref SysdigCollectorHost
+            - Name: COLLECTOR_PORT
+              Value: !Ref SysdigCollectorPort
+            - Name: TAGS
+              Value: !Ref SysdigAgentTags
+            - Name: CHECK_CERTIFICATE
+              Value: !Ref SysdigCheckCollectorCertificate
+          PortMappings:
+            - ContainerPort: 6667
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-region: !Ref AWS::Region
+              awslogs-group: !Ref SysdigOrchestratorAgentLogs
+              awslogs-stream-prefix: ecs
+      Tags:
+        - Key: application
+          Value: sysdig
+
+  SysdigLoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      IpAddressType: ipv4
+      Scheme: internal
+      Type: network
+      Subnets:
+        - !Ref SubnetA
+        - !Ref SubnetB
+      Tags:
+        - Key: application
+          Value: sysdig
+
+  SysdigTargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Port: 6667
+      Protocol: TCP
+      TargetType: ip
+      TargetGroupAttributes:
+        - Key: deregistration_delay.timeout_seconds
+          Value: 60 # default is 300
+      VpcId: !Ref VPC
+
+  SysdigLoadBalancerListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      DefaultActions:
+        - TargetGroupArn: !Ref SysdigTargetGroup
+          Type: forward
+      LoadBalancerArn: !Ref SysdigLoadBalancer
+      Port: 6667
+      Protocol: TCP
+
+  SysdigOrchestratorAgentService:
+    Type: AWS::ECS::Service
+    DependsOn:
+      - SysdigLoadBalancerListener
+    Properties:
+      ServiceName: SysdigOrchestratorAgent
+      Cluster: !Ref SysdigAgentCluster
+      TaskDefinition: !Ref SysdigOrchestratorAgent
+      DeploymentConfiguration:
+        MinimumHealthyPercent: 100
+        MaximumPercent: 200
+      DesiredCount: 1
+      LaunchType: FARGATE
+      PlatformVersion: 1.4.0
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          AssignPublicIp: ENABLED
+          Subnets:
+            - !Ref SubnetA
+            - !Ref SubnetB
+          SecurityGroups:
+            - !Ref SysdigOrchestratorAgentSecurityGroup
+      LoadBalancers:
+        - ContainerName: OrchestratorAgent
+          ContainerPort: 6667
+          TargetGroupArn: !Ref SysdigTargetGroup
+      Tags:
+        - Key: application
+          Value: sysdig

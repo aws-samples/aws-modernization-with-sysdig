@@ -1,0 +1,54 @@
+## Prerrequisites:
+# 1. Have an AWS account with a key-pair and set the secrets
+# 2. Create the S3 bucket manually and set the proper json policies
+
+name: Deploy preview to AWS S3
+
+env:
+ BUCKET: awsworkshop-review
+ BUCKETREGION: sa-east-1
+ AWS_PROFILE: default
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    
+    runs-on: ubuntu-18.04
+
+    steps:
+      # Checks out the repository under $GITHUB_WORKSPACE, so the job can access it
+      - name: Checkout main
+        uses: actions/checkout@v2
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.102.3'
+          extended: true    
+      
+      - name: Clean
+        run: rm -rf public/*
+          
+      - name: Build
+        run: hugo --minify
+                  
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload S3
+        id: S3
+        with:
+          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ env.BUCKET }}
+          source_dir: 'public'           
+          destination_dir: ''
+                  
+      - name: Deploy / Upload content
+        run: 
+          # aws s3 mb s3://$BUCKET --region $BUCKETREGION
+          # aws s3api put-bucket-policy --bucket $BUCKET --policy file://s3_bucket_policy.json
+          # aws s3 cp . s3://$BUCKET/ --profile $AWS_PROFILE --recursive
+          echo Preview url http://$BUCKET.s3-website-$BUCKETREGION.amazonaws.com
+        env:
+           AWS_DEFAULT_REGION: ${{ env.BUCKETREGION }}

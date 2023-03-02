@@ -25,6 +25,7 @@ hugo server
 
 ```
 
+
 ### Learning Objectives
 - Amazon ECR image scanning
 - Amazon Fargate automated image scanning

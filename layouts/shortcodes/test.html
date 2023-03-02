@@ -1,0 +1,14 @@
+{{ $s := (readFile (printf "%s" (.Get 1))) }}
+{{ $t := split $s "\n" }}
+{{ if not (eq (int (.Get 2)) 1) }}
+{{ .Scratch.Set "u" (after (sub (int (.Get 2)) 1) $t) }}
+{{ else }}
+{{ .Scratch.Set "u" $t }}
+{{ end }}
+{{ $v := first (add (sub (int (.Get 3)) (int (.Get 2))) 1) (.Scratch.Get "u") }}
+{{ if (.Get 4) }}
+{{ .Scratch.Set "opts" (printf ",%s" (.Get 4)) }}
+{{ else }}
+{{ .Scratch.Set "opts" "" }}
+{{ end }}
+{{ highlight (delimit $v "\n") (.Get 0) (printf "linenos=table,linenostart=%d%s" (.Get 2) (.Scratch.Get "opts")) }}

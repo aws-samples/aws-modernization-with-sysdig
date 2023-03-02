@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "Secure DevOps with AWS & Sysdig"
+title = "Sysdig Secure for AWS"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "true"
@@ -13,11 +13,11 @@ enableEmoji = true
   # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page.
   # Useful to give opportunity to people to create merge request for your doc.
   # See the config.toml file from this documentation site to have an example.
-  editURL = "https://github.com/sysdiglabs/aws-modernization-workshop-with-Sysdig/edit/main/content/"
+  editURL = "https://github.com/sysdiglabs/aws-modernization-with-sysdig/edit/main/content/"
   # Author of the site, will be used in meta information
-  author = "Sysdig Training and CNATIVE Teams"
+  author = "Sysdig Education Team"
   # Description of the site, will be used in meta information
-  description = "AWS Modernization Workshop with Sysdig"
+  description = "AWS Modernization Workshop Secure DevOps with Sysdig"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable search function. It will hide search bar
@@ -45,6 +45,11 @@ enableEmoji = true
 home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
+name = "<i class='fas fa-graduation-cap'></i> Sysdig Public Education Portal"
+url = "https://learn.sysdig.com/"
+weight = 5
+
+[[menu.shortcuts]]
 name = "<i class='fas fa-graduation-cap'></i> Modernization Workshops"
 url = "https://awsworkshop.io"
 weight = 10
@@ -70,11 +75,26 @@ url = "https://sysdig.com/company/free-trial/"
 weight = 40
 
 [markup]
-  defaultMarkdownHandler = "blackfriday"
-  [markup.blackFriday]
-    hrefTargetBlank = true
-
-
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
 
 [deployment]
 # By default, files are uploaded in an arbitrary order.
