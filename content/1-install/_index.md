@@ -41,6 +41,6 @@ and previous experience with each of the tools.
   In the particular context of this training, the agents are required to enable:
 
       - CIEM
-      - Runtime Thread Detection in EKS
+      - Runtime Threat Detection in EKS
       - KSCM: Actionable Compliance and IaC Remediation
       - **Kubernetes Admission Controller** for cluster Audit logging in EKS
