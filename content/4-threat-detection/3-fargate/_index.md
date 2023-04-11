@@ -5,7 +5,7 @@ weight: 3
 ---
 
 
-# Fargate Runtime Thread Detection
+# Fargate Runtime Threat Detection
 
 Every modern cloud platform provides serverless platforms to run
 containerized workloads without the hassle of host or infrastructure management.
@@ -24,13 +24,13 @@ security could also be compromised.
 Sysdig Serverless agents eliminates security blind spots.
 With this feature, your team will be able to detect suspicious activity
 on your serverless workloads.
-This thread detection engine is based on open source Falco,
+This threat detection engine is based on open source Falco,
 so the same set of rules used for hosts, containers and Kubernetes will
 be applied to your Fargate workloads.
 
 Sysdig and AWS partnered to provide a serverless agent to [instrument
 Fargate workloads](https://sysdig.com/blog/securing-aws-fargate/). 
-Imagine all of the power of your Falco rules for thread detection, but
+Imagine all of the power of your Falco rules for threat detection, but
 packaged for your serverless workloads.
 
 

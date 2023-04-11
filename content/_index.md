@@ -76,7 +76,7 @@ the following Sysdig Secure features available today for AWS:
      - Infrastructure as Code (_IaC_) remediation
    - Cloud Infrastructure Entitlements Management (_CIEM_)
  - Threat Detection:
-   - Cloud Thread Detection based on _CloudTrail_
+   - Cloud Threat Detection based on _CloudTrail_
    - _EKS_ Runtime Threat Detection based on [_Falco_](https://falco.org/)
    - _Fargate_ Serverless Runtime Threat Detection
 

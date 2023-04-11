@@ -1,5 +1,5 @@
 ---
-title: "4.2. EKS Runtime thread detection"
+title: "4.2. EKS Runtime threat detection"
 chapter: true
 weight: 2
 ---
