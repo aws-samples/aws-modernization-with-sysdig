@@ -1,9 +1,9 @@
 ---
-title: "Dig deeper: Thread Detection"
+title: "Dig deeper: Threat Detection"
 weight:  99
 ---
 
-The main tool for Thread Detection and Runtime Security is [Falco](falco.org).
+The main tool for Threat Detection and Runtime Security is [Falco](falco.org).
 
 Falco was created by Sysdig in 2016.  It was the first runtime security project to join CNCF as a sandbox-level project, and has since graduated to incubation status.
 
