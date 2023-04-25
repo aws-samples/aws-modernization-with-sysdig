@@ -8,7 +8,7 @@ weight: 60
 
 The Sysdig Secure Platform is as **a single source of truth** in terms of cloud security posture:
 
-- Detect runtime threads in investigate security incidents, even for serverless workloads in Fargate
+- Detect runtime threats in investigate security incidents, even for serverless workloads in Fargate
 - Scan vulnerabilities in all your running workloads and container repositories. You can further strengthen your security and compliance by implementing image scanning in other places of your DevOps lifecycle, like the [CI/CD pipelines](https://sysdig.com/blog/image-scanning-aws-codepipeline-codebuild/) or in the registry.
 - Check your compliance status and runtime security events.
 
