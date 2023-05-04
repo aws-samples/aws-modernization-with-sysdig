@@ -54,3 +54,24 @@ echo "$ECR_NAME, $REGION, $AWS_ACCOUNT"
 aws ecr get-login-password --region $REGION | \
     docker login --username AWS --password-stdin \
     $AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com
+
+
+export ECR_NAME=aws-workshop
+export REGION=us-east-1
+export IMAGE=$AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com/$ECR_NAME
+
+#push some sample images to the repo
+repositories=( \
+    "mysql:5.7" \
+    "postgres:13" \
+    "redis:6" \
+)
+
+for repo_src in ${repositories[@]}; do
+
+    docker pull ${repo_src}
+
+    repo_dest=${AWS_ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/aws-workshop-${repo_src}
+    docker tag ${repo_src} ${repo_dest}
+    docker push ${repo_dest}
+done
