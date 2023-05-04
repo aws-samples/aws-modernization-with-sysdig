@@ -173,7 +173,7 @@ elements to secure your workloads with the Sysdig Serverless Agent.
     The first security alerts will pop up in your Sysdig Secure Events feed right after the deployment is completed.
 
 
-## Visualize runtime security threads from Fargate in Sysdig Secure
+## Visualize runtime security threats from Fargate in Sysdig Secure
 
 This application has a basic behavior: writing under `/bin`.
 Sysdig Secure includes by default a *Falco Rule* detecting this behavior.
@@ -203,7 +203,7 @@ During this section you replicated a production Fargate environment.
 You instrumented an existing Fargate task definition to detect runtime security threats
 with the Sysdig Serverless Agent.
 
-Now you are ready to **Detect Runtime security threads in your AWS Fargate workloads with Sysdig Secure**.
+Now you are ready to **Detect Runtime security threaths in your AWS Fargate workloads with Sysdig Secure**.
 
 
 ## Clean-up

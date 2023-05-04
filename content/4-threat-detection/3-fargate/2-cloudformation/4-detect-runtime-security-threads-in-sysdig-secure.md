@@ -1,5 +1,5 @@
 ---
-title: "Detect Threads in Secure"
+title: "Detect Threats in Secure"
 chapter: true
 weight: 50
 ---
@@ -25,4 +25,4 @@ This application is writing under `/bin`, what is not a good practice. Luckily, 
 
 ---
 
-You have finished this practice. Now you are ready to **Detect Runtime security threads in your AWS Fargate workloads with Sysdig Secure**.
+You have finished this practice. Now you are ready to **Detect Runtime security threats in your AWS Fargate workloads with Sysdig Secure**.

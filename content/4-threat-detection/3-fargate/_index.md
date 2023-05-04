@@ -37,8 +37,8 @@ packaged for your serverless workloads.
 ## Installation methods
 
 The serverless agents can be automatically deployed with:
-- [Terraform](/4-thread-detection/3-fargate/1-terraform/01-terraform-install.html).
-- [CloudFormation](/4-thread-detection/3-fargate/2-cloudformation.html).
+- [Terraform](/4-threat-detection/3-fargate/1-terraform/01-terraform-install.html).
+- [CloudFormation](/4-threat-detection/3-fargate/2-cloudformation.html).
   
 For more specific use cases, your workloads can also be
 [instrumented manually](https://docs.sysdig.com/en/docs/installation/serverless-agents/aws-fargate-serverless-agents/#manually-instrument-a-task-definition).

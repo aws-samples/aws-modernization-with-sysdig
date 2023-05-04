@@ -8,9 +8,12 @@ mkdir -p $HOME/bin && mv ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/
 # download and deploy EKS cluster from Hashicorp demo https://github.com/hashicorp/learn-terraform-provision-eks-cluster
 git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
 cd learn-terraform-provision-eks-cluster
-# change machine types for first instance type
-sed -ie 's/t3.small/t3.large/g' eks-cluster.tf
+# change machine types for first instance type as well as the region
+sed -ie 's/t3.small/t3.large/g' main.tf
 sed -ie 's/us-east-2/us-east-1/g' variables.tf
+# comment out terraform-cloud to set local terraform
+sed -ie '6,10 s/^/#/' terraform.tf
+
 # deploy cluster
 terraform init && terraform apply -auto-approve
 

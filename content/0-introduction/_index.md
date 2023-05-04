@@ -80,7 +80,7 @@ Module | Submodule | Use-case | Description | ETA
 &nbsp; | Sysdig Agents | Deploy Sysdig Secure for k8s Workloads | Deploy Sysdig Agents in EKS | 10 min.
 [2. Vulnerability Management](../../2-vulnerability-management.html) | ECR Registry Scanning | Scan images from ECR automatically | Scan your ECR Registry images automatically | 20 min.
 [3. Security Posture](../../3-posture.html) | CSPM | Cloud Security Posture Management | Insights, Benchmarks and Compliance | 15 min.
-[4. Threat Detection](../../4-thread-detection.html) | CloudTrail | Runtime Cloud Security | Protect your cloud environments at runtime. | 10 min.
+[4. Threat Detection](../../4-threat-detection.html) | CloudTrail | Runtime Cloud Security | Protect your cloud environments at runtime. | 10 min.
 &nbsp; | EKS | Runtime Security for EKS | Protect your AWS Managed k8s from runtime threats. | 15 min.
 &nbsp; | Fargate | Runfime Security for Fargate | Serverless Runtime Protection | 20 min.
 
