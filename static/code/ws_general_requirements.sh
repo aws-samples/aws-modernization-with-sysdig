@@ -43,7 +43,19 @@ export ECR_NAME=aws-workshop
 export REGION=us-east-1
 
 aws ecr create-repository --repository-name $ECR_NAME \
-    --image-scanning-configuration scanOnPush=true \
+    --image-scanning-configuration scanOnPush=false \
+    --region $REGION
+
+aws ecr create-repository --repository-name mysql \
+    --image-scanning-configuration scanOnPush=false \
+    --region $REGION
+
+aws ecr create-repository --repository-name postgres \
+    --image-scanning-configuration scanOnPush=false \
+    --region $REGION
+
+aws ecr create-repository --repository-name redis \
+    --image-scanning-configuration scanOnPush=false \
     --region $REGION
 
 # auth AWS CLI with registry
@@ -52,7 +64,23 @@ echo "$ECR_NAME, $REGION, $AWS_ACCOUNT"
 aws ecr get-login-password --region $REGION | \
     docker login --username AWS --password-stdin \
     $AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com
-    
+
+# populate ECR
+repositories=( \
+    "mysql:5.7" \
+    "postgres:13" \
+    "redis:6" \
+)
+
+for repo_src in ${repositories[@]}; do
+
+    docker pull ${repo_src}
+
+    repo_dest=${AWS_ACCOUNT}.dkr.ecr.us-east-1.amazonaws.com/${repo_src}
+    docker tag ${repo_src} ${repo_dest}
+    docker push ${repo_dest}
+done
+
    
 # Validate that our IAM role is valid.
 aws sts get-caller-identity --query Arn | grep Sysdig-Workshop-Admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
