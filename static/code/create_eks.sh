@@ -6,11 +6,17 @@ chmod +x ./kubectl
 mkdir -p $HOME/bin && mv ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
 
 # download and deploy EKS cluster from Hashicorp demo https://github.com/hashicorp/learn-terraform-provision-eks-cluster
-git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
+# git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
+# we are providing the source files with https://github.com/sysdiglabs/aws-modernization-with-sysdig/pull/19
 cd learn-terraform-provision-eks-cluster
-# change machine types for first instance type
-sed -ie 's/t3.small/t3.large/g' eks-cluster.tf
+
+# patch
+# change machine types for first instance type as well as the region
+sed -ie 's/t3.small/t3.large/g' main.tf
 sed -ie 's/us-east-2/us-east-1/g' variables.tf
+# comment out terraform-cloud to set local terraform
+sed -ie '6,10 s/^/#/' terraform.tf
+
 # deploy cluster
 terraform init && terraform apply -auto-approve
 
@@ -21,6 +27,7 @@ aws eks --region $(terraform output -raw region) update-kubeconfig \
 # falco event generator 
 helm repo add falcosecurity https://falcosecurity.github.io/charts
 helm repo update
+kubectl create ns event-generator
 helm upgrade --install event-generator falcosecurity/event-generator \
   --namespace event-generator \
   --create-namespace \

@@ -36,8 +36,6 @@ echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
 echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 aws configure set default.region ${AWS_REGION}
 
-# Validate that our IAM role is valid.
-aws sts get-caller-identity --query Arn | grep Sysdig-Workshop-Admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
 
 
 # ECR Registry for module 2, create repository
@@ -54,3 +52,7 @@ echo "$ECR_NAME, $REGION, $AWS_ACCOUNT"
 aws ecr get-login-password --region $REGION | \
     docker login --username AWS --password-stdin \
     $AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com
+    
+   
+# Validate that our IAM role is valid.
+aws sts get-caller-identity --query Arn | grep Sysdig-Workshop-Admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
