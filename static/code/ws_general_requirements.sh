@@ -41,26 +41,15 @@ aws configure set default.region ${AWS_REGION}
 # ECR Registry for module 2, create repository
 export ECR_NAME=aws-workshop
 export REGION=us-east-1
+export AWS_ACCOUNT=$(aws sts get-caller-identity | jq '.Account' | xargs)
 
-aws ecr create-repository --repository-name $ECR_NAME \
-    --image-scanning-configuration scanOnPush=false \
-    --region $REGION
+repositories=( "$ECR_NAME" "mysql" "postgres" "redis" )
 
-aws ecr create-repository --repository-name mysql \
-    --image-scanning-configuration scanOnPush=false \
-    --region $REGION
-
-aws ecr create-repository --repository-name postgres \
-    --image-scanning-configuration scanOnPush=false \
-    --region $REGION
-
-aws ecr create-repository --repository-name redis \
-    --image-scanning-configuration scanOnPush=false \
-    --region $REGION
+for repo in ${repositories[@]}; do
+    aws ecr create-repository --repository-name ${repo} --region $REGION --image-scanning-configuration scanOnPush=false
+done
 
 # auth AWS CLI with registry
-export AWS_ACCOUNT=$(aws sts get-caller-identity | jq '.Account' | xargs)
-echo "$ECR_NAME, $REGION, $AWS_ACCOUNT"
 aws ecr get-login-password --region $REGION | \
     docker login --username AWS --password-stdin \
     $AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com
