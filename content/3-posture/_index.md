@@ -17,7 +17,7 @@ Contact your Sysdig representative to learn more about this features.
 
 In this module, you will learn about Security Posture and Compliance. 
 
-You will use Sysdig Secure to get an overview of your Cloud (CSPM) and Kubernetes (KSPM) security posture and will take action to remediate a couple of detected issues. 
+You will use Sysdig Secure to get an overview of your Cloud security posture and will take action to remediate a couple of detected issues. 
 
 <!-- You will also use the *IaC Security* feature to automatically fix one posture issue with the new Sysdig Secure integration with GitHub. -->
 

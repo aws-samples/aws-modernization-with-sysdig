@@ -12,9 +12,14 @@ During the next steps you'll be required to retrieve and use some user data like
 
 During the workshop, you'll get instructions to learn how to get them.
 
-Please, pay special attention to the Sysdig region you use to register and get your account.
-To learn more about regions, visit the
-[documentation page about regions](https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/).
+
+{{% notice info %}}
+**About Sysdig and AWS regions**:
+For production, having your Sysdig Saas account in a region close to you AWS region
+is beneficial, but for this training you can select the region you want.
+Learn more about Sysdig Saas regions in the
+[docs](https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/).
+{{% /notice %}}
 
 ## Getting a new account
 
@@ -26,23 +31,16 @@ In case you don't have an account yet, follow the next steps:
 
     ![Get trial](/images/10_prerequisites/getTrial.png)
 
-<img src=/images/10_prerequisites/getTrial.png width="100%" >
-
-
 2. You will receive a confirmation email.
    Follow the link to log into Sysdig in a new tab.
 
-<!-- 3. Get your user data:
-   - The '**Sysdig Secure API Endpoint**' you are routed to.  This will be the Sysdig Secure hostname in the browser URL. It should be one of the following
-     - https://secure.sysdig.com
-     - https://eu1.app.sysdig.com
-     - https://us2.app.sysdig.com
+3. Set a password, and the onboarding Wizard will be presented (the next steps are going to skip the Wizard,
+   you'll be learning in the next steps how to install all required Sysdig components in your AWS account and EKS cluster).
+   Select AWS and then click on `Alternatively, provision with Terraform for Single Account`.
 
-         Make sure you do not leave a trailing `/` in this URL. For more information of Sysdig's regional URLs, please refer to the [Sysdig documentation](https://docs.sysdig.com/en/saas-regions-and-ip-ranges.html).
+    ![Onboarding](/images/onboarding.png)
 
-    - Your '**Sysdig Secure API Token**'. Click your initials on the left nav bar, click '**Settings**' and navigate to '**User Profile**'.
+4. Type in the AWS Region `us-east-1` and click `Next`.
+   Then click `Get into Sysdig`. The Sysdig Secure UI will be presented.
 
-        **IMPORTANT:** Make sure you **DO NOT** use the **Sysdig Monitor** API Token, or the Access Token! -->
-
-
-<!-- ![Get trial](/images/10_prerequisites/apiValues.gif) -->
+   In the next step, you'll setup an AWS Cloud9 engine as a workstation to complete this workshop.
