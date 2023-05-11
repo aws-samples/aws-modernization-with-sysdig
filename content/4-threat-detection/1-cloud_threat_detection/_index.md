@@ -1,5 +1,5 @@
 ---
-title: "4.1. CloudTrail"
+title: "CloudTrail"
 chapter: true
 weight: 1
 ---

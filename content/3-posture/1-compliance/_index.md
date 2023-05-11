@@ -1,5 +1,5 @@
 ---
-title: "1. Compliance"
+title: "Compliance"
 chapter: true
 weight: 1
 ---

@@ -1,5 +1,5 @@
 ---
-title: "2. Identity and Access"
+title: "Identity and Access"
 chapter: true
 weight: 2
 ---
