@@ -12,6 +12,8 @@ Contact your Sysdig representative for a full overview of its capabilities.
 {{% /notice %}}
 
 
+# Module 3: Posture
+
 ## About this module
 
 In this module, you will learn about Security Posture for Compliance
