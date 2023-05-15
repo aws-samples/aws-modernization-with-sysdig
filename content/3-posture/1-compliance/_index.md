@@ -36,13 +36,3 @@ Learn more about it in the [docs](https://docs.sysdig.com/en/docs/sysdig-secure/
 
 ![Inventory](/images/inventory1.png)
 
-## Remediations: types
-
-### Status of a control
-
-- Pass
-- Fail
-- Accept risk: a failed control can be removed from the failed score. 
-
-remediations: types -->
-

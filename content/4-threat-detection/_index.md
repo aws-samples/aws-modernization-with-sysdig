@@ -1,5 +1,5 @@
 ---
-title: "4. Threat Detection"
+title: "3. Threat Detection"
 chapter: true
 weight: 57
 ---

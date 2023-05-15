@@ -1,9 +1,9 @@
----
+<!-- ---
 title: "3. Posture"
 chapter: true
 weight: 40
 ---
-
+ -->
 
 {{% notice info %}}
 The new Actionable Compliance views have been recently released.
