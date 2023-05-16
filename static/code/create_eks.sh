@@ -24,6 +24,17 @@ terraform init && terraform apply -auto-approve
 aws eks --region $(terraform output -raw region) update-kubeconfig \
     --name $(terraform output -raw cluster_name)
 
+# Kubectl shell completion
+cat << EOF > /root/.kube/completion.bash.inc
+source /usr/share/bash-completion/bash_completion
+source <(kubectl completion bash)
+alias k=kubectl
+complete -o default -F __start_kubectl k
+EOF
+
+
+echo 'source /root/.kube/completion.bash.inc' >> /root/.bashrc
+
 # falco event generator 
 helm repo add falcosecurity https://falcosecurity.github.io/charts
 helm repo update

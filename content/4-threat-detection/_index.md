@@ -1,10 +1,10 @@
 ---
-title: "4. Threat Detection"
+title: "3. Threat Detection"
 chapter: true
 weight: 57
 ---
 
-# Module 4: Cloud Threat Detection based on Cloudtrail
+# Module 4: Threat Detection and Response
 
 ## Module Overview
 

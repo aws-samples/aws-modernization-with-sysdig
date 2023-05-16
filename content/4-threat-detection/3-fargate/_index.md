@@ -1,5 +1,5 @@
 ---
-title: "4.3. Fargate Runtime Threat Detection"
+title: "Fargate Runtime Threat Detection"
 chapter: true
 weight: 3
 ---

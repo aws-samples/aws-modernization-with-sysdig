@@ -8,6 +8,9 @@ weight: 20
 None of these installers enable Fargate Runtime Threat Detection. For this feature, it is required to follow a different installation method (covered in [Module 4.3](/4-threat-detection/3-fargate.html)).
 {{% /notice %}}
 
+
+# Module 1: Install
+
 In this first section you will learn:
 1. How to deploy Sysdig Secure for Cloud. There are two alternative methods:
 

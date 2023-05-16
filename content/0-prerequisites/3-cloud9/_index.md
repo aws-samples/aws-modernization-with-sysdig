@@ -8,7 +8,7 @@ weight: 3
 that lets you write, run, and debug your code from anywhere with just a browser.
 It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages.
 
-You will use _Amazon Cloud9_ to access our AWS account via the AWS CLI in this Workshop. There are a few steps to complete to set this up
+You will use _Amazon Cloud9_ to access your AWS account via the AWS CLI in this Workshop. There are a few steps to complete to set this up:
 
 1. Create and configure a new Cloud9 IDE environment
 2. Configure Cloud9 IDE environment
@@ -22,31 +22,35 @@ To access a Cloud9 instance, networking is required.
 Create a VPC for the Cloud9 instance:
 
 1. Follow this link to
-[**create VPC**](https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#CreateVpc:createMode=vpcWithResources),
-select **VPC and More** 
-and click on **Create VPC** to generate the networking components.
+   [**create VPC**](https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#CreateVpc:createMode=vpcWithResources),
+   select **VPC and More** 
+   and click on **Create VPC** to generate the networking components.
 
-Then, to create and configure the Cloud9 instance for this workshop:
+   Then, to create and configure the Cloud9 instance for this workshop:
 
-1. [Follow this link](https://us-east-1.console.aws.amazon.com/cloud9control/home?region=us-east-1#/create/)
-   to create the IDE. Name it `sysdig-workshop`.
+      1. [Follow this link](https://us-east-1.console.aws.amazon.com/cloud9control/home?region=us-east-1#/create/)
+         to create the IDE. Name it `sysdig-workshop`.
 
-2. Select the options:
-    - *Instance type*: **t3.medium**.
-    - *Platform*: **Amazon Linux 2**.
-    - *Connection*: **Secure Shell (SSH)**.
+      2. Select the options:
+          - Select *New EC2 instance*, then *Additional instance types*.
+          - *Instance type*: **t3.medium**.
+          - *Platform*: **Amazon Linux 2**.
+          - *Network settings > Connection*: **Secure Shell (SSH)**.
 
-3. Expand **VPC settings** under **Network settings**
-   and select the VPC created above
-   and one of its subnets (select a *public* one).
-   Click **Create** and then open the new workstation.
+      3. Expand **VPC settings** under **Network settings**
+         and select the VPC created above
+         and one of its subnets (select a *public* one).
+         Click **Create** and then open the new workstation.
 
-    ![Deploy Cloud9](/images/10_prerequisites/cloud9.gif)
+          ![Deploy Cloud9](/images/10_prerequisites/cloud9.gif)
 
-    {{% notice info %}}
+          {{% notice info %}}
 Wait for it to be ready. This might take up to 1-2 minutes to provision.
 {{% /notice %}}
 
+         The Cloud9 Dashboard will be presented. Wait for your new instance to be created,
+         then click on `Open`.
+         
 
 ## Configure Cloud9 IDE environment
 
@@ -114,6 +118,8 @@ Your workstation is ready to start the workshop.Starting from here, when you see
    ./ws_general_requirements.sh
    ```
 
+   Wait for the script to be done.
+
    {{% notice warning %}}
 This script will check the status of the attached IAM role: if it is not valid, <span style="color: red;">**DO NOT PROCEED**</span>. Go back and confirm the steps on this page.
 {{% /notice %}}
@@ -125,10 +131,10 @@ This script will check the status of the attached IAM role: if it is not valid, 
    ./create_eks.sh
    ```
 
+   This script will create the new EKS instance and deploy in the cluster the Falco `event-generator`.
+   This workload generates *syscall* activity that simulates different threats in the environment.
+
       {{% notice info %}}
 The EKS cluster deployment in AWS will take about 10 minutes to complete.
 There's no need to wait until the EKS provisioner is done. Open a new Terminal and continue from there with the workshop until the script is done.
 {{% /notice %}}
-
-
-  

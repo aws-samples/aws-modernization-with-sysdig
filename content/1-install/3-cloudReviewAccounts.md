@@ -6,7 +6,7 @@ weight: 3
 
 ## Review accounts connected
 
-There are [different methods](https://docs.sysdig.com/en/docs/installation/sysdig-secure-for-cloud/deploy-sysdig-secure-for-cloud-on-aws/#confirm-the-services-are-working) to check that the installation was successful. 
+There are [different methods](https://docs.sysdig.com/en/docs/installation/sysdig-secure/connect-cloud-accounts/aws/#validate) to check that the installation was successful. 
 
 One quick way to check it is to visit the [**Data Sources > Cloud Accounts**](https://secure.sysdig.com/#/data-sources/cloud-accounts)
 dashboard to review that an account with your *Account ID* is connected.
