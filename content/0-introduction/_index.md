@@ -4,66 +4,31 @@ chapter: false
 weight: 1
 ---
 
-# To Cloud Security Platforms
-## A new paradigm for security platforms
+# TO CLOUD NATIVE APPLICATION PROTECTION PLATFORMS
 
-Before describing the Sysdig platform, it is good to get an overview of the new
-categories for modern IT security tools that are emerging ³ for cloud.
+The cloud has fundamentally changed the nature of modern applications, IT infrastructures, and processes. Cloud infrastructures provide the dynamic building blocks that allow development teams to rapidly spin up software and continuously deliver solutions to meet evolving customer and market needs.
+Modern applications built on open software supply chains, microservices, and cloud support business innovation but also create a dynamic and growing attack surface of interdependent workloads, services, and identities. 
+To keep pace, cloud users are increasingly looking for a consolidated platform that addresses four functional requirements: 
+
+- Vulnerability management
+- Posture management
+- Permissions & entitlement management
+- Threat detection & response
+
+To boost effectiveness, organizations are adopting Cloud Native Application Protection Platforms (CNAPPs), like Sysdig, that combine functionality for Cloud Security Posture Management (CSPM), Cloud Workload Protection (CWP), Cloud Infrastructure Entitlement Management (CIEM), and Cloud Detection and Response (CDR) into one platform. By integrating these capabilities teams are able to avoid disconnects that occur with point solutions to manage risk without slowing down application delivery.
 
 ![Cloud Security Platforms](/images/00_introduction/cloudplatforms.png)
-
-- **Cloud Workloads protection platform (CWPP)**: This segment might look like a dropbox
-  category with a set of heterogeneus tools. But they all share a common goal:
-  workload protection in its different stages. It includes:
-    - Runtime Detection
-    - System hardening
-    - Vulnerability Management
-    - Network Security
-    - Compliance
-    - Incident Response
-
-- **Cloud Security Posture Management (CSPM)**: security in cloud environments is not all about the workloads.
-  The cloud where the workloads are running also need to be protected by the final user.
-  This tools are designed to identify misconfiguration issues and compliance risks in the cloud.
-  Tracking cloud resources and verifying the static configuration of the cloud is the main goal of these tools.
-  Some CSPM solutions will add extended capabilities, like providing remediation.
-  Also, one of the main use cases of CSPM is to check that cloud settings are following best practices.
-
-- **Cloud infrastructure entitlement management (CIEM)**: in cloud environments, human and non-human 
-  identities can access access different resources. To apply a Principle of least privilege,
-  administrators need to learn which permissions are being used on a daily basis and which ones not.
-  And hence, suggest policy modifications to enforce least privilege access.
-
-- **Cloud-native application protection platform (CNAPP)**: it provides more than CWPP-CSPM convergence.
-  CNAPP integrates CSPM and CWPP to offer both, and potentially augments them
-  with additional cloud security capabilities, like Infrastructure as Code Scanning,
-  extended monitoring capabilities and more.
-
-In this scenario, it is easy to find tools targeted to an specific security area,
-with no real support work with other tools. Some customers decide to approach cloud
-security with different tools to cover all the different use cases.
-But this lack of integration might have negative consequences.
-
-Sysdig provides an integral approach to continuos cloud security,
-targeting at all of the to the whole spectrum of security threats.
 
 ![Sysdig](/images/logo.png)
 
 
 # Sysdig Secure for AWS
 
-Sysdig is driving the standard for cloud and container security and helping enterprises confidently run containers,
-Kubernetes, and cloud services. With the Sysdig platform, you can find and prioritize software vulnerabilities,
-detect and respond to threats, and manage cloud configurations, permissions, and compliance. 
+Sysdig helps companies secure and accelerate innovation in the cloud. Our roots are in runtime security built on Falco, the open standard for cloud threat detection created by Sysdig. Powered by Runtime Insights, our platform helps developers, DevOps, DevSecOps, and security teams understand what is running in production to focus on the risks that matter most.
 
-From containers and Kubernetes running with solutions like Amazon ECS, Amazon EKS, and AWS Fargate,
-to your AWS cloud services such as Amazon S3, Amazon RDS, and AWS Lambda, you get a single view of risk from source to run.
+Using Sysdig, you’ll be able to detect and stop attacks in real time, prioritize and fix vulnerabilities fast, reduce cloud security posture risk, and more effectively manage permissions.
 
-By providing real-time visibility at scale, Sysdig helps you address risk and eliminate
-security blind spots across your entire cloud and container environment. 
-
-The following section provides an overview of the modules covered in this workshop
-as well as guidance on expected costs if you run the workshop in your own AWS account.
+In this workshop, you’ll experience how to implement cloud-native security for containers and Kubernetes with AWS solutions like Amazon Elastic Container Service (ECS), Amazon Elastic Kubernetes Service (EKS), and AWS Fargate, as well as manage and remediate misconfigurations with AWS cloud services such as Amazon S3, Amazon RDS, and AWS Lambda.
 
 
 ## Workshop Modules
@@ -80,7 +45,7 @@ Module | Submodule | Use-case | Description | ETA
 &nbsp; | Sysdig Agents | Deploy Sysdig Secure for k8s Workloads | Deploy Sysdig Agents in EKS | 10 min.
 [2. Vulnerability Management](../../2-vulnerability-management.html) | ECR Registry Scanning | Scan images from ECR automatically | Scan your ECR Registry images automatically | 20 min.
 [3. Security Posture](../../3-posture.html) | CSPM | Cloud Security Posture Management | Insights, Benchmarks and Compliance | 15 min.
-[4. Threat Detection](../../4-thread-detection.html) | CloudTrail | Runtime Cloud Security | Protect your cloud environments at runtime. | 10 min.
+[4. Threat Detection](../../4-threat-detection.html) | CloudTrail | Runtime Cloud Security | Protect your cloud environments at runtime. | 10 min.
 &nbsp; | EKS | Runtime Security for EKS | Protect your AWS Managed k8s from runtime threats. | 15 min.
 &nbsp; | Fargate | Runfime Security for Fargate | Serverless Runtime Protection | 20 min.
 

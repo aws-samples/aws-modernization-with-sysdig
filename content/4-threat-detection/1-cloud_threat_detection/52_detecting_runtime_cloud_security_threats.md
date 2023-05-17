@@ -30,7 +30,7 @@ S3 bucket names are globally unique, so we'll use **your initials** in **lower c
 
     aws s3api create-bucket \
       --bucket $BUCKETNAME\
-      --region sa-east-1 \
+      --region us-east-1 \
       --create-bucket-configuration LocationConstraint=sa-east-1
     ```
 

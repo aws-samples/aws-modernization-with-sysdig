@@ -14,7 +14,7 @@ To learn more about this, review the docs [here](https://docs.sysdig.com/en/docs
 
 ## Requirements
 
-To install the Sysdig Secure for AWS integration, it is required:
+To install the Sysdig Secure for AWS integration:
 - Terraform installed in your host (v.3.1+).
 - Sysdig Secure SaaS account with administrator permissions.
 
@@ -22,14 +22,14 @@ To install the Sysdig Secure for AWS integration, it is required:
 ## Install
 
 1. Log into Sysdig Secure, and browse to **Integrations > Data Sources > Cloud Accounts**, 
-then click on [**Connect Cloud Account > AWS > Terraform Single Account**](https://secure.sysdig.com/#/data-sources/cloud-accounts?setupModalEnv=AWS&installContentDisplayType=tabular&accountType=single).
+then click on [**Connect AWS > Terraform Single Account**](https://secure.sysdig.com/#/data-sources/cloud-accounts?setupModalEnv=AWS&installContentDisplayType=tabular&accountType=single).
 
     ![Install with Terraform](/images/1-installation/aws.png)
 
-2. In the menu, insert a valid aws region (for this workshop, use `us-east-1`)
+1. In the menu, insert a valid aws region (for this workshop, use `us-east-1`)
    and copy the resulting content.
 
-3. Go to the terminal window and
+2. Go to the terminal window and
    create a folder with the `main.tf` file inside.
    Copy the terraform manifest from the previous step in this file.
 
@@ -39,26 +39,18 @@ then click on [**Connect Cloud Account > AWS > Terraform Single Account**](https
     touch main.tf
    ```
 
-4. Some components (*Vulnerability Management*) are disabled by default.
-   To include them, add the next input variables inside of the `"secure-for-cloud_example_single-account"` module definition.
-   Be careful with indenting:
-
-    ```terraform
-        deploy_beta_image_scanning_ecr = true
-    ```
-
     The final result should look like this:
 
     {{% code-to-md "/static/code/cloudvision/aws-single-tf.tf" "terraform" %}}
 
-5. Now, just initialize and execute Terraform with:
+3. Now, just initialize and execute Terraform with:
 
     ```bash
     terraform init && \
     terraform apply --auto-approve
     ```
 
-6. Wait until the installation finishes.
+4. Wait until the installation finishes.
     You'll see the Terraform logs displaying the progress of the install
     (it should not take more than 2 minutes to deploy):
 

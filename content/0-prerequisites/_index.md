@@ -9,6 +9,9 @@ If you already have an AWS account and a Sysdig Secure account,
 skip to [Cloud9 IDE Workspace](/0-prerequisites/3-cloud9.html).
 {{% /notice %}}
 
+
+# Module 0: Prerequisites
+
 This section explains how to:
 
 1. [Get and access an _AWS_ account](/0-prerequisites/1-aws_account.html).

@@ -1,5 +1,5 @@
 ---
-title: "2. CIEM"
+title: "Identity and Access"
 chapter: true
 weight: 2
 ---

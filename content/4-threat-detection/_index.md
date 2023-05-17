@@ -1,10 +1,10 @@
 ---
-title: "4. Threat Detection"
+title: "3. Threat Detection"
 chapter: true
 weight: 57
 ---
 
-# Module 4: Cloud Threat Detection based on Cloudtrail
+# Module 4: Threat Detection and Response
 
 ## Module Overview
 
@@ -20,7 +20,7 @@ In this module you will learn about Threat Detection, this includes:
 After the image scanning is done, you might think that all the work is completed and your application is safe to be deployed and used.
 
 Reality is that not all vulnerabilities are known and indexed in a vulnerability database
-(remembed this is part of [how image scanning works](/2-vulnerability-management/9-digdeeper.html)). But there are ways to reduce this risk: enter Runtime Security.
+(remember this is part of [how image scanning works](/2-vulnerability-management/9-digdeeper.html)). But there are ways to reduce this risk: enter Runtime Security.
 
 With Runtime Security you can stay safe against 
 zero-day vulnerabilities, but also agains threats harder to detect like file access (data leaks) or

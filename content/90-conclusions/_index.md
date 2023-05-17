@@ -6,12 +6,8 @@ weight: 60
 
 # Conclusions
 
-The Sysdig Secure Platform is as **a single source of truth** in terms of cloud security posture:
+Sysdig’s cloud native application protection platform unifies cloud and container security to help AWS users ship applications fast without security becoming a bottleneck. By consolidating the security capabilities needed for vulnerability management, permissions and configuration management, and threat detection and response, you can shift left and shield right –  to identify security problems before they move into production and improve operational practices and security monitoring to defend against attacks.
 
-- Detect runtime threads in investigate security incidents, even for serverless workloads in Fargate
-- Scan vulnerabilities in all your running workloads and container repositories. You can further strengthen your security and compliance by implementing image scanning in other places of your DevOps lifecycle, like the [CI/CD pipelines](https://sysdig.com/blog/image-scanning-aws-codepipeline-codebuild/) or in the registry.
-- Check your compliance status and runtime security events.
+AWS has revolutionized how modern applications are built and delivered, helping  organizations maintain a competitive edge and meet ever-changing customer demands. As customers expand their use of AWS services and leverage containerized workloads running on Amazon ECS, Amazon EKS, and AWS Fargate, adapting security practices is key to success.
 
-AWS security can save your infrastructure from failing at its worst moment. It will protect you and your customer data against misconfigurations, a security compromise, or your wallet from unexpected fees.
-
-CloudTrail is a great source of truth, as it can see everything that is happening in your AWS accounts. Leverage Sysdig Secure by deploying Sysdig CloudConnector for CloudTrail and obtaining the runtime visibility you need to implement AWS threat detection. Its out-of-the-box set of Falco rules for CloudTrail minimizes the setup effort, response time, and resources needed for investigating security events.
+By tapping into key data sources for cloud and containers, including system calls, Kubernetes audit logs, and CloudTrail logs, Sysdig is able to provide real-time visibility to address misconfigurations, unwanted activity, and threats across your cloud infrastructure and workloads. Our security built on open source Falco and the application of Runtime Insights helps drive greater efficiency, helping teams prioritize, focus, and address the most critical risks across AWS cloud infrastructure and workloads.
