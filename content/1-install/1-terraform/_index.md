@@ -14,7 +14,7 @@ To learn more about this, review the docs [here](https://docs.sysdig.com/en/docs
 
 ## Requirements
 
-To install the Sysdig Secure for AWS integration, it is required:
+To install the Sysdig Secure for AWS integration:
 - Terraform installed in your host (v.3.1+).
 - Sysdig Secure SaaS account with administrator permissions.
 

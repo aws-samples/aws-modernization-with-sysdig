@@ -20,7 +20,7 @@ this is a intro to the workshop:
 
 Welcomed to the Sysdig and AWS workshop!
 
-If you are here, you are likely aware of the challenges of securing in the cloud.
+If you are here, you are likely aware of the challenges of providing security in the cloud.
 
 
 ## Key Challenges of Securing the Cloud
@@ -34,7 +34,7 @@ Securing cloud-native applications and infrastructure is not easy, even for prof
 - Dynamic workloads using a combination of cloud services, VMs, microservices, and applications built inside containers. How can you track activity in real time to keep up with threats?
 - Rapid code development using CI/CD development practices increases the risk of vulnerabilities entering production. How do you prioritize issues without slowing innovation? 
 - Multiple teams – Developers, DevOps, Security – are responsible for the management, monitoring, and security of infrastructure, applications, and cloud services. How do you eliminate silos and enable collaboration? 
-- At scale, large volumes of dynamic cloud assets, configurations, and permissions spanning public and on-premises infrastructure are difficult manage. How can you get a single view of risk across all workloads and cloud deployments?
+- At scale, large volumes of dynamic cloud assets, configurations, and permissions spanning public and on-premises infrastructure are difficult to manage. How can you get a single view of risk across all workloads and cloud deployments?
 - Workloads are ephemeral with short lifespans – 72% of containers live less than five minutes. How do you detect and respond to threats in real-time?
 
 
