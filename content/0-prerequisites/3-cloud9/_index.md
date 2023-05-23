@@ -85,13 +85,56 @@ and attach the new role to it.
    
    ![image](/images/10_prerequisites/iamRoleWorkspace.gif)
 
-2. Follow [this deep link to create an IAM role with Administrator access.](https://us-east-1.console.aws.amazon.com/iam/home#/roles$new?step=review&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::aws:policy%2FAdministratorAccess)
-   
-3. Confirm that **AWS service** and **EC2** are selected,
-   then click **Next: Permissions**. Check **AdministratorAccess**,
-   then click **Next: Tags** and **Next: Review** to get to the last step.
+2. Create a policy for the Cloud9 machine. Follow [this link](https://us-east-1.console.aws.amazon.com/iamv2/home?region=eu-central-1#/policies/create?step=addPermissions), select JSON, and paste the next content in there:
 
-   Name the role: `Sysdig-Workshop-Admin` and select **Create role**.
+   ```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:*",
+                "logs:*",
+                "sts:*",
+                "ec2:*",
+                "eks:*",
+                "ecr:*",
+                "ses:*",
+                "s3:CreateBucket",
+                "s3:DeleteBucket",
+                "s3:PutEncryptionConfiguration"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:Get*",
+                "iam:List*",
+                "iam:CreateRole",
+                "iam:AttachRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:PassRole",
+                "iam:CreateOpenIDConnectProvider",
+                "iam:TagOpenIDConnectProvider"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+   ```
+
+   Then click on **Next**, name it `workshop-policy` and click on **Create Policy**.
+
+3. Follow [this deep link to create an IAM role with the policy *workshop-policy*](https://us-east-1.console.aws.amazon.com/iam/home#/roles$new?step=review&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::account-id:policy%2Fworkshop-policy). 
+   
+4. Name the role: `Sysdig-Workshop-Admin`.
+
+   Confirm that **AWS service** and **EC2** are included in Trusted entities,
+   and your policy *workshop-policy* in Policies.
+   
+   Then, select **Create role**.
    In the next step you'll assign it to the machine.
 
     ![Create IAM Role](/images/10_prerequisites/iamRole.gif)
@@ -134,7 +177,19 @@ This script will check the status of the attached IAM role: if it is not valid, 
    This script will create the new EKS instance and deploy in the cluster the Falco `event-generator`.
    This workload generates *syscall* activity that simulates different threats in the environment.
 
+
       {{% notice info %}}
 The EKS cluster deployment in AWS will take about 10 minutes to complete.
 There's no need to wait until the EKS provisioner is done. Open a new Terminal and continue from there with the workshop until the script is done.
 {{% /notice %}}
+
+
+## EKS clean-up
+
+When the workshop is completed, destroy the cluster with:
+
+
+```bash
+cd learn-terraform-provision-eks-cluster
+terraform apply -destroy
+```
