@@ -19,10 +19,10 @@ Follow the instructions below to recreate a complete production environment for 
 1. Download the assets for this demo in your working station with:
 
     ``` bash
-    mkdir fargate-serverless-agents/terraform-installer
+    mkdir -p fargate-serverless-agents/terraform-installer,
     cd fargate-serverless-agents
     git clone https://github.com/aws-samples/aws-modernization-with-sysdig.git
-    cp aws-modernization-with-sysdig/static/code/fargate ./terraform-installer/
+    cp -R aws-modernization-with-sysdig/static/code/fargate ./terraform-installer/
     rm -rf aws-modernization-with-sysdig/
     ```
 
