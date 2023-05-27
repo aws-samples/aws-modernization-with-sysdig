@@ -11,7 +11,7 @@ If you are currently logged in to an AWS Account, you can logout using this [lin
 {{% /notice %}}
 
 
-### Create AWS Account
+### Access Event Engine AWS Account
 
 1. Connect in a new browser tab to the _Event Engine_ portal by browsing to
    [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/).
@@ -25,15 +25,51 @@ If you are currently logged in to an AWS Account, you can logout using this [lin
 Leave the Event Engine tab open (A new tab will be used for the next step).
 {{% /notice %}}
 
-1. Choose **AWS Console**, then **Open AWS Console**.
+2. Choose **AWS Console**, then **Open AWS Console**.
 
     ![Event Engine Dashboard](/images/10_prerequisites/event-engine-dashboard.png)
 
-2. Use a single region for the duration of this workshop.
-   This workshop has been tested using  `us-east-1` (US East - N.Virginia).
-   Please select **US East (N.Virginia)** in the top right corner.
+3. Access **Cloud9 Instance** from AWS Console.
+   
+    Enter **Cloud9** on AWS services search and click **Cloud9**
 
-    ![Event Engine Region](/images/10_prerequisites/event-engine-region.png)
+    ![Cloud9 Search](/images/10_prerequisites/console-cloud9.png)
+
+    You could see a **Cloud9 Instance**  provisioned for you already called **SysdigCloud9-workshop**. Click Open to open the cloud9 Session
+
+    ![Workshop Instance](/images/10_prerequisites/cloud9-workshop.png)
+
+## Set permissions for your workspace
+
+{{% notice info %}}
+Cloud9 normally manages IAM credentials dynamically. This isn't currently compatible with
+the EKS IAM authentication, so we will disable it and rely on the IAM role attached to the Cloud9 instanceinstead.
+{{% /notice %}}
+
+
+1. Click the gear icon (in top right corner),
+   and select **AWS SETTINGS**. Turn off **AWS managed temporary credentials** and close the Preferences tab.
+   
+   ![image](/images/10_prerequisites/iamRoleWorkspace.gif)
+
+
+
+## Workshop-specific requirements
+
+Your workstation is ready to start the workshop.Starting from here, when you see command to be entered such as below, you will enter these commands into *Cloud9 IDE* or equivalent terminal of your choice.
+
+1. Clone the workshop repository and get the provided files and execute the script to setup the general requirements for the workshop:
+
+   ```bash
+   git clone https://github.com/sysdiglabs/aws-modernization-with-sysdig
+   cp -r ./aws-modernization-with-sysdig/static/code/* ./
+   rm -rf ./aws-modernization-with-sysdig
+   ./connect_eks.sh
+   ```
+
+
+### You are now set up with AWS Cloud9 Instance to continue with rest of the workshop. Skip this section and proceed to **1.Install**
+
 
     {{% notice warning %}}
 This account will expire at the end of the workshop and the all the resources created will be automatically deprovisioned. You will not be able to access this account after today.
