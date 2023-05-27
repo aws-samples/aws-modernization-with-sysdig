@@ -12,7 +12,7 @@ cd learn-terraform-provision-eks-cluster
 
 # patch
 # change machine types for first instance type as well as the region
-sed -ie 's/t3.small/c5.xlarge/g' main.tf
+#sed -ie 's/t3.small/c5.xlarge/g' main.tf
 sed -ie 's/us-east-2/us-east-1/g' variables.tf
 # comment out terraform-cloud to set local terraform
 sed -ie '6,10 s/^/#/' terraform.tf
