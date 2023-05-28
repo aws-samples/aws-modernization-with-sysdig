@@ -8,14 +8,6 @@ weight: 20
 None of these installers enable Fargate Runtime Threat Detection. For this feature, it is required to follow a different installation method (covered in [Module 4.3](/4-threat-detection/3-fargate.html)).
 {{% /notice %}}
 
-{{% notice note %}}
-If you did not have to go through the prerequisite steps, please run the following commands in your Cloud9 terminal:
-    wget https://sysdig-workshop-immersionday.s3.amazonaws.com/connect_eks.sh
-    chmod +x connect_eks.sh
-    ./connect_eks.sh
-
-{{% /notice %}}
-
 
 # Module 1: Install
 
