@@ -87,7 +87,8 @@ and attach the new role to it.
 
 2. Create a policy for the Cloud9 machine. Follow [this link](https://us-east-1.console.aws.amazon.com/iamv2/home?region=eu-central-1#/policies/create?step=addPermissions), select JSON, and paste the next content in there:
 
-   ```json
+   ```
+   json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -123,6 +124,7 @@ and attach the new role to it.
         }
     ]
 }
+   ```
    ```
 
    Then click on **Next**, name it `workshop-policy` and click on **Create Policy**.
@@ -193,3 +195,4 @@ When the workshop is completed, destroy the cluster with:
 cd learn-terraform-provision-eks-cluster
 terraform apply -destroy
 ```
+
