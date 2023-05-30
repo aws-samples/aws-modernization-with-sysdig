@@ -87,7 +87,8 @@ and attach the new role to it.
 
 2. Create a policy for the Cloud9 machine. Follow [this link](https://us-east-1.console.aws.amazon.com/iamv2/home?region=eu-central-1#/policies/create?step=addPermissions), select JSON, and paste the next content in there:
 
-   ```json
+   ```
+   json
 {
     "Version": "2012-10-17",
     "Statement": [
