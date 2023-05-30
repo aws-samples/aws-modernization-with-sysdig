@@ -194,3 +194,4 @@ When the workshop is completed, destroy the cluster with:
 cd learn-terraform-provision-eks-cluster
 terraform apply -destroy
 ```
+
