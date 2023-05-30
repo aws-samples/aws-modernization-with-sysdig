@@ -125,6 +125,7 @@ and attach the new role to it.
     ]
 }
    ```
+   ```
 
    Then click on **Next**, name it `workshop-policy` and click on **Create Policy**.
 
