@@ -14,22 +14,22 @@ None of these installers enable Fargate Runtime Threat Detection. For this featu
 
 After authenticating your new Sysdig account, the onboarding wizard screen will be shown.
 
-    ![Onboarding](/images/onboarding.png)
+  ![Onboarding](/images/onboarding.png)
 
 Onboarding wizard
 Choose "AWS Account" to start.
 
-    ![Onboarding](/images/onboarding-2-select-features.png)
+  ![Onboarding](/images/onboarding-2-select-features.png)
 
 Agentless features screen
 Make sure that both options "CSPM" and "Threat Detection" are selected and press "Next".
 
-    ![Onboarding](/images/onboarding-3-type.png)
+  ![Onboarding](/images/onboarding-3-type.png)
 
 Onboarding type
 Choose "Single" for this workshop.
 
-    ![Onboarding](/images/onboarding-4-installation.png)
+  ![Onboarding](/images/onboarding-4-installation.png)
 
 <!-- 1. Type in the AWS Region `us-east-1` and click `Next`.
 #   Then click `Get into Sysdig`. The Sysdig Secure UI will be presented. -->
