@@ -16,17 +16,17 @@ After authenticating your new Sysdig account, the onboarding wizard screen will 
 
   ![Onboarding](/images/onboarding.png)
 
-Onboarding wizard
+Onboarding wizard.  
 Choose "AWS Account" to start.
 
   ![Onboarding](/images/onboarding-2-select-features.png)
 
-Agentless features screen
+Agentless features screen.  
 Make sure that both options "CSPM" and "Threat Detection" are selected and press "Next".
 
   ![Onboarding](/images/onboarding-3-type.png)
 
-Onboarding type
+Onboarding type.  
 Choose "Single" for this workshop.
 
   ![Onboarding](/images/onboarding-4-installation.png)
@@ -54,19 +54,16 @@ and previous experience with each of the tools.
 1. The **Sysdig Secure for Cloud** installer will enable 
    all the next Sysdig Secure Cloud features:
 
-      - Compliance
-      - CSPM
-      - Cloud Threat detection using CloudTrail
+      - Posture and compliance (CSPM)
+      - CIEM
+      - Cloud Threat detection using EventBridge
       - Vulnerability Management
-      - ECR Image Registry Scanning
-      - Fargate Image Scanning
-
 
 2. The deployment of the **Sysdig Agents in an EKS cluster**,
   enable most of the Sysdig Monitor and Secure features. 
   In the particular context of this training, the agents are required to enable:
 
-      - CIEM
       - Runtime Threat Detection in EKS
-      - KSCM: Actionable Compliance and IaC Remediation
+      - ECR image scanning
+      - KSPM: Actionable Compliance and IaC Remediation
       - **Kubernetes Admission Controller** for cluster Audit logging in EKS
