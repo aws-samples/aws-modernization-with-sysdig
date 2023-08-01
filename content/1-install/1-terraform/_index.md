@@ -21,13 +21,14 @@ To install the Sysdig Secure for AWS integration:
 
 ## Install
 
-1. Log into Sysdig Secure, and browse to **Integrations > Data Sources > Cloud Accounts**, 
-then click on [**Connect AWS > Terraform Single Account**](https://secure.sysdig.com/#/data-sources/cloud-accounts?setupModalEnv=AWS&installContentDisplayType=tabular&accountType=single).
+1. In the previous step we chosen Terraform installation from the onboarding wizard.
+(If you skipped the wizard, just log into Sysdig Secure, and browse to **Integrations > Data Sources > Cloud Accounts**, 
+then click on **Connect Account > AWS** Mark all options **Next** Mark "Single" **Next** Terraform ).
 
-    ![Install with Terraform](/images/1-installation/aws.png)
+    ![Install with Terraform](/images/1-installation/aws-terraform-onboarding.png)
 
-1. In the menu, insert a valid aws region (for this workshop, use `us-east-1`)
-   and copy the resulting content.
+1. Insert valid **AWS Account ID** and **region** (for this workshop, use `us-east-1` region)
+   and copy the resulting content from the auto-generated box named "main.tf".
 
 2. Go to the terminal window and
    create a folder with the `main.tf` file inside.
@@ -41,7 +42,7 @@ then click on [**Connect AWS > Terraform Single Account**](https://secure.sysdig
 
     The final result should look like this:
 
-    {{% code-to-md "/static/code/cloudvision/aws-single-tf.tf" "terraform" %}}
+    {{% code-to-md "/static/code/cloud-agentless/aws-single-tf.tf" "terraform" %}}
 
 3. Now, just initialize and execute Terraform with:
 
