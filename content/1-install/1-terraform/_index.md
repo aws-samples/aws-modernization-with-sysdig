@@ -22,7 +22,7 @@ To install the Sysdig Secure for AWS integration:
 ## Install
 
 1. In the previous step we chosen Terraform installation from the onboarding wizard.
-(If you skipped the wizard, just log into Sysdig Secure, and browse to **Integrations > Data Sources > Cloud Accounts**, 
+(If you skipped the wizard, just log into Sysdig Secure and browse to **Integrations > Data Sources > Cloud Accounts**, 
 then click on **Connect Account > AWS** Mark all options **Next** Mark "Single" **Next** Terraform ).
 
     ![Install with Terraform](/images/1-installation/aws-terraform-onboarding.png)
