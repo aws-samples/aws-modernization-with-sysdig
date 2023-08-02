@@ -30,4 +30,4 @@ Sysdig Secure give you a single pane of glass to view all activity across your i
 
     To view a general dashboard with actionable information including cloud and containers, browse to **Events > Events Dasboards > Events Overview**
 
-    ![Cloud Events](/images/40_module_2sysdig-cloud-events-overview.png)
+    ![Cloud Events](/images/40_module_2/sysdig-cloud-events-overview.png)
