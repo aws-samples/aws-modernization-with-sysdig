@@ -7,22 +7,25 @@ weight: 1
 In this section we will explain how to audit AWS CloudTrail events with Sysdig. Once Sysdig **Secure for cloud** is deployed in your infrastructure, every CloudTrail entry is analysed in real time, and evaluated against a flexible set of security rules based on Falco.
 
 
-This allows you to detect misconfigurations and unexpected or unwanted activity quickly and raise notifications or automate reactions when something, or someone, creates, deletes or modifies your cloud resources, hence protecting you from compromised cloud accounts or involuntary human error.
+This allows you to detect unexpected or unwanted activity quickly and raise notifications or automate reactions when something, or someone, creates, deletes or modifies your cloud resources, hence protecting you from compromised cloud accounts or involuntary human error.
 
-A rich set of Falco rules are included corresponding to security standards and benchmarks like NIST 800-53, PCI DSS, SOC 2, MITRE ATT&CK®, CIS AWS, AWS Foundational Security Best Practices.
+A rich set of Falco rules are included and curated by Sysdig Threat Research Team and the great Falco community. Most of the rules come from investigations, standards and/or benchmarks like NIST 800-53, PCI DSS, SOC 2, MITRE ATT&CK®, CIS AWS, AWS Foundational Security Best Practices.
 
+### Rules
+
+Sysdig rules use Falco format, and define the conditions under which an alert will be generated, what context to be captured and what the output will be.
 
 ### Policies
 
-Sysdig Secure Runtime Policies are a combination of rules about activities an enterprise wants to detect in an environment, the actions that should be taken if the policy rule is breached. In the case of Cloud Security, these may relate to activities within your AWS account, such as users being created or updated, S3 buckets being manipulated or the execution of an interactive command.
+Sysdig Secure Runtime Policies are a combination of rules grouped by activities an enterprise wants to detect in an environment, the actions that should be taken if the policy rule is breached. In the case of Cloud Security, these may relate to activities within your AWS account, such as users being created or updated, S3 buckets being manipulated or the execution of an interactive command.
 
 Let's start:
 
-1. Browse to Sysdig Secure, and navigate to 'Policies > Runtime Policies', filter by '**AWS CloudTrail**' from the 'Select policy type' dropdown and highlight the '**Sysdig AWS Threat Detection**' policy
+1. Browse to Sysdig Secure, and navigate to **'Policies > Threat Detection > Runtime Policies'**, expand the **'AWS CloudTrail'** and click the '**Sysdig AWS Threat Detection**' policy
 
-    <!-- ![Runtime Policies](/images/runtime_policies_01.png) -->
+    ![Runtime Policies](/images/40_module_2/sysdig-runtime-policies-aws-cloudtrail.png)
 
-    You can see the list of rules that make up this policy.
+    You can see the list of rules that make up this policy on the right column.
 
 2. Click and expand rule '**Share RDS Snapshot with Foreign Account**'
 
@@ -61,19 +64,17 @@ Let's start:
 
     This rule is one of many thats included out-of-the-box in Sysdig Secure for Cloud.
 
-3. Browse to Sysdig Secure, and navigate to 'Policies > Rules > Rules Library' to see a list of all Falco rules relating to CloudTrail
+3. Browse to Sysdig Secure, and navigate to **'Policies > Threat Detection > Rules > Rules Library'** to see a list of all Falco rules relating to CloudTrail
 
-4. Select '**aws**' from the '**Select Tags**' list
+4. Select '**AWS**' from the '**Select Tags**' list at the top
 
     ![CloudTrail Falco Policy Rules](/images/falco_rules_01.png)
 
     You will see a list of rules with various tags.
 
-5. Highlight the rule '**Share RDS Snapshot with Foreign Account**' to see the actual Falco rule, and the Sysdig Policy in which it is used, in this case '**AWS CloudTrail security event**'
+5. Highlight the rule '**Share RDS Snapshot with Foreign Account**' (use the **Search** if you want) to see the actual Falco rule, and the Sysdig Policy in which it is used, in this case '**Sysdig AWS Threat Detection**'. You can click on the policy to get back to the Runtime Policy view again.
 
     ![CloudTrail Falco Policy Rules](/images/falco_rules_02.png)
-
-6. You can click on **AWS CloudTrail security event** to view the Runtime Policy again.
 
 
 In the next step we'll play the red team and generate a suspicious event so that a Falco rule is triggered and we can see it in action.

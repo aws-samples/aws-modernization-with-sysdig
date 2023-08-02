@@ -87,51 +87,49 @@ and attach the new role to it.
 
 2. Create a policy for the Cloud9 machine. Follow [this link](https://us-east-1.console.aws.amazon.com/iamv2/home?region=eu-central-1#/policies/create?step=addPermissions), select JSON, and paste the next content in there:
 
-   ```
-   json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ssm:*",
-                "logs:*",
-                "sts:*",
-                "ec2:*",
-                "eks:*",
-                "ecr:*",
-                "ses:*",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:PutEncryptionConfiguration"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "iam:Get*",
-                "iam:List*",
-                "iam:CreateRole",
-                "iam:AttachRolePolicy",
-                "iam:PutRolePolicy",
-                "iam:PassRole",
-                "iam:CreateOpenIDConnectProvider",
-                "iam:TagOpenIDConnectProvider"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
-   ```
+   ```bash
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "ssm:*",
+                    "logs:*",
+                    "sts:*",
+                    "ec2:*",
+                    "eks:*",
+                    "ecr:*",
+                    "ses:*",
+                    "s3:CreateBucket",
+                    "s3:DeleteBucket",
+                    "s3:PutEncryptionConfiguration"
+                ],
+                "Resource": "*"
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "iam:Get*",
+                    "iam:List*",
+                    "iam:CreateRole",
+                    "iam:AttachRolePolicy",
+                    "iam:PutRolePolicy",
+                    "iam:PassRole",
+                    "iam:CreateOpenIDConnectProvider",
+                    "iam:TagOpenIDConnectProvider"
+                ],
+                "Resource": "*"
+            }
+        ]
+    }
    ```
 
    Then click on **Next**, name it `workshop-policy` and click on **Create Policy**.
 
-3. Follow [this deep link to create an IAM role with the policy *workshop-policy*](https://us-east-1.console.aws.amazon.com/iam/home#/roles$new?step=review&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::account-id:policy%2Fworkshop-policy). 
+1. Follow [this deep link to create an IAM role with the policy *workshop-policy*](https://us-east-1.console.aws.amazon.com/iam/home#/roles$new?step=review&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::account-id:policy%2Fworkshop-policy). 
    
-4. Name the role: `Sysdig-Workshop-Admin`.
+2. Name the role: `Sysdig-Workshop-Admin`.
 
    Confirm that **AWS service** and **EC2** are included in Trusted entities,
    and your policy *workshop-policy* in Policies.
