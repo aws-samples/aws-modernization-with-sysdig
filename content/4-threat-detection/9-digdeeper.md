@@ -9,7 +9,7 @@ Falco was created by Sysdig in 2016.  It was the first runtime security project 
 
 ## Falco and Runtime Security
 
-Link to our internal course in public domain.
+One of the key components of Sysdig runtime is Falco. Read more about Falco Open Source in [Sysdig's Falco 101](https://learn.sysdig.com/path/falco).
 
 
 ## CloudTrail
