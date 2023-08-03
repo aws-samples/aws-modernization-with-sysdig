@@ -14,16 +14,18 @@ Link to our internal course in public domain.
 
 ## CloudTrail
 
-A set of out-of-the-box Falco rules for CloudTrail is packaged with the Sysdig CloudConnector allowing you to easily generate detections and alerts on abnormal behavior changes. 
+A set of out-of-the-box Falco rules for CloudTrail is packaged with Sysdig CDR (Cloud Detection and Response) allowing you to easily generate detections and alerts on abnormal behavior changes. 
 You can also complement these with your own custom rules.
 The Falco rules are also mapped against **NIST 800-190** compliance standard controls. More compliance mapping for additional compliance standards like PCI or CIS will be provided in the future
 
 ### How it works?
 
-Similar to ECS Fargate serverless, incoming CloudTrail events are fetched and stored in an S3 bucket. A subscription in the SNS topic will then forward the events to the **Sysdig CloudVision** endpoint. The CloudVision will then analyze each event against a configured set of **Falco rules**.
+Similar to ECS Fargate serverless, incoming CloudTrail events are forwarded to Sysdig backend, enriched and evaluated against **Falco rules**.
 
 ![Reference Architecture](/images/50_module_3/sysdig-agentless-cloud-diagram.png)
 
-Sysdig CloudVision provides several **notification options**, including sending security findings to Sysdig Backend, as well as AWS Security Hub and AWS CloudWatch, so you can review the security events without leaving your AWS console.
+Sysdig Cloud provides several outbound integration options. Events can be pulled from outside using Sysdig REST API. In addition, Sysdig can push events either via **notification channels** or **event forwarder**.
 
-![Reference Architecture](/images/50_module_3/image4.png)
+**Forwarding options** can transmit streams of security findings to retention services like SQS or other log tools like Splunk or Elasticsearch.  This mechanism forwards streams of events of a determined type with no discrimination.
+
+**Notification channels** send determined events selected by Falco rules to tools like Pagerduty, OpsGenie or Slack. Notifications are ment to be actionable, meaning that is worth taking an action when they happen: trigger a runbook, automate a response or at least notify a specialized team for awareness or investigation.
