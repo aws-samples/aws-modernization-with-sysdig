@@ -22,7 +22,7 @@ The Falco rules are also mapped against **NIST 800-190** compliance standard con
 
 Similar to ECS Fargate serverless, incoming CloudTrail events are fetched and stored in an S3 bucket. A subscription in the SNS topic will then forward the events to the **Sysdig CloudVision** endpoint. The CloudVision will then analyze each event against a configured set of **Falco rules**.
 
-![Reference Architecture](/images/50_module_3/image6.png)
+![Reference Architecture](/images/50_module_3/sysdig-agentless-cloud-diagram.png)
 
 Sysdig CloudVision provides several **notification options**, including sending security findings to Sysdig Backend, as well as AWS Security Hub and AWS CloudWatch, so you can review the security events without leaving your AWS console.
 
