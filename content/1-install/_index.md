@@ -33,7 +33,7 @@ In this first section you will learn:
 1. How to deploy Sysdig Secure for Cloud. There are two alternative methods:
 
      - [with Terraform](/1-install/1-terraform.html).
-     - [with CloudFormation](/1-install/2-cloudFormation.html).
+     - [with CloudFormation](/1-install/2-cloudformation.html).
 
 2. How to [deploy the Sysdig Agents with Helm](/1-install/3-agent-eks.html) in an EKS Cluster.
   There are [multiple methods](https://docs.sysdig.com/en/docs/installation/sysdig-agent/agent-installation/) to install a Sysdig Agent that are not covered in this workshop.
