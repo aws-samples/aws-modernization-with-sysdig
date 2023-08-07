@@ -32,10 +32,9 @@ For the purposes of the workshop, make sure you're in `us-east-1` (i.e. 'N. Virg
 
     The AWS Console should open the CF Template:
 
-    1. Paste the *Sysdig Secure API Token*.
-       From the screenshot below: 
+    1. From the screenshot below: 
        A. Change the "Stack name" string if you want a different name.
-       B. Check tick boxes from the footer (acknowledge)
+       B. Check tick box from the footer (acknowledge)
 
     ![Cloud Security CloudFormation Stack](/images/CloudSecurityCloudFormationStack-with-notes2.png)
 
