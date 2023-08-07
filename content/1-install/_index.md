@@ -21,11 +21,6 @@ Choose "AWS Account" to start.
 
   ![Onboarding](/images/onboarding-2-select-features.png)
 
-Agentless features screen.  
-Make sure that both options "CSPM" and "Threat Detection" are selected and press "Next".
-
-  ![Onboarding](/images/onboarding-3-type.png)
-
 Onboarding type.  
 Choose "Single" for this workshop.
 
