@@ -8,7 +8,7 @@ weight: 3
 
 There are [different methods](https://docs.sysdig.com/en/docs/installation/sysdig-secure/connect-cloud-accounts/aws/#validate) to check that the installation was successful. 
 
-One quick way to check it is to visit the [**Data Sources > Cloud Accounts**](https://secure.sysdig.com/#/data-sources/cloud-accounts)
+One quick way to check it is to visit the [**Integrations > Data Sources > Cloud Accounts**](https://secure.sysdig.com/#/data-sources/cloud-accounts)
 dashboard to review that an account with your *Account ID* is connected.
 
 ![Cloud Account Connected](/images/1-installation/cloudaccountsconnected.png)

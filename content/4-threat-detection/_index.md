@@ -4,14 +4,14 @@ chapter: true
 weight: 57
 ---
 
-# Module 4: Threat Detection and Response
+# Module 3: Threat Detection and Response
 
 ## Module Overview
 
 In this module you will learn about Threat Detection, this includes:
 
-1. Cloud Runtime Security with CloudTrail
-2. Runtime Security with Falco in EKS
+1. Cloud Runtime Security with CloudTrail (Agentless)
+2. Runtime Security with Falco in EKS 
 3. Runtime Security in serverless Fargate
 
 
@@ -34,13 +34,15 @@ Falco is an open source threat detection language that is widely used to detect 
 
 ## Cloud Threat Detection
 
-Using Falco to detect and alert on AWS configuration changes is similar to runtime detections of your application stack.  This makes Sysdig Secure your central location to detect and alert on all aspects of your security posture.
+![Runtime Policies](/images/40_module_2/cdr-solution.png)
+
+Sysdig CDR (Cloud Detection and Response) built on top of Falco, detects and alerts on AWS events and changes.  This makes Sysdig Secure your central location to detect and alert on any suspicious event happening anywhere in your infrastructure including cloud applications and services.
 
 AWS provides a rich environment upon which to base your application, but it's not without its risks.  There are many places where bad actors can create harm, for example exposing data by making S3 buckets public, deleting bucket encryption, disabling MFA for an account, adding/removing IAM policies.
 
 Every action taken over your infrastructure resources results in an entry in AWS CloudTrail. This includes all AWS account activity, actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.  This event history is extremely useful for detecting unwanted or unexpected activity involving your AWS resources, however it's quite noisy, and being JSON, it's not really human readable so can be hard to understand.
 
-An important thing to note is Sysdig remains your single reference point for all infrastructure & runtime security configuration as well as associated events and alerts.
+Sysdig performs threat detection using Falco rules and policies on CloudTrail events. (It creates a CloudTrail trail in the account(s), the agentless feature relies on AWS EventBridge to access AWS service events).
 
 
 
