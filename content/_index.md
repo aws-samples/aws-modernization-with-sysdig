@@ -74,7 +74,7 @@ the following Sysdig Secure features available today for AWS:
 For a detailed description of these Sysdig Secure for cloud integrations with AWS,
 please refer to the [Sysdig Secure for cloud documentation](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/aws).
 
-![Sysdig Secure for cloud overview](/images/cloudvision.png)
+![Sysdig Secure for cloud overview](/images/sysdig-cnapp.png)
 
 
 ## Audience: _Who can take this workshop_?
