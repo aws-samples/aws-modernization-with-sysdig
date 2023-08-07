@@ -34,13 +34,6 @@ In case you don't have an account yet, follow the next steps:
 2. You will receive a confirmation email.
    Follow the link to log into Sysdig in a new tab.
 
-3. Set a password, and the onboarding Wizard will be presented (the next steps are going to skip the Wizard,
-   you'll be learning in the next steps how to install all required Sysdig components in your AWS account and EKS cluster).
-   Select AWS and then click on `Alternatively, provision with Terraform for Single Account`.
-
-    ![Onboarding](/images/onboarding.png)
-
-4. Type in the AWS Region `us-east-1` and click `Next`.
-   Then click `Get into Sysdig`. The Sysdig Secure UI will be presented.
+3. Set a password and submit it. Now the Sysdig onboarding Wizard will be presented.
 
    In the next step, you'll setup an AWS Cloud9 engine as a workstation to complete this workshop.
