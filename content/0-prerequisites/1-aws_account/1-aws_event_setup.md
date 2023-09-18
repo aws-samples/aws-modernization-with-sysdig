@@ -58,7 +58,30 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role attac
 
 Your workstation is ready to start the workshop.Starting from here, when you see command to be entered such as below, you will enter these commands into *Cloud9 IDE* or equivalent terminal of your choice.
 
-1. Clone the workshop repository and get the provided files and execute the script to setup the general requirements for the workshop:
+1. Close existing terminal and open a new terminal and check your aws identity
+   ```bash
+   aws sts get-caller-identity
+   ```
+   The output should look like the example below
+
+   ```
+    {
+        "UserId": "XXXXXXXXXXXXXXXXXXX:i-nnnnnnnnnnnnnnnnnnnn",
+        "Account": "nnnnnnnnnnnn",
+        "Arn": "arn:aws:sts::nnnnnnnnnnnn:assumed-role/team-template-SysdigInstanceRole-XXXXXXXXXXX/i-nnnnnnnnnnnn"
+    } 
+   ```
+
+   A wrong session information would look like 
+   ```   
+    {   
+        "UserId": "XXXXXXXXXXXXXXXXXXX:MasterKey",
+        "Account": "nnnnnnnnnnnn",
+        "Arn": "arn:aws:sts::nnnnnnnnnnnn:assumed-role/TeamRole/MasterKey"
+    }
+   ```
+
+2. Clone the workshop repository and get the provided files and execute the script to setup the general requirements for the workshop:
 
    ```bash
    git clone https://github.com/sysdiglabs/aws-modernization-with-sysdig
