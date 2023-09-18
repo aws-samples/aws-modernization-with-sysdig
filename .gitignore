@@ -34,3 +34,14 @@ msbuild.wrn
 
 # Node Modules
 node_modules/
+
+
+# Terraform
+.terraform.lock.hcl
+.terraform
+*.tfstate
+*.tfstate.backup
+*.tfe
+
+# Certs/Keys
+*.pem
